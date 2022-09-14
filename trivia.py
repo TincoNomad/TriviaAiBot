@@ -6,7 +6,7 @@ def get_question():
         qs = ''
         id = 1
         answer = 0  
-        response = requests.get('')
+        response = requests.get('https://devcenter.heroku.com/articles/python-runtimes/api/random/')
         json_data = json.loads(response.text)
         qs += 'Question: \n'
         qs += json_data[0]['title'] + '\n'
