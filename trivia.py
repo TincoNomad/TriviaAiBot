@@ -6,7 +6,8 @@ def get_question():
         qs = ''
         id = 1
         answer = 0  
-        response = requests.get('')
+        #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/random/')
+        response = requests.get('http://127.0.0.1:8000/api/random/')
         json_data = json.loads(response.text)
         qs += 'Question: \n'
         qs += json_data[0]['title'] + '\n'
@@ -33,9 +34,9 @@ class MyClient(discord.Client):
 
 
         if message.content =='$trivia':
-            print('message')
-            qs, answer = get_question()
-            await message.channel.send('hi I am the bot')
+            
+            question, answer = get_question()
+            await message.channel.send(question)
 
 
 
