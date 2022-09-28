@@ -1,26 +1,26 @@
+import asyncio
 import discord
 import requests
 import json
 
 def get_question():
-        qs = ''
+        question = ''
         id = 1
         answer = 0  
-        #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/random/')
-        response = requests.get('http://127.0.0.1:8000/api/random/')
+        response = requests.get('https://djangodiscordtriviabot.herokuapp.com//api/question/')
+        #response = requests.get('http://127.0.0.1:8000/api/question')
         json_data = json.loads(response.text)
-        qs += 'Question: \n'
-        qs += json_data[0]['title'] + '\n'
+        question += 'Pregunta: \n\n'
+        question += json_data[0]['title'] + '\n\n'
 
         for item in json_data[0]['answer']:
-            qs += str(id) + '.' + item['answer'] + '\n'
+            question += str(id) + '.' + item['answer'] + '\n\n'
 
             if item['is_correct']:
                 answer = id
+            id += 1
 
-                id += 1
-
-        return(qs, answer)
+        return(question, answer)
 
 
 class MyClient(discord.Client):
@@ -37,6 +37,20 @@ class MyClient(discord.Client):
             
             question, answer = get_question()
             await message.channel.send(question)
+        
+            def check(message):
+                return message.author ==message.author and message.content.isdigit()
+
+            try:
+                guess = await client.wait_for('message',check=check, timeout= 10.0)
+            except asyncio.TimeoutError:
+                return await message.channel.send('Ops, te demoraste mucho 🥲')
+
+            if int(guess.content) == answer:
+                await message.channel.send('¡Correcto! Muy bien 🥳')
+            else:
+                await message.channel.send('Uy no, esa no es la respuesta 😞')
+
 
 
 

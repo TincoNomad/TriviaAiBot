@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     #added
     'triviaplatzibot.trivia',
     'rest_framework',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [

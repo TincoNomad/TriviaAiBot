@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/random/',RandomQuestions.as_view(), name='random'),
+    path('api/question',RandomQuestions.as_view(), name='random'),
 ]
 
 if settings.DEBUG:
