@@ -20,4 +20,5 @@ class RandomQestionsSerializer(serializers.ModelSerializer):
         fields = [
             'title',
             'answer',
+            'points',
         ]

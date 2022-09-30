@@ -3,24 +3,48 @@ import discord
 import requests
 import json
 
+
+def get_score():
+    leaderboard = ''
+    id = 1
+    #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/score/leaderboard')
+    response = requests.get('http://127.0.0.1:8000/api/score/leaderboard')
+    json_data = json.loads(response.text)
+
+    for item in json_data:
+        leaderboard += str(id)+' - '+ item['name'] + ', '+str(item['points']) + 'Puntos' + '\n'
+
+        id += 1
+
+    return(leaderboard)
+
+def update_score(name, points):
+    #url = 'https://djangodiscordtriviabot.herokuapp.com/api/score'
+    url = 'http://127.0.0.1:8000/api/score'
+    new_score = {'name': name, 'points': points}
+    x = requests.post(url, data=new_score)
+
+
 def get_question():
         question = ''
         id = 1
-        answer = 0  
-        response = requests.get('https://djangodiscordtriviabot.herokuapp.com//api/question/')
-        #response = requests.get('http://127.0.0.1:8000/api/question')
+        answer = 0
+        points = 0 
+        #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/question/')
+        response = requests.get('http://127.0.0.1:8000/api/question')
         json_data = json.loads(response.text)
         question += 'Pregunta: \n\n'
         question += json_data[0]['title'] + '\n\n'
 
         for item in json_data[0]['answer']:
-            question += str(id) + '.' + item['answer'] + '\n\n'
+            question += str(id) + '-' + item['answer'] + '\n\n'
 
             if item['is_correct']:
                 answer = id
             id += 1
 
-        return(question, answer)
+        points = json_data[0]['points']
+        return(question, answer, points)
 
 
 class MyClient(discord.Client):
@@ -32,10 +56,13 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
 
+        if message.content == '$puntaje':
+            leaderboard = get_score()
+            await message.channel.send(leaderboard)
 
         if message.content =='$trivia':
             
-            question, answer = get_question()
+            question, answer, points = get_question()
             await message.channel.send(question)
         
             def check(message):
@@ -47,7 +74,10 @@ class MyClient(discord.Client):
                 return await message.channel.send('Ops, te demoraste mucho 🥲')
 
             if int(guess.content) == answer:
-                await message.channel.send('¡Correcto! Muy bien 🥳')
+                user = guess.author
+                mensaje = '¡Correcto! ' + str(guess.author.name) + ', ganaste ' + str(points) + ' puntos 🥳'
+                await message.channel.send(mensaje)
+                update_score(user, points)
             else:
                 await message.channel.send('Uy no, esa no es la respuesta 😞')
 

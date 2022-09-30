@@ -1,14 +1,18 @@
 from django.contrib import admin
 from django.urls import path
 from .trivia.views import RandomQuestions
+from .score.views import UpdateScores, LeaderBoard
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('api/question',RandomQuestions.as_view(), name='random'),
+    path('api/score',UpdateScores.as_view(), name='score_update'),
+    path('api/score/leaderboard', LeaderBoard.as_view(), name='leaderboard')
+ 
 ]
 
 if settings.DEBUG:
