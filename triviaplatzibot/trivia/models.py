@@ -7,27 +7,31 @@ from django.utils.translation import gettext as _
 class Question(models.Model):
 
     LEVEL = (
-        (0,_('Beginner')),
-        (1,_('Intermediate')),
-        (2,_('Advance')),
+        (0,_('-----')),
+        (1,_('Beginner')),
+        (2,_('Intermediate')),
+        (3,_('Advance')),
     )
 
     SCHOOLS = (
-        (0,_('developing')),
-        (1,_('marketing')),
-        (2,_('design')),
-        (3,_('soft skills')),
-        (4,_('Business')),
-        (5,_('digital Content')),
-        (6,_('startup')),
-        (7,_('english')),
+        (0,_('-----')),
+        (1,_('developing')),
+        (2,_('Data/M-Learning')),
+        (3,_('marketing')),
+        (4,_('design')),
+        (5,_('soft skills')),
+        (6,_('Business')),
+        (7,_('Finanzas')),
+        (8,_('digital Content')),
+        (9,_('startup')),
+        (10,_('english')),
     )
 
     title = models.CharField(_('title'), max_length=250)
     points = models.SmallIntegerField(_('Points'))
     difficulty = models.IntegerField(_('Difficulty'), choices=LEVEL, default=0)
-    schools = models.IntegerField(_('Schools'), choices=SCHOOLS, default=0,)
-    url = models.URLField(_('url'), default='', null=True)
+    schools = models.IntegerField(_('Schools'), choices=SCHOOLS, default=0)
+    url = models.URLField(_('url'),null=True, default='')
     is_active = models.BooleanField(_('Is Active'), default=True)
     created_at = models.DateTimeField(_('created'), auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField(_('Updated'), auto_now=True, auto_now_add=False)
