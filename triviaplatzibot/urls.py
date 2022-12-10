@@ -9,10 +9,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('api/question',RandomQuestions.as_view(), name='random'),
+    path('api/question',RandomQuestions.as_view(), name='question'),
     path('api/score',UpdateScores.as_view(), name='score_update'),
-    path('api/score/leaderboard', LeaderBoard.as_view(), name='leaderboard')
- 
+    path('api/score/leaderboard', LeaderBoard.as_view(), name='leaderboard'), 
 ]
 
 if settings.DEBUG:

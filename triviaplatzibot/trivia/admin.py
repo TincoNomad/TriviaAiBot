@@ -2,37 +2,65 @@ from django.contrib import admin
 
 from . import models
 
-
 #Table union Queastion + Answers
-class AnswweInlineModel(admin.TabularInline):
+class AnswerInlineModel(admin.TabularInline):
     model = models.Answer
     fields = [
-        'answer',
+        'answerTitle',
         'is_correct',
+        'question',
     ]
+    extra = 0
+
+#Table union Course + Question
+class QuestionInLineModel(admin.TabularInline):
+    model = models.Question
+    fields = [
+        'questionTitle',
+        'points',
+    ]
+    extra = 0
+
+#Cursos
+@admin.register(models.Course)
+
+class CourseAdmin(admin.ModelAdmin):
+    fields = [
+        'title',
+        'difficulty',
+        'school',
+        'url',
+    ]
+    list_display =[
+        'title',
+        'difficulty',
+        'school',
+    ]
+    inlines = [QuestionInLineModel,]
 
 #Qestion
 @admin.register(models.Question)
 
-class QustionAdmin(admin.ModelAdmin):
+class QuestionAdmin(admin.ModelAdmin):
     fields = [
-        'title',
+        'questionTitle',
         'points',
-        'difficulty',
+    
     ]
     list_display = [
-        'title',
-        'updated_at'
+        'questionTitle',
+        'course',
+        'updated_at',
     ]
-    inlines = [AnswweInlineModel,]
-
+    inlines = [AnswerInlineModel,]
 
 #Answer
 @admin.register(models.Answer)
 
 class AnswerAdmin(admin.ModelAdmin):
     list_display = [
-        'answer',
+        'answerTitle',
         'is_correct',
         'question',
     ]
+    
