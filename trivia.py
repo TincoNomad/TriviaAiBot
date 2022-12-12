@@ -55,14 +55,14 @@ def get_question(opcionCurso):
         if i['title'] == opcionCurso:
             url = i['url']
 
-    question += questionOptions[0]['questionTitle'] + '\n'
-    for item in questionOptions[0]['answer']:
-            question += str(id) + '-' + item['answerTitle'] + '\n\n'
+    question += questionOptions[0][0]['questionTitle'] + '\n\n'
+    for item in questionOptions[0][0]['answer']:
+            question += str(id) + '-' + item['answerTitle'] + '\n'
 
             if item['is_correct']:
                 answer = id
             id += 1
-    points = questionOptions['poits']
+    points = questionOptions[0][0]['points']
     
     return question, answer, points, url,
 
@@ -159,8 +159,8 @@ Escoje una dificulatad:
                 return curso
             opcionCurso = curso[3:]
             get_question(opcionCurso)
-            #await message.channel.send(opcionCurso)
             await juego()
+            
 
 
 
