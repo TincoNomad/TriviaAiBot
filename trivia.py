@@ -4,11 +4,11 @@ import requests
 import json
 
 
+
 ###### Game data base get points ######
 def get_score():
     leaderboard = ''
     id = 1
-    #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/score/leaderboard')
     response = requests.get('http://127.0.0.1:8000/api/score/leaderboard')
     json_data = json.loads(response.text)
 
@@ -21,7 +21,6 @@ def get_score():
 
 ###### Game data base save points ######
 def update_score(name, points):
-    #url = 'https://djangodiscordtriviabot.herokuapp.com/api/score'
     url = 'http://127.0.0.1:8000/api/score'
     new_score = {'name': name, 'points': points}
     x = requests.post(url, data=new_score)
@@ -30,7 +29,6 @@ def update_score(name, points):
 def get_course(opcionEscuela, opcionNivel):
     course = ''
     numero = 1
-    #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/question/')
     response = requests.get('http://127.0.0.1:8000/api/question')
     json_data = json.loads(response.text)
     for item in json_data:
@@ -52,7 +50,6 @@ def get_question(opcionCurso,counter):
     id = 1
     answer = ''
     points = 0
-    #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/question/')
     response = requests.get('http://127.0.0.1:8000/api/question')
     json_data = json.loads(response.text)
     questionOptions = [i['question'] for i in json_data if i['title'] == opcionCurso]
@@ -72,7 +69,6 @@ def get_question(opcionCurso,counter):
 #get course url
 def getLink(opcionCurso):
     url = ''
-    #response = requests.get('https://djangodiscordtriviabot.herokuapp.com/api/question/')
     response = requests.get('http://127.0.0.1:8000/api/question')
     json_data = json.loads(response.text)
     for i in json_data:
@@ -105,33 +101,57 @@ class MyClient(discord.Client):
 
 #game logic
         async def juego():
+
+            #await asyncio.sleep(5.0)
             
             question, answer, points = get_question(opcionCurso,counter)
-
+            
+            await message.channel.send('----------------------------------'+'\n'+'Lee la pregunta, tienes 30 segundos')
             await message.channel.send(question)
-                
+            await message.channel.send('----------------------------------'+'\n'+'🕰️ Espera, que te voy a avisar cuando responder 🕰️')
+
             def check(message):
-                return message.author ==message.author and message.content.isdigit()
+                return message.author == message.author and message.content.isdigit()
+            
+            async def attempt():
+                
+                players = []
+                
+                while True:
+                    
+                    try:
+                        guess = await client.wait_for('message',check=check, timeout=5.0)
+                    except asyncio.TimeoutError:
+                        return await message.channel.send('ohhh, parece que nadie adivino esta 😔. Bueno vamos a la siguiente 💪🏽')
 
-            try:
-                guess = await client.wait_for('message',check=check, timeout= 10.0)
-            except asyncio.TimeoutError:
-                return await message.channel.send('Ops, te demoraste mucho 🥲')
-            await asyncio.sleep(10.0)
+                    player_info = str(guess.author.name)+str(guess.author.discriminator)
 
-            if int(guess.content) == answer:
-                user = guess.author
-                mensaje = '¡Correcto! ' + str(guess.author.name) + ', ganaste ' + str(points) + ' puntos 🥳' + '\n\n'
-                await message.channel.send(mensaje)
-                update_score(user, points)
-            else:
-                await message.channel.send('Uy no '+ str(guess.author.name) +', esa no es la respuesta 😞' + '\n\n')
+                    if player_info not in players:
+                        if int(guess.content) == answer:
+                        
+                            user = guess.author
+                            mensaje = '¡Correcto! ' + str(guess.author.name) + ', ganaste ' + str(points) + ' puntos 🥳' + '\n\n'
+                            await message.channel.send(mensaje)
+                            update_score(user, points)
+                            players.append(player_info)
+                            break
+                    
+                        else:
+                            await message.channel.send('Uy no '+ str(guess.author.name) +', esa no es la respuesta 😞' + '\n\n')
+                            players.append(player_info)
+                    else:
+                        await message.channel.send(str(guess.author.name) + ', Solo puedes intentar una vez 🙈')
 
+            await asyncio.sleep(15)
+            await message.channel.send('...3⏳')
+            await asyncio.sleep(1)
+            await message.channel.send('...2⏳')
+            await asyncio.sleep(1)
+            await message.channel.send('---Tiempo de responder 🚴🏽‍♂️---')
+            await attempt()
+            
 ###### Begining of the game #######         
         if message.content == "$trivia":
-
-            response = requests.get('http://127.0.0.1:8000/api/question')
-            json_data = json.loads(response.text)
 
 #school options
             escuelas = '''
@@ -175,16 +195,38 @@ Escoje una dificulatad:
 ```       
             '''
 #begining of interaction
+            await message.channel.send('hola, ' + message.author.mention + '. Te envie un mensaje por DM 😊')
+            await message.author.send(
+'''Estamos a punto de comenzar el juego de trivias con Platzi 🥳.
+Si en verdad es tiempo de jugar escrive "go" para escojer el tema de la Trivie. Si no es momento de jugar, no escribas nada o escribe cualqueir otra cosa 😜'''
+                )
+            def comenzar(message):
+                return message.content
+
+            try:
+                desicion_comenzar = await client.wait_for('message',check=comenzar, timeout= 5.0)
+            except asyncio.TimeoutError:
+                return await message.author.send('Entiendo, aun no es tiempo de jugar , no hay problema 😉, jugaremos en otro momento 😃')
+
+            if str.lower(desicion_comenzar.content) == "go":
+                        
+                await message.author.send(escuelas)
+                await message.channel.send("------¡Hey! @here !Trivia time!---------")
+                await message.channel.send(mensaje1)
+                await message.channel.send(mensaje2)
+                await message.channel.send('''Dentro de poco comenzará el juego, seran 5 preguntas y el tema sera uno de lo cursos 
+de Platzi, tendrán 30 segundos para leer la pregunta y luego del aviso, 10 seg para responder. 
+Si nadie responder se pasara a la siguiente pregunta. Cuando alguien responda correctamente aparecera la siguietne pregunta y ganara 10 puntos.''')
+                await message.channel.send('Comenzamos en 3 ⏳')
+                response = requests.get('http://127.0.0.1:8000/api/question')
+                json_data = json.loads(response.text)
+                    
+                    
+            else:
+                return await message.author.send('Entiendo, aun no es tiempo de jugar , no hay problema 😉, jugaremos en otro momento 😃')
+                
+                    
             
-
-            await message.channel.send(mensaje1)
-            await message.channel.send(mensaje2)
-            await message.channel.send('''Dentro de poco comenzará el juego, seran 5 preguntas y el tema sera uno de lo cursos 
-de Platzi, tendrán 10 segundos para escoger una respuesta''')
-
-            await message.channel.send('Comenzamos en 3 ⏳')
-            await message.author.send(escuelas)
-
 #recolect parameters
             def opciones(message):
 
@@ -192,35 +234,35 @@ de Platzi, tendrán 10 segundos para escoger una respuesta''')
             try:
                 respuesta = await client.wait_for('message',check=opciones, timeout= 15.0)
             except asyncio.TimeoutError:
-                return await message.author.send('Ups, te demoraste mucho en escoger una opción 😄'), await message.channel.send('''Ups, esto es vergonzoso pero parece que tuvimos un problema, no
-te preocupes, tendremos otro momento para jugar. No pares de aprender 🚀''')
+                return await message.author.send(
+                    'Ups, te demoraste mucho en escoger una opción 😄'+'\n'+'Escribe "$trivia" en el canal,una vez más, e intentalo nuevamente 😊'
+                    ), await message.channel.send('Ups, esto es vergonzoso 🙈, parece que tuvimos un problema pero no te preocupes, jugaremos pronto 😄')
 
             opcionEscuela = respuesta.content
-            await message.channel.send('... 2 ⏳')
             await message.author.send(dificultad)
+            await message.channel.send('... 2 ⏳')
             try:
                 respuesta = await client.wait_for('message',check=opciones, timeout= 15.0)
             except asyncio.TimeoutError:
-                return await message.author.send('Ups, te demoraste mucho en escoger una opción 😄'), await message.channel.send('''Ups, esto es vergonzoso pero parece que tuvimos un problema, no
-te preocupes, tendremos otro momento para jugar. No pares de aprender 🚀''')
+                return await message.author.send(
+                    'Ups, te demoraste mucho en escoger una opción 😄'+'\n'+'Escribe "$trivia" en el canal una vez más, e intentalo nuevamente 😊'
+                    ), await message.channel.send('Ups, esto es vergonzoso 🙈, parece que tuvimos un problema pero no te preocupes, jugaremos pronto 😄')
 
             opcionNivel = respuesta.content
             get_course(opcionEscuela, opcionNivel)
 
-#Choosing a course for the game
             course, numero = get_course(opcionEscuela, opcionNivel)
-            await message.channel.send('... 1 ⏳')
             while True:
                 if numero != 0:
                     await message.author.send('Escoje un curso:')
                     await message.author.send(course)
+                    await message.channel.send('... 1 ⏳')
                     try:
-                        respuesta = await client.wait_for('message',check=opciones, timeout= 15.0)
+                        respuesta = await client.wait_for('message',check=opciones, timeout= 20.0)
                     except asyncio.TimeoutError:
-                        return await message.author.send('''
+                        return await message.channel.send('''
 Ups, te demoraste mucho 😄, si aun no sabes sobre cual curso hacer el juego no hay problema, revisa 
-la lista y luego vuelve a colocar el comando $trivia'''), await message.channel.send('''Ups, esto es vergonzoso pero parece que tuvimos un problema, no
-te preocupes, tendremos otro momento para jugar. No pares de aprender 🚀''')
+la lista y luego vuelve a colocar el comando $trivia''')
 
                     if int(respuesta.content) < numero:
                         position = int(respuesta.content) - 1
@@ -229,22 +271,16 @@ te preocupes, tendremos otro momento para jugar. No pares de aprender 🚀''')
                     elif int(respuesta.content) >= numero:
                         await message.author.send('Has escogido un opción incorrecta, por favor intenta de nuevo 😊')
                         continue
-                    #opcionCurso = cursoElegido[3:]
                     counter = 0
                     get_question(opcionCurso,counter)
                     getLink(opcionCurso)
                     #continue
                 else:
-                        #await message.channel.send(curso)
-                    await message.channel.send('''Ups, esto es vergonzoso pero parece que tuvimos un problema, no
-te preocupes, tendremos otro momento para jugar. No pares de aprender 🚀''')
-
                     await message.author.send(course)
                     await message.author.send('puedes ingresar a el admin del juego para agregarlo y volver para jugar nuevamente 😃')
                     break
 
 # game action.
-                counter = 0
                 while counter <= 4:
                     await juego()
                     counter += 1
