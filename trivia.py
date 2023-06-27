@@ -84,7 +84,6 @@ class MyClient(discord.Client):
 #confirm bot conection
     async def on_ready(self):
         print('nos conectamos como', self.user)
-        #print(config('DISCORD_KEY'))
 
 #sotp bot for looping
     async def on_message(self, message):
@@ -302,5 +301,4 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
 
-#client.run('MTAwOTEyMjE2MTU2ODUzNDY1OQ.G5hOpM._iDXKZvyRHEu_IhQGOzUTnx6VA7LtLryc773sc')
 client.run(config('DISCORD_KEY'))
