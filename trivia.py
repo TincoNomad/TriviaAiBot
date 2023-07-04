@@ -151,17 +151,11 @@ class MyClient(discord.Client):
                             update_score(user, points)
                     else:
                         await message.channel.send((guess.author.mention) + ', Solo puedes intentar una vez 🙈')
-
-            #await asyncio.sleep(15)
-            #await message.channel.send('...3⏳')
-            #await asyncio.sleep(5)
-            #await message.channel.send('...2⏳')           
+         
             await attempt()
         
             
 ###### Begining of the game #######         
-        #if message.content == "$trivia":
-
 #school options
         escuelas = '''
 Escoje una escuela:
