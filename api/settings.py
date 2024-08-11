@@ -22,8 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #added
-    'triviaplatzibot.trivia',
-    'triviaplatzibot.score',
+    'api.trivia',
+    'api.score',
     'rest_framework',
     'whitenoise.runserver_nostatic',
 ]
@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'triviaplatzibot.urls'
+ROOT_URLCONF = 'api.urls'
 
 TEMPLATES = [
     {
@@ -58,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'triviaplatzibot.wsgi.application'
+WSGI_APPLICATION = 'api.wsgi.application'
 
 
 # Database
@@ -102,7 +102,7 @@ USE_TZ = True
 #Static files management
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'triviaplatzibot/static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'api/static'),]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 

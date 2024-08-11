@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class TriviaConfig(AppConfig):
+class ScoreConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'triviaplatzibot.trivia'
+    name = 'api.score'

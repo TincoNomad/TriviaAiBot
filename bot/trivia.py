@@ -3,6 +3,7 @@ import discord
 import requests
 import json
 from decouple import config
+from config import LEADERBOARD_URL, SCORE_URL, QUESTION_URL
 
 
 
@@ -10,7 +11,7 @@ from decouple import config
 def get_score():
     leaderboard = ''
     id = 1
-    response = requests.get('http://127.0.0.1:8000/api/score/leaderboard')
+    response = requests.get(LEADERBOARD_URL)
     json_data = json.loads(response.text)
 
     for item in json_data:
@@ -24,7 +25,7 @@ def get_score():
 
 ###### Game data base save points ######
 def update_score(name, points):
-    url = 'http://127.0.0.1:8000/api/score'
+    url = SCORE_URL
     new_score = {'name': name, 'points': points}
     x = requests.post(url, data=new_score)
 
@@ -32,7 +33,7 @@ def update_score(name, points):
 def get_course(opcionEscuela, opcionNivel):
     course = ''
     numero = 1
-    response = requests.get('http://127.0.0.1:8000/api/question')
+    response = requests.get(QUESTION_URL)
     json_data = json.loads(response.text)
     for item in json_data:
         if item['school'] == int(opcionEscuela) and item['difficulty'] == int(opcionNivel):
@@ -53,7 +54,7 @@ def get_question(opcionCurso,counter):
     id = 1
     answer = ''
     points = 0
-    response = requests.get('http://127.0.0.1:8000/api/question')
+    response = requests.get(QUESTION_URL)
     json_data = json.loads(response.text)
     questionOptions = [i['question'] for i in json_data if i['title'] == opcionCurso]
         
@@ -72,7 +73,7 @@ def get_question(opcionCurso,counter):
 #get course url
 def getLink(opcionCurso):
     url = ''
-    response = requests.get('http://127.0.0.1:8000/api/question')
+    response = requests.get(QUESTION_URL)
     json_data = json.loads(response.text)
     for i in json_data:
         if i['title'] == opcionCurso:
@@ -111,7 +112,8 @@ class MyClient(discord.Client):
 ``` 
             ''')
 
-            question, answer, points = get_question(opcionCurso,counter)
+            #question, answer, points = get_question(opcionCurso,counter)
+            question, answer = get_question(opcionCurso,counter)
             
             await message.channel.send('----------------------------------'+'\n'+'Lee la pregunta, tienes 30 segundos')
             await message.channel.send(question)
@@ -122,6 +124,7 @@ class MyClient(discord.Client):
             
             async def attempt():
                 
+                points = get_question(opcionCurso,counter)
                 players = []
                 
                 while True:
@@ -137,20 +140,20 @@ class MyClient(discord.Client):
                         if int(guess.content) == answer:
                         
                             user = guess.author
-                            mensaje = '¡Correcto! ' + str(guess.author.mention) + ', ganaste ' + str(points) + ' puntos 🥳' + '\n\n'
+                            mensaje = '¡Correcto! ' + str(guess.author.name) + ', ganaste ' + str(points) + ' puntos 🥳' + '\n\n'
                             await message.channel.send(mensaje)
                             update_score(user, points)
                             players.append(player_info)
                             break
                     
                         else:
-                            await message.channel.send('Uy no '+ (guess.author.mantion) +', esa no es la respuesta 😞' + '\n\n')
+                            await message.channel.send('Uy no '+ (guess.author.name) +', esa no es la respuesta 😞' + '\n\n')
                             user = guess.author
                             points = 0
                             players.append(player_info)
                             update_score(user, points)
                     else:
-                        await message.channel.send((guess.author.mention) + ', Solo puedes intentar una vez 🙈')
+                        await message.channel.send((guess.author.name) + ', Solo puedes intentar una vez 🙈')
          
             await attempt()
         
@@ -249,7 +252,7 @@ Si en verdad es tiempo de jugar escrive "go" para escojer el tema de la Trivie. 
             if str.lower(desicion_comenzar.content) == "go":
                         
                 await message.author.send(escuelas)
-                await message.channel.send("------¡Hey! @here !Trivia time!---------")
+                await message.channel.send("------¡Hey!!Trivia time!---------")
                 await message.channel.send(mensaje1)
                 await message.channel.send(mensaje2)
                 await message.channel.send('''Dentro de poco comenzará el juego, seran 5 preguntas y el tema sera uno de lo cursos 
@@ -336,4 +339,5 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
 
-client.run(config('DISCORD_KEY'))
+# client.run(config('DISCORD_KEY'))
+client.run('MTI3MTY2NjkyNzgyMzA5Mzg1NA.GajfAW.IzdlKYgp_AWl9Vgsz7ExGGohelJ3bTKAEJKPr8')
