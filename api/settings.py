@@ -1,10 +1,14 @@
 import os
+import sys
 from pathlib import Path
-from decouple import config
+from config import DJANGO_KEY
+
+project_root = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_root))
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = DJANGO_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -108,4 +112,3 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

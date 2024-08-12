@@ -1,5 +1,5 @@
-from tkinter.messagebox import NO
-from django.shortcuts import render
+# from tkinter.messagebox import NO
+# from django.shortcuts import render
 from rest_framework.views import APIView
 from .serializer import ScoreSerializer
 from rest_framework.response import Response
