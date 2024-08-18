@@ -102,10 +102,6 @@ class TriviaGame:
         except (json.JSONDecodeError, ValueError, KeyError) as e:
             return f"Error al procesar los datos del curso: {e}"
 
-# Check if the message is a valid numeric response
-def check(message):
-    return message.content.isdigit()
-
 # Main Discord Bot class
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
@@ -161,7 +157,7 @@ class MyClient(discord.Client):
 
             while True:
                 try:
-                    guess = await client.wait_for("message", check=check, timeout=TIMEOUT_DURATION)
+                    guess = await client.wait_for("message", check=self.check, timeout=TIMEOUT_DURATION)
                 except asyncio.TimeoutError:
                     return await message.channel.send(
                         "ohhh, it seems no one guessed this 😔. Well, let's move on to the next one 💪🏽"
@@ -229,11 +225,8 @@ Choose a difficulty:
                 response = requests.get(QUESTION_URL)
                 json_data = json.loads(response.text)
 
-                def options(message):
-                    return message.content.isdigit()
-
                 try:
-                    respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
+                    respuesta = await client.wait_for("message", check=self.options, timeout=TIMEOUT_DURATION)
                 except asyncio.TimeoutError:
                     return await message.author.send(
                         "Ups, you took too long to choose an option 😄"
@@ -244,7 +237,7 @@ Choose a difficulty:
                 school_option = respuesta.content
                 await message.author.send(difficulty)
                 try:
-                    respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
+                    respuesta = await client.wait_for("message", check=self.options, timeout=TIMEOUT_DURATION)
                 except asyncio.TimeoutError:
                     return await message.author.send(
                         "Ups, you took too long to choose an option 😄"
@@ -264,7 +257,7 @@ Choose a difficulty:
                     )
                     try:
                         respuesta = await client.wait_for(
-                            "message", check=options, timeout=60
+                            "message", check=self.options, timeout=60
                         )
                     except asyncio.TimeoutError:
                         return await message.author.send(
@@ -286,12 +279,9 @@ Choose a difficulty:
 If it's really time to play, write "go" to choose the theme of the Trivia. If it's not time to play, don't write anything or write anything else 😜"""
             )
 
-            def start_game(message):
-                return message.content
-
             try:
                 decision_to_start = await client.wait_for(
-                    "message", check=start_game, timeout=TIMEOUT_DURATION
+                    "message", check=self.start_game, timeout=TIMEOUT_DURATION
                 )
             except asyncio.TimeoutError:
                 return await message.author.send(
@@ -315,11 +305,8 @@ If no one responds, we'll move on to the next question. When someone responds co
                 )
 
             # Collect game parameters (school and difficulty)
-            def options(message):
-                return message.content.isdigit()
-
             try:
-                respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
+                respuesta = await client.wait_for("message", check=self.options, timeout=TIMEOUT_DURATION)
             except asyncio.TimeoutError:
                 return await message.author.send(
                     "Ups, you took too long to choose an option 😄"
@@ -333,7 +320,7 @@ If no one responds, we'll move on to the next question. When someone responds co
             await message.author.send(difficulty)
             await message.channel.send("... 2 ⏳")
             try:
-                respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
+                respuesta = await client.wait_for("message", check=self.options, timeout=TIMEOUT_DURATION)
             except asyncio.TimeoutError:
                 return await message.author.send(
                     "Ups, you took too long to choose an option 😄"
@@ -354,7 +341,7 @@ If no one responds, we'll move on to the next question. When someone responds co
                     await message.channel.send("... 1 ⏳")
                     try:
                         respuesta = await client.wait_for(
-                            "message", check=options, timeout=TIMEOUT_DURATION
+                            "message", check=self.options, timeout=TIMEOUT_DURATION
                         )
                     except asyncio.TimeoutError:
                         return await message.channel.send("""
@@ -395,6 +382,18 @@ the list and then come back with the $trivia command""")
             await score()
             url = self.trivia_game.getLink(selected_course)
             await message.channel.send(f"The theme of this game was the course {url}")
+
+    @staticmethod
+    def check(message):
+        return message.content.isdigit()
+
+    @staticmethod
+    def options(message):
+        return message.content.isdigit()
+
+    @staticmethod
+    def start_game(message):
+        return message.content
 
 # Set up Discord bot connection
 intents = discord.Intents.default()
