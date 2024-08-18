@@ -4,37 +4,33 @@ import requests
 import json
 from config import LEADERBOARD_URL, SCORE_URL, QUESTION_URL, DISCORD_KEY
 
+# Constants
+TIMEOUT_DURATION = 30
+MAX_QUESTIONS = 5
+POINTS_PER_CORRECT_ANSWER = 10
 
 # Fetch and format the leaderboard data
 def get_score():
-    leaderboard = ""
-    id = 1
-    response = requests.get(LEADERBOARD_URL)
     try:
-        json_data = json.loads(response.text)
+        response = requests.get(LEADERBOARD_URL)
+        response.raise_for_status()  # Lanza una excepción para códigos de estado HTTP no exitosos
+        json_data = response.json()
+        
         if not isinstance(json_data, list):
-            raise ValueError("The response is not a list of dictionaries")
-    except (json.JSONDecodeError, ValueError) as e:
-        return f"Error getting scores: {e}"
-
-    for item in json_data:
-        if not isinstance(item, dict):
-            return "Error: An element in the list is not a dictionary"
-        leaderboard += (
-            str(id)
-            + " - "
-            + item["name"]
-            + "- "
-            + str(item["points"])
-            + " Points"
-            + "\n"
-        )
-        id += 1
-
-    if leaderboard == "":
-        return "No score yet, no games have been played"
-    else:
-        return leaderboard
+            raise ValueError("La respuesta no es una lista de diccionarios")
+        
+        leaderboard = ""
+        for id, item in enumerate(json_data, start=1):
+            if not isinstance(item, dict):
+                raise ValueError("Un elemento de la lista no es un diccionario")
+            leaderboard += f"{id} - {item['name']} - {item['points']} Points\n"
+        
+        return leaderboard if leaderboard else "No hay puntuaciones aún, no se han jugado partidas"
+    
+    except requests.RequestException as e:
+        return f"Error al obtener puntuaciones: {e}"
+    except (json.JSONDecodeError, ValueError, KeyError) as e:
+        return f"Error al procesar los datos de puntuación: {e}"
 
 # Update player's score in the database
 def update_score(name, points):
@@ -44,65 +40,78 @@ def update_score(name, points):
     return response.status_code
 
 
-# Fetch available courses based on school and difficulty level
-def get_course(school_option, difficulty_level):
-    course = ""
-    numero = 1
-    response = requests.get(QUESTION_URL)
-    json_data = json.loads(response.text)
+class TriviaGame:
+    def __init__(self):
+        pass
 
-    for item in json_data:
-        if item["school"] == int(school_option) and item["difficulty"] == int(
-            difficulty_level
-        ):
-            course += "\n" + str(numero) + "-" + item["title"]
-            numero += 1
+    def get_course(self, school_option, difficulty_level):
+        try:
+            response = requests.get(QUESTION_URL)
+            response.raise_for_status()
+            json_data = response.json()
 
-    if course == "":
-        course = "Oops, this is embarrassing, but it seems we don't have courses with those categories yet 😅"
-        numero = 0
+            course = ""
+            numero = 0
+            for item in json_data:
+                if item["school"] == int(school_option) and item["difficulty"] == int(difficulty_level):
+                    numero += 1
+                    course += f"\n{numero}-{item['title']}"
 
-    return (course, numero)
+            if not course:
+                return "Ups, esto es vergonzoso, pero parece que aún no tenemos cursos con esas categorías 😅", 0
+            
+            return course, numero
 
+        except requests.RequestException as e:
+            return f"Error al obtener los cursos: {e}", 0
+        except (json.JSONDecodeError, ValueError, KeyError) as e:
+            return f"Error al procesar los datos de los cursos: {e}", 0
 
-# Fetch a specific question for the selected course
-def get_question(selected_course, question_counter):
-    question = ""
-    id = 1
-    answer = ""
-    points = 0
-    response = requests.get(QUESTION_URL)
-    json_data = json.loads(response.text)
-    questionOptions = [i["question"] for i in json_data if i["title"] == selected_course]
+    def get_question(self, selected_course, question_counter):
+        try:
+            response = requests.get(QUESTION_URL)
+            response.raise_for_status()
+            json_data = response.json()
+            questionOptions = [i["question"] for i in json_data if i["title"] == selected_course]
 
-    question += questionOptions[0][question_counter]["questionTitle"] + "\n\n"
-    for item in questionOptions[0][question_counter]["answer"]:
-        question += str(id) + "-" + item["answerTitle"] + "\n"
+            question = questionOptions[0][question_counter]["questionTitle"] + "\n\n"
+            for id, item in enumerate(questionOptions[0][question_counter]["answer"], start=1):
+                question += f"{id}-{item['answerTitle']}\n"
 
-        if item["is_correct"]:
-            answer = id
-        id += 1
-    points = questionOptions[0][0]["points"]
+                if item["is_correct"]:
+                    answer = id
+            return question, answer, POINTS_PER_CORRECT_ANSWER
 
-    return question, answer, points
+        except requests.RequestException as e:
+            return f"Error al obtener la pregunta: {e}", 0, 0
+        except (json.JSONDecodeError, ValueError, KeyError) as e:
+            return f"Error al procesar los datos de la pregunta: {e}", 0, 0
 
+    def getLink(self, selected_course):
+        try:
+            response = requests.get(QUESTION_URL)
+            response.raise_for_status()
+            json_data = response.json()
+            for i in json_data:
+                if i["title"] == selected_course:
+                    return i["url"]
+            return "No se encontró el enlace del curso"
 
-# Get the URL for the selected course
-def getLink(selected_course):
-    url = ""
-    response = requests.get(QUESTION_URL)
-    json_data = json.loads(response.text)
-    for i in json_data:
-        if i["title"] == selected_course:
-            url = i["url"]
-    return url
+        except requests.RequestException as e:
+            return f"Error al obtener el enlace del curso: {e}"
+        except (json.JSONDecodeError, ValueError, KeyError) as e:
+            return f"Error al procesar los datos del curso: {e}"
 
 # Check if the message is a valid numeric response
 def check(message):
-    return message.author == message.author and message.content.isdigit()
+    return message.content.isdigit()
 
 # Main Discord Bot class
 class MyClient(discord.Client):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.trivia_game = TriviaGame()
+
     # Confirm bot connection
     async def on_ready(self):
         print("We are connected as", self.user)
@@ -130,7 +139,7 @@ class MyClient(discord.Client):
 ``` 
             """)
 
-            question, answer, points = get_question(selected_course, question_counter)
+            question, answer, points = self.trivia_game.get_question(selected_course, question_counter)
             # question, answer = get_question(selected_course,question_counter)
 
             await message.channel.send(
@@ -152,45 +161,25 @@ class MyClient(discord.Client):
 
             while True:
                 try:
-                    guess = await client.wait_for("message", check=check, timeout=30)
+                    guess = await client.wait_for("message", check=check, timeout=TIMEOUT_DURATION)
                 except asyncio.TimeoutError:
                     return await message.channel.send(
                         "ohhh, it seems no one guessed this 😔. Well, let's move on to the next one 💪🏽"
                     )
 
-                player_info = str(guess.author.name) + str(guess.author.discriminator)
+                player_info = f"{guess.author.name}{guess.author.discriminator}"
 
                 if player_info not in players:
+                    players.append(player_info)
                     if int(guess.content) == answer:
-                        user = guess.author
-                        mensaje = (
-                            "Correct! "
-                            + str(guess.author.name)
-                            + ", you won "
-                            + str(points)
-                            + " points 🥳"
-                            + "\n\n"
-                        )
-                        await message.channel.send(mensaje)
-                        update_score(user, points)
-                        players.append(player_info)
+                        await message.channel.send(f"Correct! {guess.author.name}, you won {points} points 🥳\n\n")
+                        update_score(guess.author, points)
                         break
-
                     else:
-                        await message.channel.send(
-                            "Uh no "
-                            + (guess.author.name)
-                            + ", that's not the answer 😞"
-                            + "\n\n"
-                        )
-                        user = guess.author
-                        points = 0
-                        players.append(player_info)
-                        update_score(user, points)
+                        await message.channel.send(f"Uh no {guess.author.name}, that's not the answer 😞\n\n")
+                        update_score(guess.author, 0)
                 else:
-                    await message.channel.send(
-                        (guess.author.name) + ", You can only try once 🙈"
-                    )
+                    await message.channel.send(f"{guess.author.name}, You can only try once 🙈")
 
         # School options for course selection
         schools = """
@@ -235,56 +224,62 @@ Choose a difficulty:
             """
         # Handle the "$cursos" command to list available courses
         if message.content == "$cursos":
-            await message.author.send(schools)
-            response = requests.get(QUESTION_URL)
-            json_data = json.loads(response.text)
-
-            def options(message):
-                return message.content.isdigit()
-
             try:
-                respuesta = await client.wait_for("message", check=options, timeout=40)
-            except asyncio.TimeoutError:
-                return await message.author.send(
-                    "Ups, you took too long to choose an option 😄"
-                    + "\n"
-                    + 'Write "$cursos" in the channel, one more time, and try again 😊'
-                )
+                await message.author.send(schools)
+                response = requests.get(QUESTION_URL)
+                json_data = json.loads(response.text)
 
-            school_option = respuesta.content
-            await message.author.send(difficulty)
-            try:
-                respuesta = await client.wait_for("message", check=options, timeout=40)
-            except asyncio.TimeoutError:
-                return await message.author.send(
-                    "Ups, you took too long to choose an option 😄"
-                    + "\n"
-                    + 'Write "$cursos" in the channel one more time, and try again 😊'
-                )
+                def options(message):
+                    return message.content.isdigit()
 
-            difficulty_level = respuesta.content
-            get_course(school_option, difficulty_level)
-
-            course, numero = get_course(school_option, difficulty_level)
-
-            if numero != 0:
-                await message.author.send(course)
-                await message.author.send(
-                    "`If you don't see the course you're looking for, you can ask for it to be added to the game 😊`"
-                )
                 try:
-                    respuesta = await client.wait_for(
-                        "message", check=options, timeout=60
-                    )
+                    respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
                 except asyncio.TimeoutError:
                     return await message.author.send(
-                        '`If you need more time, you can write "$cursos" in the channel again 😊`'
+                        "Ups, you took too long to choose an option 😄"
+                        + "\n"
+                        + 'Write "$cursos" in the channel, one more time, and try again 😊'
                     )
+
+                school_option = respuesta.content
+                await message.author.send(difficulty)
+                try:
+                    respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
+                except asyncio.TimeoutError:
+                    return await message.author.send(
+                        "Ups, you took too long to choose an option 😄"
+                        + "\n"
+                        + 'Write "$cursos" in the channel one more time, and try again 😊'
+                    )
+
+                difficulty_level = respuesta.content
+                # get_course(school_option, difficulty_level)
+
+                course, numero = self.trivia_game.get_course(school_option, difficulty_level)
+
+                if numero != 0:
+                    await message.author.send(course)
+                    await message.author.send(
+                        "`If you don't see the course you're looking for, you can ask for it to be added to the game 😊`"
+                    )
+                    try:
+                        respuesta = await client.wait_for(
+                            "message", check=options, timeout=60
+                        )
+                    except asyncio.TimeoutError:
+                        return await message.author.send(
+                            '`If you need more time, you can write "$cursos" in the channel again 😊`'
+                        )
+
+            except discord.errors.Forbidden:
+                await message.channel.send("No puedo enviarte un mensaje directo. Por favor, verifica tus configuraciones de privacidad.")
+            except Exception as e:
+                await message.channel.send(f"Ocurrió un error inesperado: {e}")
 
         # Handle the "$trivia" command to start the game
         if message.content == "$trivia":
             await message.channel.send(
-                "hello, " + message.author.mention + ". I sent you a message by DM 😊"
+                f"hello, {message.author.mention}. I sent you a message by DM 😊"
             )
             await message.author.send(
                 """We're about to start the Platzi trivia game 🥳.
@@ -296,7 +291,7 @@ If it's really time to play, write "go" to choose the theme of the Trivia. If it
 
             try:
                 decision_to_start = await client.wait_for(
-                    "message", check=start_game, timeout=40
+                    "message", check=start_game, timeout=TIMEOUT_DURATION
                 )
             except asyncio.TimeoutError:
                 return await message.author.send(
@@ -324,7 +319,7 @@ If no one responds, we'll move on to the next question. When someone responds co
                 return message.content.isdigit()
 
             try:
-                respuesta = await client.wait_for("message", check=options, timeout=30)
+                respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
             except asyncio.TimeoutError:
                 return await message.author.send(
                     "Ups, you took too long to choose an option 😄"
@@ -338,7 +333,7 @@ If no one responds, we'll move on to the next question. When someone responds co
             await message.author.send(difficulty)
             await message.channel.send("... 2 ⏳")
             try:
-                respuesta = await client.wait_for("message", check=options, timeout=30)
+                respuesta = await client.wait_for("message", check=options, timeout=TIMEOUT_DURATION)
             except asyncio.TimeoutError:
                 return await message.author.send(
                     "Ups, you took too long to choose an option 😄"
@@ -349,9 +344,9 @@ If no one responds, we'll move on to the next question. When someone responds co
                 )
 
             difficulty_level = respuesta.content
-            get_course(school_option, difficulty_level)
+            # get_course(school_option, difficulty_level)
 
-            course, numero = get_course(school_option, difficulty_level)
+            course, numero = self.trivia_game.get_course(school_option, difficulty_level)
             while True:
                 if numero != 0:
                     await message.author.send("Choose a course:")
@@ -359,28 +354,24 @@ If no one responds, we'll move on to the next question. When someone responds co
                     await message.channel.send("... 1 ⏳")
                     try:
                         respuesta = await client.wait_for(
-                            "message", check=options, timeout=30
+                            "message", check=options, timeout=TIMEOUT_DURATION
                         )
                     except asyncio.TimeoutError:
                         return await message.channel.send("""
 Ups, you took too long 😄, if you still don't know about which course to make the game, no problem, review 
 the list and then come back with the $trivia command""")
 
-                    if int(respuesta.content) < numero:
+                    if int(respuesta.content) <= numero:
                         position = int(respuesta.content) - 1
                         selected_course = json_data[position]["title"]
                         await message.author.send(
                             "Success in choosing the course. We'll start in 10 seconds 🥳"
                         )
-
-                    elif int(respuesta.content) >= numero:
+                        break
+                    else:
                         await message.author.send(
                             "You chose an incorrect option, please try again 😊"
                         )
-                        continue
-                    question_counter = 0
-                    get_question(selected_course, question_counter)
-                    getLink(selected_course)
                 else:
                     await message.author.send(course)
                     await message.author.send(
@@ -388,22 +379,22 @@ the list and then come back with the $trivia command""")
                     )
                     break
 
-                # Game action: ask questions and handle answers
-                while question_counter <= 4:
-                    await game()
-                    question_counter += 1
-                await message.channel.send("""
+            # Game action: ask questions and handle answers
+            question_counter = 0
+            while question_counter <= MAX_QUESTIONS - 1:
+                await game()
+                question_counter += 1
+            await message.channel.send("""
 ```
    End of the Game. Thanks for participating 💚          
 ``` 
-                """)
-                await message.channel.send(
-                    "It was very fun 💃🕺 Congratulations!" + "\n" + "Final Score: "
-                )
-                await score()
-                url = getLink(selected_course)
-                await message.channel.send("The theme of this game was the course " + url)
-                break
+            """)
+            await message.channel.send(
+                "It was very fun 💃🕺 Congratulations!\nFinal Score: "
+            )
+            await score()
+            url = self.trivia_game.getLink(selected_course)
+            await message.channel.send(f"The theme of this game was the course {url}")
 
 # Set up Discord bot connection
 intents = discord.Intents.default()
