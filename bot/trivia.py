@@ -1,6 +1,6 @@
 import asyncio
 import discord
-import requests
+import requests #type: ignore
 import json
 from config import LEADERBOARD_URL, SCORE_URL, QUESTION_URL, DISCORD_KEY
 from enum import Enum
@@ -420,4 +420,4 @@ intents.message_content = True
 client = MyClient(intents=intents)
 
 # Run the Discord bot
-client.run(DISCORD_KEY)
+client.run(DISCORD_KEY) #type: ignore

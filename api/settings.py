@@ -2,6 +2,7 @@ import os
 import sys
 from pathlib import Path
 from config import DJANGO_KEY
+from typing import List
 
 project_root = Path(__file__).resolve().parent.parent
 sys.path.append(str(project_root))
@@ -13,7 +14,7 @@ SECRET_KEY = DJANGO_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: List[str] = []
 
 
 # Application definition
