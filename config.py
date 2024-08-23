@@ -1,7 +1,7 @@
 import os
-from dotenv import load_dotenv
+from dotenv import read_dotenv
 
-load_dotenv()
+read_dotenv()
 
 # Determine if we are in development or production
 IS_DEVELOPMENT = os.environ.get('ENVIRONMENT', 'development') == 'development'
