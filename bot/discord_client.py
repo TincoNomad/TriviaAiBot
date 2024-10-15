@@ -134,8 +134,12 @@ If no one responds, we'll move on to the next question. When someone responds co
 
                 # Cargar datos del juego
                 try:
+                    print("Intentando cargar datos del juego...")
                     await self.trivia_game.fetch_game_data()
+                    print("Datos del juego cargados exitosamente en discord_client.py")
+                    print(f"Contenido de game_data: {self.trivia_game.game_data[:100]}...")  # Imprime los primeros 100 caracteres
                 except Exception as e:
+                    print(f"Excepción al cargar datos del juego: {e}")
                     await message.channel.send(f"Lo siento, ocurrió un error al cargar los datos del juego: {e}")
                     return
 

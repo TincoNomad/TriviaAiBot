@@ -2,64 +2,71 @@ from django.contrib import admin
 
 from . import models
 
-#Table union Queastion + Answers
+#Table union Question + Answers
 class AnswerInlineModel(admin.TabularInline):
     model = models.Answer
     fields = [
-        'answerTitle',
+        'answer_title',
         'is_correct',
         'question',
     ]
     extra = 0
 
-#Table union Course + Question
+#Table union Trivia + Question
 class QuestionInLineModel(admin.TabularInline):
     model = models.Question
     fields = [
-        'questionTitle',
+        'question_title',
         'points',
     ]
     extra = 0
 
-#Cursos
-@admin.register(models.Course)
-
-class CourseAdmin(admin.ModelAdmin):
+#Trivias
+@admin.register(models.Trivia)
+class TriviaAdmin(admin.ModelAdmin):
     fields = [
         'title',
         'difficulty',
-        'school',
+        'theme',
         'url',
     ]
-    list_display =[
+    list_display = [
         'title',
         'difficulty',
-        'school',
+        'theme',
     ]
     inlines = [QuestionInLineModel,]
 
-#Qestion
-@admin.register(models.Question)
+#Levels
+@admin.register(models.Level)
+class LevelAdmin(admin.ModelAdmin):
+    list_display = ['value', 'name']
 
+#Themes
+@admin.register(models.Theme)
+class ThemeAdmin(admin.ModelAdmin):
+    list_display = ['value', 'name']
+
+#Questions
+@admin.register(models.Question)
 class QuestionAdmin(admin.ModelAdmin):
     fields = [
-        'questionTitle',
+        'trivia',
+        'question_title',
         'points',
-    
     ]
     list_display = [
-        'questionTitle',
-        'course',
+        'question_title',
+        'trivia',
         'updated_at',
     ]
     inlines = [AnswerInlineModel,]
 
-#Answer
+#Answers
 @admin.register(models.Answer)
-
 class AnswerAdmin(admin.ModelAdmin):
     list_display = [
-        'answerTitle',
+        'answer_title',
         'is_correct',
         'question',
     ]

@@ -9,15 +9,20 @@ class TriviaGame:
 
     async def fetch_game_data(self):
         try:
+            print(f"Intentando obtener datos del juego desde: {QUESTION_URL}")
             async with aiohttp.ClientSession() as session:
                 async with session.get(QUESTION_URL) as response:
+                    print(f"Código de estado de la respuesta: {response.status}")
                     response.raise_for_status()
                     self.game_data = await response.json()
+            print(f"Datos del juego cargados: {self.game_data[:100]}...")  # Imprime los primeros 100 caracteres
             logger.info("Datos del juego cargados exitosamente")
         except aiohttp.ClientError as e:
+            print(f"Error de cliente aiohttp: {e}")
             logger.error(f"Error al obtener los datos del juego: {e}")
             raise Exception(f"Error al obtener los datos del juego: {e}")
         except json.JSONDecodeError as e:
+            print(f"Error al decodificar JSON: {e}")
             logger.error(f"Error al decodificar los datos del juego: {e}")
             raise Exception(f"Error al decodificar los datos del juego: {e}")
 

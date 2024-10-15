@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from .trivia.views import RandomQuestions
-from .score.views import UpdateScores, LeaderBoard
+from .apps.trivia.views import RandomQuestions
+from .apps.score.views import UpdateScores, LeaderBoard
 from django.conf import settings
 from django.conf.urls.static import static
 

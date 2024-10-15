@@ -4,21 +4,24 @@ from pathlib import Path
 from config import DJANGO_KEY
 from typing import List
 
+# Set up the project root and add it to the Python path
 project_root = Path(__file__).resolve().parent.parent
 sys.path.append(str(project_root))
 
+# Define the base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Import the secret key from the config file
 SECRET_KEY = DJANGO_KEY
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Debug mode is set to True by default (should be False in production)
 DEBUG = True
 
+# List of allowed hosts (empty by default, should be set in production)
 ALLOWED_HOSTS: List[str] = []
 
-
 # Application definition
-
+# List of installed Django apps and third-party packages
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,13 +29,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #added
-    'api.apps.TriviaConfig',
-    'api.apps.ScoreConfig',
+    # Custom apps
+    'api.apps.trivia.apps.TriviaConfig',
+    'api.apps.score.apps.ScoreConfig',
+    # Third-party apps
     'rest_framework',
     'whitenoise.runserver_nostatic',
 ]
 
+# Middleware configuration
+# List of middleware classes for request/response processing
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -41,12 +47,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #added
+    # WhiteNoise for static file serving
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+# Root URL configuration
 ROOT_URLCONF = 'api.urls'
 
+# Template configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -63,10 +71,10 @@ TEMPLATES = [
     },
 ]
 
+# WSGI application path
 WSGI_APPLICATION = 'api.wsgi.application'
 
-
-# Database
+# Database configuration (using SQLite by default)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -74,6 +82,7 @@ DATABASES = {
     }
 }
 
+# Password validation settings
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -89,27 +98,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-
+# Internationalization settings
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-#Static files management
+# Static files configuration
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'api/static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
