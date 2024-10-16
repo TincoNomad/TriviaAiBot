@@ -1,7 +1,7 @@
-from rest_framework import generics, permissions # type: ignore
-from rest_framework.response import Response # type: ignore
-from rest_framework.authtoken.views import ObtainAuthToken # type: ignore
-from rest_framework.authtoken.models import Token # type: ignore
+from rest_framework import generics, permissions
+from rest_framework.response import Response 
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token 
 from .serializers import UserSerializer
 
 # Create your views here.
