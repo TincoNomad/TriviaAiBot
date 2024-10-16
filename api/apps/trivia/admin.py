@@ -8,7 +8,6 @@ class AnswerInlineModel(admin.TabularInline):
     fields = [
         'answer_title',
         'is_correct',
-        'question',
     ]
     extra = 0
 
@@ -37,15 +36,10 @@ class TriviaAdmin(admin.ModelAdmin):
     ]
     inlines = [QuestionInLineModel,]
 
-#Levels
-@admin.register(models.Level)
-class LevelAdmin(admin.ModelAdmin):
-    list_display = ['value', 'name']
-
 #Themes
 @admin.register(models.Theme)
 class ThemeAdmin(admin.ModelAdmin):
-    list_display = ['value', 'name']
+    list_display = ['name']
 
 #Questions
 @admin.register(models.Question)

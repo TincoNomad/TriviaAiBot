@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # Custom apps
     'api.apps.trivia.apps.TriviaConfig',
     'api.apps.score.apps.ScoreConfig',
+    'api.apps.users.apps.UsersConfig',
     # Third-party apps
     'rest_framework',
     'whitenoise.runserver_nostatic',

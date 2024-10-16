@@ -1,16 +1,27 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from django.conf import settings
+from django.core.exceptions import ValidationError
 
 
 # Course model representing different courses available
 class Trivia(models.Model):
-    LEVEL_DEFAULT = (0, _('-----'))
+    DIFFICULTY_CHOICES = [
+        (1, _('Beginner')),
+        (2, _('Intermediate')),
+        (3, _('Advanced')),
+    ]
     
-    title = models.CharField(_('Título'), max_length=250)
-    difficulty = models.IntegerField(_('Dificultad'), default=0)
-    theme = models.IntegerField(_('Tema'), default=0)
+    title = models.CharField(_('Title'), max_length=250)
+    difficulty = models.IntegerField(_('Difficulty'), choices=DIFFICULTY_CHOICES)
+    theme = models.ForeignKey('Theme', on_delete=models.CASCADE, related_name='trivias', verbose_name=_('Theme'))
     url = models.URLField(_('URL'), null=True, blank=True)
-    
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trivias', verbose_name=_('User'))
+
+    def clean(self):
+        if self.questions.count() < 3:
+            raise ValidationError(_('La trivia debe tener al menos 3 preguntas.'))
+
     def __str__(self):
         return self.title
 
@@ -22,17 +33,16 @@ class Level(models.Model):
         return f"({self.value}, _('{self.name}'))"
 
 class Theme(models.Model):
-    value = models.IntegerField(_('Valor'))
-    name = models.CharField(_('Nombre'), max_length=100)
+    name = models.CharField(_('Name'), max_length=100, unique=True)
 
     def __str__(self):
-        return f"({self.value}, _('{self.name}'))"
+        return self.name
 
 # Question model representing questions for each course
 class Question(models.Model):
     trivia = models.ForeignKey(Trivia, related_name='questions', verbose_name=_('Trivia'), on_delete=models.CASCADE, null=True)
     question_title = models.CharField(_('Question Title'), max_length=250, null=True)
-    points = models.SmallIntegerField(_('Points'))
+    points = models.SmallIntegerField(_('Points'), default=10)
     is_active = models.BooleanField(_('Is Active'), default=True)
     created_at = models.DateTimeField(_('Created'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Updated'), auto_now=True)
