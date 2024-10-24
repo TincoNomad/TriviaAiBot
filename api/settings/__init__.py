@@ -6,6 +6,6 @@ from .base import *  # noqa: F403
 # Importar explícitamente las configuraciones que podrían ser sobrescritas
 environment = os.environ.get('DJANGO_ENVIRONMENT', 'development')
 if environment == 'production':
-    from .production import FULL_LEADERBOARD_URL, FULL_SCORE_URL, FULL_QUESTION_URL
+    from .prod import FULL_LEADERBOARD_URL, FULL_SCORE_URL, FULL_QUESTION_URL
 else:
-    from .development import FULL_LEADERBOARD_URL, FULL_SCORE_URL, FULL_QUESTION_URL
+    from .dev import FULL_LEADERBOARD_URL, FULL_SCORE_URL, FULL_QUESTION_URL
