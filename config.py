@@ -17,3 +17,6 @@ QUESTION_URL = f"{BASE_URL}/question"
 # Keys
 DJANGO_KEY = os.environ.get('SECRET_KEY')
 DISCORD_KEY = os.environ.get('DISCORD_KEY')
+
+# Simple JWT
+SIGNING_KEY = os.environ.get('SIGNING_KEY') 

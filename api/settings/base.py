@@ -1,8 +1,9 @@
 import os
 import sys
 from pathlib import Path
-from config import DJANGO_KEY
+from config import DJANGO_KEY, SIGNING_KEY
 from typing import List
+from datetime import timedelta
 
 # Set up the project root and add it to the Python path
 project_root = Path(__file__).resolve().parent.parent
@@ -23,19 +24,21 @@ ALLOWED_HOSTS: List[str] = []
 # Application definition
 # List of installed Django apps and third-party packages
 INSTALLED_APPS = [
+    # Custom apps
+    'api.apps.users.apps.UsersConfig',
+    'api.apps.trivia.apps.TriviaConfig',
+    'api.apps.score.apps.ScoreConfig',
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # Custom apps
-    'api.apps.trivia.apps.TriviaConfig',
-    'api.apps.score.apps.ScoreConfig',
-    'api.apps.users.apps.UsersConfig',
+    'django.contrib.staticfiles',    
     # Third-party apps
     'rest_framework',
     'whitenoise.runserver_nostatic',
+    'rest_framework_simplejwt',
 ]
 
 # Middleware configuration
@@ -115,3 +118,26 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APPEND_SLASH = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SIGNING_KEY,
+    'VERIFYING_KEY': None,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+}
+
+AUTH_USER_MODEL = 'users.CustomUser'

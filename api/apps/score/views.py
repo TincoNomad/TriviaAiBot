@@ -8,6 +8,7 @@ from .serializers import ScoreSerializer, TriviaWinnerSerializer
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import F
+from api.utils.jwt_utils import auth_jwt
 
 class UpdateScores(APIView):
 
@@ -28,10 +29,22 @@ class UpdateScores(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LeaderBoard(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
+
+        user_id = auth_jwt(request)
+        if user_id is None:
+            return Response({"error": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED)
+        
         scores = Score.objects.all().order_by('-points')[:10]
         serializer = ScoreSerializer(scores, many=True)
-        return Response(serializer.data)
+        response_data = {
+            'leaderboard': serializer.data,
+            'current_user_id': user_id
+        }
+        
+        return Response(response_data)
 
 class UserScoreListView(generics.ListAPIView):
     serializer_class = ScoreSerializer

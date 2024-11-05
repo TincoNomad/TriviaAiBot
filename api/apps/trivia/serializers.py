@@ -45,7 +45,6 @@ class TriviaSerializer(serializers.ModelSerializer):
         return trivia
 
     def update(self, instance, validated_data):
-        # ... (código anterior) ...
 
         if 'questions' in validated_data:
             self.update_questions(instance, validated_data.pop('questions'))

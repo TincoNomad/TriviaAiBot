@@ -44,12 +44,12 @@ class MyClient(discord.Client):
             leaderboard = get_score()
             await message.channel.send(leaderboard)
 
-        # Handle the "$puntaje" command to show scores
-        if message.content == "$puntaje":
+        # Handle the "$score" command to show scores
+        if message.content == "$score":
             await score()
 
-        # Handle the "$cursos" command to list available courses
-        if message.content == "$cursos":
+        # Handle the "$courses" command to list available courses
+        if message.content == "$courses":
             try:
                 await message.author.send(self.schools)
 
@@ -59,7 +59,7 @@ class MyClient(discord.Client):
                     return await message.author.send(
                         "Ups, you took too long to choose an option 😄"
                         + "\n"
-                        + 'Write "$cursos" in the channel, one more time, and try again 😊'
+                        + 'Write "$courses" in the channel, one more time, and try again 😊'
                     )
 
                 school_option = respuesta.content
@@ -70,7 +70,7 @@ class MyClient(discord.Client):
                     return await message.author.send(
                         "Ups, you took too long to choose an option 😄"
                         + "\n"
-                        + 'Write "$cursos" in the channel one more time, and try again 😊'
+                        + 'Write "$courses" in the channel one more time, and try again 😊'
                     )
 
                 difficulty_level = respuesta.content
@@ -89,17 +89,17 @@ class MyClient(discord.Client):
                         )
                     except asyncio.TimeoutError:
                         return await message.author.send(
-                            '`If you need more time, you can write "$cursos" in the channel again 😊`'
+                            '`If you need more time, you can write "$courses" in the channel again 😊`'
                         )
 
             except discord.errors.Forbidden:
-                await message.channel.send("No puedo enviarte un mensaje directo. Por favor, verifica tus configuraciones de privacidad.")
+                await message.channel.send("I cannot send you a direct message. Please check your privacy settings.")
             except Exception as e:
-                await message.channel.send(f"Ocurrió un error inesperado: {e}")
+                await message.channel.send(f"An unexpected error occurred: {e}")
 
         # Handle the "$trivia" command to start the game
         if message.content == "$trivia":
-            logger.info(f"Usuario {message.author} inició un juego de trivia")
+            logger.info(f"User {message.author} started a trivia game")
             await message.channel.send(
                 f"hello, {message.author.mention}. I sent you a message by DM 😊"
             )
@@ -118,7 +118,7 @@ If it's really time to play, write "go" to choose the theme of the Trivia. If it
                 )
 
             if str.lower(decision_to_start.content) == "go":
-                logger.info(f"Usuario {message.author} comenzó el juego de trivia")
+                logger.info(f"User {message.author} started a trivia game")
                 await message.channel.send("------Hey!!Trivia time!---------")
                 await message.channel.send("""
 ```
@@ -136,22 +136,22 @@ If no one responds, we'll move on to the next question. When someone responds co
                 try:
                     print("Intentando cargar datos del juego...")
                     await self.trivia_game.fetch_game_data()
-                    print("Datos del juego cargados exitosamente en discord_client.py")
-                    print(f"Contenido de game_data: {self.trivia_game.game_data[:100]}...")  # Imprime los primeros 100 caracteres
+                    print("Game data loaded successfully in discord_client.py")
+                    print(f"Game data content: {self.trivia_game.game_data[:100]}...")  # Imprime los primeros 100 caracteres
                 except Exception as e:
-                    print(f"Excepción al cargar datos del juego: {e}")
-                    await message.channel.send(f"Lo siento, ocurrió un error al cargar los datos del juego: {e}")
+                    print(f"Error loading game data: {e}")
+                    await message.channel.send(f"I'm sorry, there was an error loading the game data: {e}")
                     return
 
                 # Collect game parameters (school and difficulty)
                 try:
                     school_option = await self.get_school_option(message)
                     if school_option is None:
-                        return await message.channel.send("Ups, esto es vergonzoso 🙈, parece que tuvimos un problema con la selección de la escuela, pero no te preocupes, ¡jugaremos pronto 😄!")
+                        return await message.channel.send("Ups, this is embarrassing 🙈, it seems we had a problem with the school selection, but don't worry, we'll play soon 😄!")
 
                     difficulty_level = await self.get_difficulty_level(message)
                     if difficulty_level is None:
-                        return await message.channel.send("Ups, esto es vergonzoso 🙈, parece que tuvimos un problema con la selección de la dificultad, pero no te preocupes, ¡jugaremos pronto 😄!")
+                        return await message.channel.send("Ups, this is embarrassing 🙈, it seems we had a problem with the difficulty selection, but don't worry, we'll play soon 😄!")
 
                     course, numero = self.trivia_game.get_course(school_option, difficulty_level)
                     if numero == 0:
@@ -191,7 +191,7 @@ the list and then come back with the $trivia command""")
                     while question_counter <= MAX_QUESTIONS - 1:
                         await self.game(message, selected_course, question_counter)
                         question_counter += 1
-                    logger.info(f"Juego de trivia finalizado para el usuario {message.author}")
+                    logger.info(f"Trivia game finished for user {message.author}")
                     await message.channel.send("""
 ```
    End of the Game. Thanks for participating 💚          
@@ -205,8 +205,8 @@ the list and then come back with the $trivia command""")
                     await message.channel.send(f"The theme of this game was the course {url}")
 
                 except Exception as e:
-                    logger.error(f"Error inesperado durante el juego: {e}")
-                    await message.channel.send(f"Lo siento, ocurrió un error inesperado: {e}. Por favor, intenta iniciar el juego de nuevo.")
+                    logger.error(f"Unexpected error during the game: {e}")
+                    await message.channel.send(f"I'm sorry, there was an unexpected error: {e}. Please try starting the game again.")
                     return
             else:
                 return await message.author.send(
@@ -231,11 +231,11 @@ the list and then come back with the $trivia command""")
             respuesta = await self.wait_for("message", check=self.options, timeout=TIMEOUT_DURATION)
             school_option = int(respuesta.content)
             if school_option not in [school.value for school in School]:
-                await message.author.send("Opción inválida. Por favor, elige un número entre 1 y 10.")
+                await message.author.send("Invalid option. Please choose a number between 1 and 10.")
                 return None
             return school_option
         except asyncio.TimeoutError:
-            await message.author.send("Ups, tardaste demasiado en elegir una opción 😄\nEscribe '$trivia' en el canal una vez más e inténtalo de nuevo 😊")
+            await message.author.send("Ups, you took too long to choose an option 😄\nWrite '$trivia' in the channel one more time and try again 😊")
             return None
 
     async def get_difficulty_level(self, message):
@@ -244,23 +244,23 @@ the list and then come back with the $trivia command""")
             respuesta = await self.wait_for("message", check=self.options, timeout=TIMEOUT_DURATION)
             difficulty_level = int(respuesta.content)
             if difficulty_level not in [diff.value for diff in Difficulty]:
-                await message.author.send("Opción inválida. Por favor, elige un número entre 1 y 3.")
+                await message.author.send("Invalid option. Please choose a number between 1 and 3.")
                 return None
             return difficulty_level
         except asyncio.TimeoutError:
-            await message.author.send("Ups, tardaste demasiado en elegir una opción 😄\nEscribe '$trivia' en el canal una vez más e inténtalo de nuevo 😊")
+            await message.author.send("Ups, you took too long to choose an option 😄\nWrite '$trivia' in the channel one more time and try again 😊")
             return None
 
     async def game(self, message, selected_course, question_counter):
         try:
-            logger.info(f"Iniciando pregunta {question_counter + 1} para el curso {selected_course}")
+            logger.info(f"Starting question {question_counter + 1} for course {selected_course}")
             await asyncio.sleep(10)
             await message.channel.send("```\n------------ QUESTION -------------\n```")
 
             question, answer, points = self.trivia_game.get_question(selected_course, question_counter)
 
-            if question == "Error al obtener la pregunta" or question == "Error al procesar los datos de la pregunta":
-                await message.channel.send(f"Lo siento, hubo un problema al obtener la pregunta: {question}")
+            if question == "Error getting the question" or question == "Error processing question data":
+                await message.channel.send(f"I'm sorry, there was a problem getting the question: {question}")
                 return
 
             await message.channel.send("----------------------------------\nRead the question, you have 30 seconds")
@@ -268,8 +268,8 @@ the list and then come back with the $trivia command""")
 
             await self.attempt(message, answer, points)
         except Exception as e:
-            logger.error(f"Error durante el juego: {e}")
-            await message.channel.send(f"Lo siento, ocurrió un error inesperado durante el juego: {e}")
+            logger.error(f"Error during the game: {e}")
+            await message.channel.send(f"I'm sorry, there was an unexpected error during the game: {e}")
 
     async def attempt(self, message, answer, points):
         players = []
@@ -278,9 +278,9 @@ the list and then come back with the $trivia command""")
             while True:
                 try:
                     guess = await self.wait_for("message", check=self.check, timeout=TIMEOUT_DURATION)
-                    logger.info(f"Usuario {guess.author} intentó responder")
+                    logger.info(f"User {guess.author} attempted to answer")
                 except asyncio.TimeoutError:
-                    logger.info("Tiempo agotado para responder la pregunta")
+                    logger.info("Time out for answering the question")
                     return await message.channel.send("ohhh, it seems no one guessed this 😔. Well, let's move on to the next one 💪🏽")
 
                 player_info = f"{guess.author.name}{guess.author.discriminator}"
@@ -297,5 +297,5 @@ the list and then come back with the $trivia command""")
                 else:
                     await message.channel.send(f"{guess.author.name}, You can only try once 🙈")
         except Exception as e:
-            logger.error(f"Error durante el intento de respuesta: {e}")
-            await message.channel.send(f"Lo siento, ocurrió un error inesperado durante el intento de respuesta: {e}")
+            logger.error(f"Error during the attempt: {e}")
+            await message.channel.send(f"I'm sorry, there was an unexpected error during the attempt: {e}")

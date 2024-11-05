@@ -9,26 +9,26 @@ class TriviaGame:
 
     async def fetch_game_data(self):
         try:
-            print(f"Intentando obtener datos del juego desde: {QUESTION_URL}")
+            print(f"Trying to get game data from: {QUESTION_URL}")
             async with aiohttp.ClientSession() as session:
                 async with session.get(QUESTION_URL) as response:
-                    print(f"Código de estado de la respuesta: {response.status}")
+                    print(f"Response status code: {response.status}")
                     response.raise_for_status()
                     self.game_data = await response.json()
-            print(f"Datos del juego cargados: {self.game_data[:100]}...")  # Imprime los primeros 100 caracteres
-            logger.info("Datos del juego cargados exitosamente")
+            print(f"Game data loaded: {self.game_data[:100]}...")  # Prints the first 100 characters
+            logger.info("Game data loaded successfully")
         except aiohttp.ClientError as e:
-            print(f"Error de cliente aiohttp: {e}")
-            logger.error(f"Error al obtener los datos del juego: {e}")
-            raise Exception(f"Error al obtener los datos del juego: {e}")
+            print(f"aiohttp client error: {e}")
+            logger.error(f"Error getting game data: {e}")
+            raise Exception(f"Error getting game data: {e}")
         except json.JSONDecodeError as e:
-            print(f"Error al decodificar JSON: {e}")
-            logger.error(f"Error al decodificar los datos del juego: {e}")
-            raise Exception(f"Error al decodificar los datos del juego: {e}")
+            print(f"JSON decoding error: {e}")
+            logger.error(f"Error decoding game data: {e}")
+            raise Exception(f"Error decoding game data: {e}")
 
     def get_course(self, school_option, difficulty_level):
         if not self.game_data:
-            raise Exception("Los datos del juego no han sido cargados")
+            raise Exception("Game data not loaded")
 
         course = ""
         numero = 0
@@ -38,13 +38,13 @@ class TriviaGame:
                 course += f"\n{numero}-{item['title']}"
 
         if not course:
-            return "Ups, esto es vergonzoso, pero parece que aún no tenemos cursos con esas categorías 😅", 0
+            return "Ups, this is embarrassing, but it seems we don't have courses with those categories yet 😅", 0
         
         return course, numero
 
     def get_question(self, selected_course, question_counter):
         if not self.game_data:
-            raise Exception("Los datos del juego no han sido cargados")
+            raise Exception("Game data not loaded")
 
         questionOptions = [i["question"] for i in self.game_data if i["title"] == selected_course]
 
@@ -58,9 +58,9 @@ class TriviaGame:
 
     def getLink(self, selected_course):
         if not self.game_data:
-            raise Exception("Los datos del juego no han sido cargados")
+            raise Exception("Game data not loaded")
 
         for i in self.game_data:
             if i["title"] == selected_course:
                 return i["url"]
-        return "No se encontró el enlace del curso"
+        return "Course link not found"
