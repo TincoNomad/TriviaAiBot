@@ -1,5 +1,5 @@
 import discord
-from config import DISCORD_KEY
+from env import env
 from .discord_client import MyClient
 
 # Set up Discord bot connection
@@ -8,4 +8,4 @@ intents.message_content = True
 client = MyClient(intents=intents)
 
 # Run the Discord bot
-client.run(DISCORD_KEY) #type: ignore
+client.run(env('DISCORD_KEY')) #type: ignore

@@ -1,7 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from config import DJANGO_KEY, SIGNING_KEY
+from env import env
 from typing import List
 from datetime import timedelta
 
@@ -13,10 +13,10 @@ sys.path.append(str(project_root))
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Import the secret key from the config file
-SECRET_KEY = DJANGO_KEY
+SECRET_KEY = env('SECRET_KEY')
 
-# Debug mode is set to True by default (should be False in production)
-DEBUG = True
+# Debug mode from environment variables
+DEBUG = env('DEBUG')
 
 # List of allowed hosts (empty by default, should be set in production)
 ALLOWED_HOSTS: List[str] = []
@@ -131,7 +131,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SIGNING_KEY,
+    'SIGNING_KEY': env('SIGNING_KEY'),
     'VERIFYING_KEY': None,
     'AUTH_HEADER_TYPES': ('Bearer',),
     'USER_ID_FIELD': 'id',

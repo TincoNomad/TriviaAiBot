@@ -1,6 +1,6 @@
 import json
 import aiohttp
-from config import QUESTION_URL
+from api.django import QUESTION_URL
 from .utils import logger, School, Difficulty, POINTS_PER_CORRECT_ANSWER
 
 class TriviaGame:

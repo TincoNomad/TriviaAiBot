@@ -1,6 +1,6 @@
 import requests #type: ignore
 import json
-from config import LEADERBOARD_URL, SCORE_URL
+from api.django import LEADERBOARD_URL, SCORE_URL
 from .utils import logger
 
 # Fetch and format the leaderboard data
