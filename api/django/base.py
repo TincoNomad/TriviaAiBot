@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'api.apps.users.apps.UsersConfig',
     'api.apps.trivia.apps.TriviaConfig',
     'api.apps.score.apps.ScoreConfig',
+    'api.apps.monitoring.apps.MonitoringConfig',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Monitoring middleware
+    'api.apps.monitoring.middleware.MonitoringMiddleware',
     # WhiteNoise for static file serving
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
@@ -122,7 +125,17 @@ APPEND_SLASH = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler'
 }
 
 SIMPLE_JWT = {
@@ -141,3 +154,13 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# Monitoring settings
+MONITORING = {
+    'REQUEST_LOG_RETENTION_DAYS': 30,
+    'ERROR_LOG_RETENTION_DAYS': 90,
+}
+
+if DEBUG:
+    MONITORING['REQUEST_LOG_RETENTION_DAYS'] = 7
+    MONITORING['ERROR_LOG_RETENTION_DAYS'] = 30

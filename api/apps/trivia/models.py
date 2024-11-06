@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django.conf import settings
 from django.core.exceptions import ValidationError
+import uuid
 
 
 # Course model representing different courses available
@@ -12,12 +13,21 @@ class Trivia(models.Model):
         (3, _('Advanced')),
     ]
     
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(_('Title'), max_length=250)
     is_public = models.BooleanField(_('Is Public'), default=True, help_text=_('Determines if the trivia is visible to all users'))
     difficulty = models.IntegerField(_('Difficulty'), choices=DIFFICULTY_CHOICES)
     theme = models.ForeignKey('Theme', on_delete=models.CASCADE, related_name='trivias', verbose_name=_('Theme'))
     url = models.URLField(_('URL'), null=True, blank=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trivias', verbose_name=_('User'))
+    username = models.CharField(_('Username'), max_length=100, null=True, blank=True)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE,
+        related_name='trivias', 
+        verbose_name=_('User'),
+        null=True,
+        blank=True
+    )
 
     def clean(self):
         if self.questions.count() < 3:
@@ -26,14 +36,8 @@ class Trivia(models.Model):
     def __str__(self):
         return self.title
 
-class Level(models.Model):
-    value = models.IntegerField(_('Value'))
-    name = models.CharField(_('Name'), max_length=100)
-
-    def __str__(self):
-        return f"({self.value}, _('{self.name}'))"
-
 class Theme(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(_('Name'), max_length=100, unique=True)
 
     def __str__(self):

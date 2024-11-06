@@ -9,22 +9,28 @@ class TriviaGame:
 
     async def fetch_game_data(self):
         try:
-            print(f"Trying to get game data from: {QUESTION_URL}")
+            logger.info(f"Fetching game data from: {QUESTION_URL}")
             async with aiohttp.ClientSession() as session:
                 async with session.get(QUESTION_URL) as response:
-                    print(f"Response status code: {response.status}")
+                    logger.info(f"API Response status: {response.status}")
                     response.raise_for_status()
                     self.game_data = await response.json()
-            print(f"Game data loaded: {self.game_data[:100]}...")  # Prints the first 100 characters
+                    logger.debug(f"Game data received: {self.game_data[:100]}...")
             logger.info("Game data loaded successfully")
         except aiohttp.ClientError as e:
-            print(f"aiohttp client error: {e}")
-            logger.error(f"Error getting game data: {e}")
-            raise Exception(f"Error getting game data: {e}")
+            logger.error(f"API Client Error: {e}", extra={
+                'url': QUESTION_URL,
+                'method': 'GET',
+                'status_code': getattr(e, 'status', None)
+            })
+            raise
         except json.JSONDecodeError as e:
-            print(f"JSON decoding error: {e}")
-            logger.error(f"Error decoding game data: {e}")
-            raise Exception(f"Error decoding game data: {e}")
+            logger.error(f"JSON Decode Error: {e}", extra={
+                'url': QUESTION_URL,
+                'method': 'GET',
+                'response_content': getattr(e, 'doc', None)[:200]
+            })
+            raise
 
     def get_course(self, school_option, difficulty_level):
         if not self.game_data:

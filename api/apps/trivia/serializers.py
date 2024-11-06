@@ -26,10 +26,16 @@ class QuestionSerializer(serializers.ModelSerializer):
 class TriviaSerializer(serializers.ModelSerializer):
     theme = serializers.CharField(max_length=100)
     questions = QuestionSerializer(many=True, required=False)
+    can_make_private = serializers.SerializerMethodField()
 
     class Meta:
         model = Trivia
-        fields = ['id', 'title', 'difficulty', 'theme', 'url', 'questions']
+        fields = ['id', 'title', 'difficulty', 'theme', 'url', 'questions', 
+                 'is_public', 'can_make_private', 'username']
+
+    def get_can_make_private(self, obj):
+        request = self.context.get('request')
+        return request and request.user.is_authenticated
 
     def create(self, validated_data):
         theme_data = validated_data.pop('theme', None)
@@ -78,3 +84,10 @@ class TriviaSerializer(serializers.ModelSerializer):
                 answer.save()
             else:
                 Answer.objects.create(question=question, **answer_data)
+
+class TriviaListSerializer(serializers.ModelSerializer):
+    theme = serializers.CharField(source='theme.name')
+    
+    class Meta:
+        model = Trivia
+        fields = ['id', 'title', 'difficulty', 'theme']

@@ -4,7 +4,7 @@ from env import IS_DEVELOPMENT
 DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-# URLs base y específicas
+# Base and specific URLs
 BASE_URL = 'http://127.0.0.1:8000/api'
 LEADERBOARD_URL = f"{BASE_URL}/score/leaderboard"
 SCORE_URL = f"{BASE_URL}/score"
