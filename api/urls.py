@@ -6,7 +6,7 @@ from rest_framework.routers import DefaultRouter
 from .apps.trivia.viewsets import TriviaViewSet, ThemeViewSet
 from .apps.trivia.views import RandomQuestions
 from .apps.score.viewsets import ScoreViewSet, TriviaWinnerViewSet
-from .apps.users.views import RegisterView, LoginView, LogoutView
+from .apps.users.views import RegisterView, LoginView, LogoutView, CreateUserView
 from .apps.users.viewsets import UserViewSet
 
 router = DefaultRouter()
@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/register/', RegisterView.as_view(), name='register'),
     path('api/login/', LoginView.as_view(), name='login'),
     path('api/logout/', LogoutView.as_view(), name='logout'),
+    path('api/create-user/', CreateUserView.as_view(), name='create-user'),
 ]
 
 #static file management

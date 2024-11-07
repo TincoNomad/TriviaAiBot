@@ -7,16 +7,14 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email', 'password', 'role', 'is_verified', 'created_by')
-        read_only_fields = ('is_verified', 'created_by')
+        fields = ('id', 'username', 'email', 'password', 'role')
+        read_only_fields = ('is_verified',)
 
     def create(self, validated_data):
-        request = self.context.get('request')
         user = CustomUser.objects.create_user(
             username=validated_data['username'],
             email=validated_data['email'],
             password=validated_data['password'],
-            role=validated_data.get('role', 'user'),
-            created_by=request.user if request and request.user.is_authenticated else None
+            role=validated_data.get('role', 'user')
         )
         return user

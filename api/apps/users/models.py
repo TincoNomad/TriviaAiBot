@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
@@ -10,6 +11,22 @@ class CustomUser(AbstractUser):
         ('user', _('Regular User')),
         ('admin', _('Administrator'))
     ]
+
+    username = models.CharField(
+        _('username'),
+        max_length=150,
+        unique=True,
+        validators=[
+            RegexValidator(
+                regex=r'^[\w#]+$',
+                message=_('Enter a valid username. This value may contain only letters, '
+                         'numbers, underscore and # characters.')
+            ),
+        ],
+        error_messages={
+            'unique': _("A user with that username already exists."),
+        },
+    )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     is_verified = models.BooleanField(_('Email Verified'), default=False)

@@ -18,6 +18,7 @@ class AnswerSerializer(serializers.ModelSerializer):
 class QuestionSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
     answers = AnswerSerializer(many=True)
+    points = serializers.IntegerField(default=10, read_only=True)
 
     class Meta:
         model = Question
@@ -25,7 +26,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 class TriviaSerializer(serializers.ModelSerializer):
     theme = serializers.CharField(max_length=100)
-    questions = QuestionSerializer(many=True, required=False)
+    questions = QuestionSerializer(many=True, required=True)
     can_make_private = serializers.SerializerMethodField()
 
     class Meta:
@@ -33,11 +34,32 @@ class TriviaSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'difficulty', 'theme', 'url', 'questions', 
                  'is_public', 'can_make_private', 'username']
 
+    def validate_questions(self, value):
+        if len(value) < 3:
+            raise serializers.ValidationError(
+                "A trivia must have at least 3 questions"
+            )
+        
+        for question in value:
+            if 'answers' not in question or len(question['answers']) < 2:
+                raise serializers.ValidationError(
+                    f"The question '{question.get('question_title', '')}' must have at least 2 answers"
+                )
+            
+            correct_answers = [answer for answer in question['answers'] if answer.get('is_correct', False)]
+            if not correct_answers:
+                raise serializers.ValidationError(
+                    f"The question '{question.get('question_title', '')}' must have at least one correct answer"
+                )
+
+        return value
+
     def get_can_make_private(self, obj):
         request = self.context.get('request')
         return request and request.user.is_authenticated
 
     def create(self, validated_data):
+        questions_data = validated_data.pop('questions', [])
         theme_data = validated_data.pop('theme', None)
         theme = None
 
@@ -48,6 +70,15 @@ class TriviaSerializer(serializers.ModelSerializer):
                 theme, _ = Theme.objects.get_or_create(name=theme_data)
 
         trivia = Trivia.objects.create(theme=theme, **validated_data)
+
+        # Crear preguntas y respuestas
+        for question_data in questions_data:
+            answers_data = question_data.pop('answers', [])
+            question = Question.objects.create(trivia=trivia, **question_data)
+            
+            for answer_data in answers_data:
+                Answer.objects.create(question=question, trivia=trivia, **answer_data)
+
         return trivia
 
     def update(self, instance, validated_data):

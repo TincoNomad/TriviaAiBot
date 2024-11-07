@@ -16,7 +16,6 @@ class QuestionInLineModel(admin.TabularInline):
     model = models.Question
     fields = [
         'question_title',
-        'points',
     ]
     extra = 0
 
@@ -47,7 +46,6 @@ class QuestionAdmin(admin.ModelAdmin):
     fields = [
         'trivia',
         'question_title',
-        'points',
     ]
     list_display = [
         'question_title',

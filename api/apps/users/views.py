@@ -3,29 +3,17 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import UserSerializer
-from api.utils.jwt_utils import IsAdminUser
 from api.utils.logging_utils import log_exception, logger
-from .models import CustomUser
+from api.utils.jwt_utils import IsAdminUser
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = UserSerializer
-    
-    def get_permissions(self):
-        # Si no hay usuarios, permitir registro sin autenticación
-        if not CustomUser.objects.exists():
-            return []
-        # Si hay usuarios, requerir admin
-        return [permissions.IsAuthenticated(), IsAdminUser()]
 
     def perform_create(self, serializer):
         try:
-            # Si es el primer usuario, asignar rol de admin
-            if not CustomUser.objects.exists():
-                user = serializer.save(role='admin')
-            else:
-                # Si es creado por un admin, usar el rol especificado
-                user = serializer.save(created_by=self.request.user)
-            logger.info(f"New user created: {user.username} with role: {user.role}")
+            user = serializer.save(role='admin')
+            logger.info(f"New user registered: {user.username}")
+            return user
         except Exception as e:
             logger.error(f"Error creating user: {str(e)}")
             raise
@@ -55,3 +43,19 @@ class LogoutView(generics.GenericAPIView):
         except Exception as e:
             logger.error(f"Logout error: {str(e)}")
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+class CreateUserView(generics.CreateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+
+    def perform_create(self, serializer):
+        try:
+            requested_role = self.request.data.get('role', 'user')
+            if requested_role not in ['user', 'admin']:
+                requested_role = 'user'
+            user = serializer.save(role=requested_role, created_by=self.request.user)
+            logger.info(f"Admin {self.request.user.username} created new {requested_role}: {user.username}")
+            return user
+        except Exception as e:
+            logger.error(f"Error creating user: {str(e)}")
+            raise

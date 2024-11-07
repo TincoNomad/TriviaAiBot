@@ -1,0 +1,521 @@
+2024-11-06 22:05:31,573 - django.request - WARNING - Not Found: /admin
+2024-11-06 22:05:33,210 - django.request - WARNING - Not Found: /favicon.ico
+2024-11-06 22:06:10,381 - django.request - ERROR - Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 134, in debug_sql
+    yield
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py", line 43, in __call__
+    RequestLog.objects.create(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 121, in execute
+    with self.debug_sql(sql, params, use_last_executed_query=True):
+  File "/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 139, in debug_sql
+    sql = self.db.ops.last_executed_query(self.cursor, sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 178, in last_executed_query
+    params = self._quote_params_for_last_executed_query(params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 167, in _quote_params_for_last_executed_query
+    return cursor.execute(sql, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+2024-11-07 04:15:27,069 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/models.py changed, reloading.
+2024-11-07 04:15:50,178 - django.request - ERROR - Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 134, in debug_sql
+    yield
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py", line 43, in __call__
+    RequestLog.objects.create(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 121, in execute
+    with self.debug_sql(sql, params, use_last_executed_query=True):
+  File "/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 139, in debug_sql
+    sql = self.db.ops.last_executed_query(self.cursor, sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 178, in last_executed_query
+    params = self._quote_params_for_last_executed_query(params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 167, in _quote_params_for_last_executed_query
+    return cursor.execute(sql, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+2024-11-07 04:21:32,296 - django.request - ERROR - Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 134, in debug_sql
+    yield
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py", line 43, in __call__
+    RequestLog.objects.create(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 121, in execute
+    with self.debug_sql(sql, params, use_last_executed_query=True):
+  File "/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 139, in debug_sql
+    sql = self.db.ops.last_executed_query(self.cursor, sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 178, in last_executed_query
+    params = self._quote_params_for_last_executed_query(params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 167, in _quote_params_for_last_executed_query
+    return cursor.execute(sql, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+2024-11-07 04:22:18,778 - django.request - ERROR - Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 134, in debug_sql
+    yield
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py", line 43, in __call__
+    RequestLog.objects.create(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 121, in execute
+    with self.debug_sql(sql, params, use_last_executed_query=True):
+  File "/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 139, in debug_sql
+    sql = self.db.ops.last_executed_query(self.cursor, sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 178, in last_executed_query
+    params = self._quote_params_for_last_executed_query(params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/operations.py", line 167, in _quote_params_for_last_executed_query
+    return cursor.execute(sql, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+2024-11-07 04:31:36,840 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py changed, reloading.
+2024-11-07 04:32:02,451 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py changed, reloading.
+2024-11-07 04:32:28,859 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py changed, reloading.
+2024-11-07 04:32:47,081 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py changed, reloading.
+2024-11-07 04:33:05,249 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py changed, reloading.
+2024-11-07 04:33:07,991 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/monitoring/middleware.py changed, reloading.
+2024-11-07 04:33:14,488 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 04:33:14,531 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:03,555 - django.request - WARNING - Unauthorized: /api/register/
+2024-11-07 05:10:18,509 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:18,561 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:20,734 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:20,764 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:29,103 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:29,128 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:40,853 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:40,878 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:42,329 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:42,344 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:43,026 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:43,049 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:44,188 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:44,214 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:44,928 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:44,947 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:46,001 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:46,030 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:57,124 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:10:57,148 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:11:03,036 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:11:03,059 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:11:04,514 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:11:04,537 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 05:27:34,160 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-07 05:27:42,327 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:28:12,671 - django.request - WARNING - Unauthorized: /api/register/
+2024-11-07 05:32:27,094 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-11-07 05:32:33,249 - django.request - WARNING - Unauthorized: /api/register/
+2024-11-07 05:33:00,117 - django.request - WARNING - Unauthorized: /api/register/
+2024-11-07 05:33:58,399 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:34:30,207 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:34:39,714 - django.request - WARNING - Unauthorized: /api/register/
+2024-11-07 05:36:56,491 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:37:10,632 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:37:17,837 - django.request - WARNING - Forbidden: /api/register/
+2024-11-07 05:39:33,757 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:39:36,723 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-11-07 05:39:42,111 - django.request - WARNING - Forbidden: /api/register/
+2024-11-07 05:39:52,952 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:39:56,733 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 05:40:02,404 - django.request - WARNING - Unauthorized: /api/register/
+2024-11-07 16:20:34,805 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 16:20:37,000 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 16:20:37,002 - django.request - WARNING - Not Found: /favicon.ico
+2024-11-07 17:24:18,025 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 17:24:42,218 - django.request - WARNING - Bad Request: /api/register/
+2024-11-07 17:36:10,004 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 17:36:17,067 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-07 17:36:38,507 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 17:36:44,391 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 17:36:51,709 - django.request - WARNING - Bad Request: /api/register/
+2024-11-07 17:56:52,763 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/models.py changed, reloading.
+2024-11-07 18:03:18,777 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/models.py changed, reloading.
+2024-11-07 18:03:57,594 - api.utils.logging_utils - INFO - New user registered: prueba#9201
+2024-11-07 18:06:00,257 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 18:06:10,315 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-07 18:06:12,163 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-07 18:06:13,901 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-11-07 18:06:23,418 - api.utils.logging_utils - INFO - New user registered: prueba2#9201
+2024-11-07 18:06:46,094 - api.utils.logging_utils - INFO - User logged in: prueba2#9201
+2024-11-07 18:14:17,803 - django.request - WARNING - Not Found: /api/leaderboard/
+2024-11-07 18:15:09,666 - api.utils.jwt_utils - INFO - Successfully decoded token. User ID: f3e3b46e-dc1e-4844-a4f6-1bbd1ff8b8ed
+2024-11-07 18:15:09,666 - api.utils.jwt_utils - INFO - Successfully authenticated user with ID: f3e3b46e-dc1e-4844-a4f6-1bbd1ff8b8ed
+2024-11-07 18:15:09,666 - api.utils.logging_utils - INFO - Leaderboard retrieved successfully
+2024-11-07 18:15:09,668 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:17:25,667 - api.utils.logging_utils - INFO - Admin prueba2#9201 created new user: user#1234
+2024-11-07 18:17:25,668 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:19:48,553 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:19:48.548605",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'difficulty': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'difficulty': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-07 18:19:48,556 - django.request - WARNING - Bad Request: /api/trivias/
+2024-11-07 18:39:51,355 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-07 18:40:22,057 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/admin.py changed, reloading.
+2024-11-07 18:47:39,600 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:47:39.593766",
+  "function": "create",
+  "error_type": "TypeError",
+  "error_message": "Direct assignment to the reverse side of a related set is prohibited. Use questions.set() instead.",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 19, in create\n    self.perform_create(serializer)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 42, in perform_create\n    serializer.save(is_public=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 208, in save\n    self.instance = self.create(validated_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py\", line 51, in create\n    trivia = Trivia.objects.create(theme=theme, **validated_data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 677, in create\n    obj = self.model(**kwargs)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py\", line 564, in __init__\n    _setattr(self, prop, value)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py\", line 665, in __set__\n    raise TypeError(\nTypeError: Direct assignment to the reverse side of a related set is prohibited. Use questions.set() instead.\n"
+}
+2024-11-07 18:47:39,637 - django.request - ERROR - Internal Server Error: /api/trivias/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 71, in create
+    return super().create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 42, in perform_create
+    serializer.save(is_public=True)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py", line 51, in create
+    trivia = Trivia.objects.create(theme=theme, **validated_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 564, in __init__
+    _setattr(self, prop, value)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 665, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the reverse side of a related set is prohibited. Use questions.set() instead.
+2024-11-07 18:48:22,852 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:48:22.845719",
+  "function": "create",
+  "error_type": "TypeError",
+  "error_message": "Direct assignment to the reverse side of a related set is prohibited. Use questions.set() instead.",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 19, in create\n    self.perform_create(serializer)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 42, in perform_create\n    serializer.save(is_public=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 208, in save\n    self.instance = self.create(validated_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py\", line 51, in create\n    trivia = Trivia.objects.create(theme=theme, **validated_data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 677, in create\n    obj = self.model(**kwargs)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py\", line 564, in __init__\n    _setattr(self, prop, value)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py\", line 665, in __set__\n    raise TypeError(\nTypeError: Direct assignment to the reverse side of a related set is prohibited. Use questions.set() instead.\n"
+}
+2024-11-07 18:48:22,885 - django.request - ERROR - Internal Server Error: /api/trivias/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 71, in create
+    return super().create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 42, in perform_create
+    serializer.save(is_public=True)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py", line 51, in create
+    trivia = Trivia.objects.create(theme=theme, **validated_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/base.py", line 564, in __init__
+    _setattr(self, prop, value)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 665, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the reverse side of a related set is prohibited. Use questions.set() instead.
+2024-11-07 18:53:50,882 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-07 18:54:11,175 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:54:11.172756",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'questions': [ErrorDetail(string='Una trivia debe tener al menos 3 preguntas', code='invalid')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'questions': [ErrorDetail(string='Una trivia debe tener al menos 3 preguntas', code='invalid')]}\n"
+}
+2024-11-07 18:54:11,180 - django.request - WARNING - Bad Request: /api/trivias/
+2024-11-07 18:54:35,056 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-07 18:56:16,514 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:56:16.511624",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'questions': [{}, {'answers': [{}, {'is_correct': [ErrorDetail(string='Must be a valid boolean.', code='invalid')]}]}]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'questions': [{}, {'answers': [{}, {'is_correct': [ErrorDetail(string='Must be a valid boolean.', code='invalid')]}]}]}\n"
+}
+2024-11-07 18:56:16,519 - django.request - WARNING - Bad Request: /api/trivias/
+2024-11-07 18:56:29,101 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:56:29.101239",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'questions': [ErrorDetail(string='A trivia must have at least 3 questions', code='invalid')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'questions': [ErrorDetail(string='A trivia must have at least 3 questions', code='invalid')]}\n"
+}
+2024-11-07 18:56:29,105 - django.request - WARNING - Bad Request: /api/trivias/
+2024-11-07 18:58:04,281 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-07 18:59:02,040 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-07T18:59:02.037792",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'questions': [ErrorDetail(string=\"The question 'todas las preguntas tienen al menos 2 respuestas?' must have at least 2 answers\", code='invalid')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'questions': [ErrorDetail(string=\"The question 'todas las preguntas tienen al menos 2 respuestas?' must have at least 2 answers\", code='invalid')]}\n"
+}
+2024-11-07 18:59:02,045 - django.request - WARNING - Bad Request: /api/trivias/
+2024-11-07 18:59:37,418 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:37,460 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:38,983 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:39,000 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:40,776 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:40,799 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:42,449 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:42,474 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:46,368 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:46,390 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:47,896 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-07 18:59:47,918 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
