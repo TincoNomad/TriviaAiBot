@@ -196,8 +196,4 @@ class TriviaCommands:
         
         if not game:
             return
-            
-        # Si el usuario está en medio de una pregunta, la respuesta será manejada por _handle_questions
-        # Si el usuario está seleccionando tema/dificultad/trivia, será manejado por los respectivos handlers
-        # No necesitamos hacer nada adicional aquí porque wait_for() en los otros métodos ya maneja las respuestas
         pass
