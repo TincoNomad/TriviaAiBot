@@ -18,7 +18,7 @@ class TriviaViewSet(viewsets.ModelViewSet):
         return TriviaSerializer
     
     def get_permissions(self):
-        if self.action in ['list', 'retrieve', 'create']:
+        if self.action in ['list', 'retrieve', 'create', 'difficulty']:
             return []
         if self.action == 'toggle_visibility':
             return [permissions.IsAuthenticated()]
@@ -75,8 +75,54 @@ class TriviaViewSet(viewsets.ModelViewSet):
         except IntegrityError as e:
             logger.error(f"Database integrity error: {e}")
             raise DRFValidationError(detail="Could not create trivia due to database constraints")
+    
+    @action(detail=False, methods=['get'], url_path='filter')
+    def filter_trivias(self, request):
+        theme = request.query_params.get('theme')
+        difficulty = request.query_params.get('difficulty')
+        
+        if not theme or not difficulty:
+            return Response(
+                {"error": "The parameters 'theme' and 'difficulty' are required"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        try:
+            difficulty = int(difficulty)
+            queryset = self.get_queryset()  # Esto ya maneja la lógica de is_public
+            filtered_trivias = queryset.filter(
+                theme=theme,
+                difficulty=difficulty
+            )
+            
+            serializer = self.get_serializer(filtered_trivias, many=True)
+            return Response(serializer.data)
+            
+        except ValueError:
+            return Response(
+                {"error": "The 'difficulty' parameter must be a number"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except Exception as e:
+            logger.error(f"Error filtering trivias: {e}")
+            return Response(
+                {"error": "Error filtering trivias"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+    
+    @action(detail=False, methods=['get'])
+    def difficulty(self, request):
+        """Returns the available difficulty options"""
+        try:
+            difficulties = dict(Trivia.DIFFICULTY_CHOICES)
+            return Response(difficulties, status=status.HTTP_200_OK)
+        except Exception as e:
+            logger.error(f"Error getting difficulty choices: {e}")
+            return Response(
+                {"error": "Error retrieving difficulty choices"}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 class ThemeViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Theme.objects.all()
     serializer_class = ThemeSerializer
-    permission_classes = [permissions.IsAuthenticated]

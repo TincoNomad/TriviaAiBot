@@ -519,3 +519,26 @@ TypeError: Direct assignment to the reverse side of a related set is prohibited.
 2024-11-07 18:59:46,390 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
 2024-11-07 18:59:47,896 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
 2024-11-07 18:59:47,918 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-08 04:00:38,172 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-08 04:18:19,352 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-08 04:18:46,599 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-08 04:18:46,636 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-08 04:58:37,295 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/__init__.py changed, reloading.
+2024-11-08 05:33:53,885 - django.request - WARNING - Not Found: /api/trivias
+2024-11-08 17:43:17,326 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:43:58,470 - django.request - WARNING - Not Found: /trivias
+2024-11-08 17:44:33,793 - django.request - WARNING - Not Found: /trivias
+2024-11-08 17:47:44,738 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:48:38,740 - django.request - WARNING - Not Found: /trivias
+2024-11-08 17:49:39,966 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:50:36,073 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:50:45,466 - django.request - WARNING - Not Found: /api/trivias
+2024-11-08 17:52:08,774 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:52:41,527 - django.request - WARNING - Not Found: /api/trivias
+2024-11-08 17:55:47,118 - django.request - WARNING - Not Found: /api/trivias
+2024-11-08 17:56:40,066 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:57:04,779 - django.request - WARNING - Not Found: /api/trivias//difficulty/
+2024-11-08 17:58:23,363 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-08 17:58:57,782 - django.request - WARNING - Unauthorized: /api/trivias/difficulty/
+2024-11-08 18:53:10,989 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-08 18:53:44,813 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.

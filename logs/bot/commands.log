@@ -1,0 +1,12 @@
+2024-11-07 23:20:39,224 - bot_commands - ERROR - Error in trivia command: 'TriviaAPIClient' object has no attribute 'get'
+2024-11-08 00:20:01,508 - bot_commands - ERROR - Error in trivia command: 'TriviaAPIClient' object has no attribute 'get'
+2024-11-08 00:24:26,212 - bot_commands - ERROR - Error in trivia command: Cannot connect to host 127.0.0.1:8000 ssl:default [Connect call failed ('127.0.0.1', 8000)]
+2024-11-08 00:33:53,888 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:43:58,474 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:44:33,795 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:48:38,741 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:50:45,468 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:52:41,530 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:57:04,782 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias//difficulty/'
+2024-11-08 12:58:57,784 - bot_commands - ERROR - Error in trivia command: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/difficulty/'
+2024-11-08 13:54:32,053 - bot_commands - ERROR - Error in trivia command: 'NoneType' object has no attribute 'wait_for'

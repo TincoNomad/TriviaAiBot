@@ -1,7 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
 import os
-from datetime import datetime
 
 def setup_bot_logger(name, log_file, level=logging.INFO):
     formatter = logging.Formatter(

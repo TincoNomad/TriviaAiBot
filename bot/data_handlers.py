@@ -1,7 +1,7 @@
 import requests #type: ignore
 import json
 from api.django import LEADERBOARD_URL, SCORE_URL
-from .utils import logger
+from .utils.logging_bot import bot_logger
 
 # Fetch and format the leaderboard data
 def get_score():
@@ -22,10 +22,10 @@ def get_score():
         return leaderboard if leaderboard else "No scores yet, no games have been played"
     
     except requests.RequestException as e:
-        logger.error(f"Error getting scores: {e}")
+        bot_logger.error(f"Error getting scores: {e}")
         return f"Error getting scores: {e}"
     except (json.JSONDecodeError, ValueError, KeyError) as e:
-        logger.error(f"Error processing scores data: {e}")
+        bot_logger.error(f"Error processing scores data: {e}")
         return f"Error processing scores data: {e}"
 
 # Update player's score in the database

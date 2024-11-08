@@ -1,0 +1,14 @@
+2024-11-07 23:20:39,223 - game_interactions - ERROR - Failed to initialize trivia game: 'TriviaAPIClient' object has no attribute 'get'
+2024-11-08 00:20:01,505 - game_interactions - ERROR - Failed to initialize trivia game: 'TriviaAPIClient' object has no attribute 'get'
+2024-11-08 00:24:26,211 - game_interactions - ERROR - Failed to initialize trivia game: Cannot connect to host 127.0.0.1:8000 ssl:default [Connect call failed ('127.0.0.1', 8000)]
+2024-11-08 00:33:53,887 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:43:58,473 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:44:33,795 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:48:38,741 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:50:45,468 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:52:41,530 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:57:04,781 - game_interactions - ERROR - Failed to initialize trivia game: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias//difficulty/'
+2024-11-08 12:58:57,783 - game_interactions - ERROR - Failed to initialize trivia game: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/difficulty/'
+2024-11-08 13:54:31,416 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 14:37:37,058 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 14:50:24,503 - game_interactions - INFO - Trivia game initialized successfully
