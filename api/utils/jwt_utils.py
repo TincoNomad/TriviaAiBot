@@ -8,27 +8,30 @@ logger = logging.getLogger(__name__)
 
 def get_user_from_token(token):
     """
-    Decode the JWT token and extract the user_id.
+    Decode the JWT token and extract the user.
     
     Args:
         token (str): The JWT token to decode.
     
     Returns:
-        int: The user_id if successfully decoded, None otherwise.
+        User: The user object if successfully decoded, None otherwise.
     """
     try:
-        # Ensure these settings exist in your settings.py
         algorithm = settings.SIMPLE_JWT.get('ALGORITHM', 'HS256')
         signing_key = settings.SIMPLE_JWT.get('SIGNING_KEY', settings.SECRET_KEY)
         
         logger.debug(f"Attempting to decode token with algorithm: {algorithm}")
         payload = jwt.decode(token, signing_key, algorithms=[algorithm])
         
-        # Extract the user_id from the payload
-        user_id = payload.get('user_id')
-        logger.info(f"Successfully decoded token. User ID: {user_id}")
+        # Importar User model aquí para evitar importación circular
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
         
-        return user_id
+        # Obtener el usuario completo
+        user = User.objects.filter(id=payload.get('id')).first()
+        logger.info(f"Successfully decoded token. User: {user}")
+        
+        return user
     except jwt.ExpiredSignatureError:
         logger.error("Token has expired")
     except jwt.InvalidTokenError:

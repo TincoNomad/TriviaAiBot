@@ -10,3 +10,8 @@
 2024-11-08 12:57:04,782 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias//difficulty/'
 2024-11-08 12:58:57,784 - bot_commands - ERROR - Error in trivia command: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/difficulty/'
 2024-11-08 13:54:32,053 - bot_commands - ERROR - Error in trivia command: 'NoneType' object has no attribute 'wait_for'
+2024-11-08 22:19:12,074 - bot_commands - ERROR - Error in trivia command: 'TriviaGame' object has no attribute 'difficulty_choice'
+2024-11-08 22:32:25,261 - bot_commands - ERROR - Error in trivia command: 'TriviaGame' object has no attribute 'difficulty_choice'
+2024-11-08 23:01:57,946 - bot_commands - ERROR - Error in trivia command: No trivias available
+2024-11-08 23:07:47,917 - bot_commands - ERROR - Error in trivia command: No trivias available
+2024-11-08 23:57:41,399 - bot_commands - ERROR - Error in trivia command: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'

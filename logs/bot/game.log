@@ -12,3 +12,36 @@
 2024-11-08 13:54:31,416 - game_interactions - INFO - Trivia game initialized successfully
 2024-11-08 14:37:37,058 - game_interactions - INFO - Trivia game initialized successfully
 2024-11-08 14:50:24,503 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 15:33:40,722 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 16:23:11,644 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 16:28:32,358 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 20:47:01,588 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 21:18:55,389 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 21:23:01,550 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 21:29:00,623 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 21:35:04,162 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 21:49:13,440 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 21:54:30,941 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 22:19:03,576 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 22:32:18,039 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 22:41:19,793 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 22:48:41,960 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:01:50,274 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:07:37,902 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:50:26,679 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:50:37,105 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-08 23:53:00,849 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:53:07,224 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-08 23:53:52,893 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:54:00,381 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-08 23:57:31,442 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-08 23:57:41,399 - game_interactions - ERROR - Error obteniendo trivias: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-09 00:00:10,564 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 00:00:20,322 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-09 00:01:21,158 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 00:01:29,814 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-09 00:05:32,318 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 00:05:40,947 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-09 00:15:02,902 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 00:15:11,514 - game_interactions - ERROR - Unauthorized to access this trivias
+2024-11-09 00:17:42,140 - game_interactions - INFO - Trivia game initialized successfully

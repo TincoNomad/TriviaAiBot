@@ -39,8 +39,19 @@ class TriviaAPIClient:
             
     async def get_filtered_trivias(self, theme: str, difficulty: int) -> List[Dict[str, Any]]:
         """Gets filtered trivia questions by theme and difficulty"""
-        url = f"{FILTER_URL}/?theme={theme}&difficulty={difficulty}"
-        return await self.get(url)
+        try:
+            url = f"{FILTER_URL}?theme={theme}&difficulty={difficulty}"
+            bot_logger.info(f"Requesting filtered trivias with URL: {url}")
+            return await self.get(url)
+        except aiohttp.ClientResponseError as e:
+            if e.status in [401, 403]:
+                bot_logger.error("Unauthorized access to filtered trivias endpoint")
+                raise ValueError("Unauthorized access")
+            bot_logger.error(f"Error getting filtered trivias: {e}")
+            raise
+        except Exception as e:
+            bot_logger.error(f"Error getting filtered trivias: {e}")
+            raise
             
     async def get_leaderboard(self) -> List[Dict[str, Any]]:
         """Gets the score table"""

@@ -10,7 +10,8 @@ class TriviaGame:
         self.game_data: List[Dict[str, Any]] = []
         self.current_trivia: List[Dict[str, Any]] = []
         self.difficulty_choices: Dict[int, str] = {}
-        self.theme_choices: Dict[int, str] = {}
+        self.difficulty_choice: Optional[int] = None
+        self.theme_choices: Dict[int, Dict[str, Any]] = {}
         
     async def initialize(self) -> None:
         async with self.api_client as client:
@@ -31,21 +32,29 @@ class TriviaGame:
     
     async def get_trivia(self, theme_id: str, difficulty_level: int) -> Tuple[str, int]:
         try:
-            filtered_trivias = await self.api_client.get_filtered_trivias(theme_id, difficulty_level)
-            
-            if not filtered_trivias:
-                return "No trivias available for this combination", 0
+            print(f"DEBUG TriviaGame - get_trivia called with theme_id={theme_id}, difficulty={difficulty_level}")
+            async with self.api_client as client:
+                filtered_trivias = await client.get_filtered_trivias(theme_id, difficulty_level)
+                print(f"DEBUG TriviaGame - filtered_trivias received: {filtered_trivias}")
                 
-            trivia_list = "\n".join(
-                f"{idx + 1}- {trivia['title']}" 
-                for idx, trivia in enumerate(filtered_trivias)
-            )
-            
-            self.current_trivia = filtered_trivias
-            return trivia_list, len(filtered_trivias)
-            
+                if not filtered_trivias:
+                    return "No hay trivias disponibles para esta combinación", 0
+                    
+                trivia_list = "\n".join(
+                    f"{idx + 1}- {trivia['title']}" 
+                    for idx, trivia in enumerate(filtered_trivias)
+                )
+                
+                self.current_trivia = filtered_trivias
+                return trivia_list, len(filtered_trivias)
+                
+        except ValueError as e:
+            if str(e) == "Unauthorized access":
+                game_logger.error("Unauthorized to access this trivias")
+                return "Unauthorized to access this trivias", -1
+            raise
         except Exception as e:
-            game_logger.error(f"Error getting trivias: {e}")
+            game_logger.error(f"Error obteniendo trivias: {e}")
             raise
     
     def get_question(self, selected_trivia: str, question_counter: int) -> Tuple[str, int, int]:
@@ -82,3 +91,10 @@ class TriviaGame:
         except Exception as e:
             game_logger.error(f"Error getting trivia link: {e}")
             return None
+    
+    async def set_difficulty(self, difficulty: int) -> None:
+        """Establece la dificultad seleccionada para el juego"""
+        if difficulty not in [1, 2, 3]:
+            raise ValueError("Dificultad no válida")
+        self.difficulty_choice = difficulty
+        game_logger.debug(f"Difficulty set to: {difficulty}")

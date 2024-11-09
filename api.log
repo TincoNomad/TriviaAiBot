@@ -542,3 +542,31 @@ TypeError: Direct assignment to the reverse side of a related set is prohibited.
 2024-11-08 17:58:57,782 - django.request - WARNING - Unauthorized: /api/trivias/difficulty/
 2024-11-08 18:53:10,989 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
 2024-11-08 18:53:44,813 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-08 21:20:28,747 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 04:07:47,687 - django.request - WARNING - Unauthorized: /api/trivias/filter/
+2024-11-09 04:50:37,102 - django.request - WARNING - Unauthorized: /api/trivias/filter/
+2024-11-09 04:52:04,817 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 04:52:16,996 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 04:52:18,742 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 04:53:07,222 - django.request - WARNING - Unauthorized: /api/trivias/filter/
+2024-11-09 04:54:00,378 - django.request - WARNING - Unauthorized: /api/trivias/filter/
+2024-11-09 04:57:00,284 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 04:57:41,396 - django.request - WARNING - Forbidden: /api/trivias/filter/
+2024-11-09 04:59:31,746 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:00:20,320 - django.request - WARNING - Unauthorized: /api/trivias/filter/
+2024-11-09 05:00:57,052 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:01:29,811 - django.request - WARNING - Forbidden: /api/trivias/filter/
+2024-11-09 05:01:44,422 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:01:48,312 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:02:10,632 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:02:57,878 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:04:18,903 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:04:49,596 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:05:40,945 - django.request - WARNING - Forbidden: /api/trivias/filter/
+2024-11-09 05:08:46,698 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:14:37,665 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:15:11,511 - django.request - WARNING - Forbidden: /api/trivias/filter/
+2024-11-09 05:16:52,637 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:17:23,346 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 05:17:51,463 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 05:17:51,471 - api.utils.logging_utils - INFO - Found 1 matching trivias
