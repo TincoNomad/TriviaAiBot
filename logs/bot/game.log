@@ -45,3 +45,7 @@
 2024-11-09 00:15:02,902 - game_interactions - INFO - Trivia game initialized successfully
 2024-11-09 00:15:11,514 - game_interactions - ERROR - Unauthorized to access this trivias
 2024-11-09 00:17:42,140 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 01:09:06,102 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 13:14:41,242 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 13:16:27,506 - game_interactions - ERROR - Error getting question: list index out of range
+2024-11-09 13:16:58,459 - game_interactions - ERROR - Error getting question: list index out of range

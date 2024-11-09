@@ -4,6 +4,8 @@ from .utils.logging_bot import game_logger
 from .utils.utils import get_theme_list, get_difficulty_list
 from api.django import TRIVIA_URL
 
+POINTS_PER_CORRECT_ANSWER = 10
+
 class TriviaGame:
     def __init__(self) -> None:
         self.api_client = TriviaAPIClient()
@@ -32,10 +34,8 @@ class TriviaGame:
     
     async def get_trivia(self, theme_id: str, difficulty_level: int) -> Tuple[str, int]:
         try:
-            print(f"DEBUG TriviaGame - get_trivia called with theme_id={theme_id}, difficulty={difficulty_level}")
             async with self.api_client as client:
                 filtered_trivias = await client.get_filtered_trivias(theme_id, difficulty_level)
-                print(f"DEBUG TriviaGame - filtered_trivias received: {filtered_trivias}")
                 
                 if not filtered_trivias:
                     return "No hay trivias disponibles para esta combinación", 0
@@ -80,6 +80,7 @@ class TriviaGame:
             return "Error processing question data", 0, 0
             
     def get_link(self, selected_trivia: str) -> Optional[str]:
+        """Gets the course URL for the selected trivia"""
         try:
             trivia = next(
                 (trivia for trivia in self.current_trivia if trivia["title"] == selected_trivia),
