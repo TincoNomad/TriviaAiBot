@@ -2,7 +2,7 @@ from typing import Tuple, List, Dict, Any, Optional
 from .api_client import TriviaAPIClient
 from .utils.logging_bot import game_logger
 from .utils.utils import get_theme_list, get_difficulty_list
-from api.django import TRIVIA_URL
+from api.django import TRIVIA_URL, QUESTION_URL
 
 POINTS_PER_CORRECT_ANSWER = 10
 
@@ -16,15 +16,14 @@ class TriviaGame:
         self.theme_choices: Dict[int, Dict[str, Any]] = {}
         
     async def initialize(self) -> None:
-        async with self.api_client as client:
-            try:
-                self.game_data = await client.get(TRIVIA_URL)
-                _, self.difficulty_choices = await get_difficulty_list()
-                _, self.theme_choices = await get_theme_list()
-                game_logger.info("Trivia game initialized successfully")
-            except Exception as e:
-                game_logger.error(f"Failed to initialize trivia game: {e}")
-                raise
+        try:
+            self.game_data = await self.api_client.get(TRIVIA_URL)
+            _, self.difficulty_choices = await get_difficulty_list()
+            _, self.theme_choices = await get_theme_list()
+            game_logger.info("Trivia game initialized successfully")
+        except Exception as e:
+            game_logger.error(f"Failed to initialize trivia game: {e}")
+            raise
     
     async def get_available_options(self) -> Tuple[str, str]:
         """Returns the formatted lists of themes and difficulties available"""
@@ -34,50 +33,54 @@ class TriviaGame:
     
     async def get_trivia(self, theme_id: str, difficulty_level: int) -> Tuple[str, int]:
         try:
-            async with self.api_client as client:
-                filtered_trivias = await client.get_filtered_trivias(theme_id, difficulty_level)
+            filtered_trivias = await self.api_client.get_filtered_trivias(theme_id, difficulty_level)
+            
+            if not filtered_trivias:
+                return "No hay trivias disponibles para esta combinación", 0
                 
-                if not filtered_trivias:
-                    return "No hay trivias disponibles para esta combinación", 0
-                    
-                trivia_list = "\n".join(
-                    f"{idx + 1}- {trivia['title']}" 
-                    for idx, trivia in enumerate(filtered_trivias)
-                )
+            trivia_list = "\n".join(
+                f"{idx + 1}- {trivia['title']}" 
+                for idx, trivia in enumerate(filtered_trivias)
+            )
+            
+            self.current_trivia = filtered_trivias
+            return trivia_list, len(filtered_trivias)
                 
-                self.current_trivia = filtered_trivias
-                return trivia_list, len(filtered_trivias)
-                
-        except ValueError as e:
-            if str(e) == "Unauthorized access":
-                game_logger.error("Unauthorized to access this trivias")
-                return "Unauthorized to access this trivias", -1
-            raise
         except Exception as e:
             game_logger.error(f"Error obteniendo trivias: {e}")
             raise
     
-    def get_question(self, selected_trivia: str, question_counter: int) -> Tuple[str, int, int]:
+    async def get_trivia_questions(self, trivia_id: str) -> List[Dict[str, Any]]:
+        """Gets questions for a specific trivia"""
         try:
-            trivia = next(
-                (trivia for trivia in self.current_trivia if trivia["title"] == selected_trivia),
-                None
-            )
-            
-            if not trivia or "questions" not in trivia:
-                game_logger.error(f"No questions found for trivia: {selected_trivia}")
-                return "Error getting the question", 0, 0
+            questions = await self.api_client.get(f"{QUESTION_URL}{trivia_id}/")
+            return questions
+        except Exception as e:
+            game_logger.error(f"Error getting trivia questions: {e}")
+            raise
+    
+    def get_question(self, questions: List[Dict], question_counter: int) -> Tuple[str, int, int, List[str]]:
+        try:
+            if not questions or question_counter >= len(questions):
+                game_logger.error(f"No questions found or invalid counter: {question_counter}")
+                return "Error getting the question", 0, 0, []
                 
-            question = trivia["questions"][question_counter]
+            question = questions[question_counter]
             correct_answer = next(
                 (i+1 for i, a in enumerate(question["answers"]) if a["is_correct"]),
                 0
             )
-            return question["question_title"], correct_answer, question["points"]
+            
+            answer_options = [
+                f"{i+1}. {answer['answer_title']}" 
+                for i, answer in enumerate(question["answers"])
+            ]
+            
+            return question["question_title"], correct_answer, question["points"], answer_options
             
         except Exception as e:
             game_logger.error(f"Error getting question: {e}")
-            return "Error processing question data", 0, 0
+            return "Error processing question data", 0, 0, []
             
     def get_link(self, selected_trivia: str) -> Optional[str]:
         """Gets the course URL for the selected trivia"""

@@ -574,3 +574,523 @@ TypeError: Direct assignment to the reverse side of a related set is prohibited.
 2024-11-09 06:09:27,469 - api.utils.logging_utils - INFO - Found 1 matching trivias
 2024-11-09 18:14:53,324 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
 2024-11-09 18:14:53,332 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 22:08:04,405 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 22:08:04,411 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 22:19:24,678 - api.utils.logging_utils - INFO - Random trivia questions retrieved successfully
+2024-11-09 22:24:40,729 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/views.py changed, reloading.
+2024-11-09 22:24:45,678 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/views.py changed, reloading.
+2024-11-09 22:25:05,938 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-09 22:25:39,038 - django.request - WARNING - Not Found: /api/random-question/866756a5-a27d-473e-982b-b59ce2d31f46
+2024-11-09 22:25:46,782 - django.request - WARNING - Not Found: /api/random-question/{866756a5-a27d-473e-982b-b59ce2d31f46}
+2024-11-09 22:27:11,599 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-09 22:27:17,539 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/views.py changed, reloading.
+2024-11-09 22:27:35,759 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: 866756a5-a27d-473e-982b-b59ce2d31f46
+2024-11-09 22:28:37,791 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/views.py changed, reloading.
+2024-11-09 22:28:45,074 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: 866756a5-a27d-473e-982b-b59ce2d31f46
+2024-11-09 22:34:30,723 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 22:34:30,729 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 22:49:13,835 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 22:49:25,932 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 22:50:06,369 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 22:50:06,374 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 22:53:48,675 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/views.py changed, reloading.
+2024-11-09 22:54:05,827 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-09 22:54:14,453 - django.request - WARNING - Not Found: /api/question/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 22:54:21,097 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-09 22:54:22,923 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/views.py changed, reloading.
+2024-11-09 22:54:29,645 - django.request - WARNING - Not Found: /api/question/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 22:54:46,311 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: 866756a5-a27d-473e-982b-b59ce2d31f46
+2024-11-09 23:01:53,032 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 23:01:53,038 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 23:09:10,895 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 23:09:10,901 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 23:10:39,299 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-09 23:10:41,319 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-09 23:21:50,714 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 23:21:50,721 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 23:28:45,716 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-09 23:28:51,687 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-09 23:30:10,636 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/dev.py changed, reloading.
+2024-11-09 23:30:38,946 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-09 23:30:38,952 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-09 23:30:40,799 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: 866756a5-a27d-473e-982b-b59ce2d31f46
+2024-11-09 23:30:50,009 - django.security.csrf - WARNING - Forbidden (CSRF cookie not set.): /api/score/
+2024-11-09 23:32:05,290 - django.request - WARNING - Not Found: /api/score/leaderboard/
+2024-11-10 00:01:17,307 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 00:01:24,298 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 00:18:43,798 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 02:05:18,928 - api.utils.logging_utils - INFO - Filtering trivias with theme=3acf39bf-d249-4aa1-87e0-dc974e9029be and difficulty=1
+2024-11-10 02:05:18,932 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-11-10 02:05:20,939 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: 866756a5-a27d-473e-982b-b59ce2d31f46
+2024-11-10 02:05:27,826 - django.security.csrf - WARNING - Forbidden (CSRF cookie not set.): /api/score/update_score/
+2024-11-10 02:06:56,252 - django.request - WARNING - Not Found: /api/score/leaderboard/
+2024-11-10 03:18:07,063 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:18:11,103 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-10 03:18:12,864 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-10 03:18:53,338 - django.request - WARNING - Unauthorized: /api/scores/leaderboard/
+2024-11-10 03:19:10,293 - api.utils.logging_utils - INFO - User logged in: prueba2#9201
+2024-11-10 03:19:21,955 - api.utils.logging_utils - INFO - Leaderboard retrieved successfully
+2024-11-10 03:19:21,957 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-10 03:19:32,418 - django.request - WARNING - Not Found: /api/score/leaderboard/
+2024-11-10 03:20:04,282 - api.utils.logging_utils - INFO - Leaderboard retrieved successfully
+2024-11-10 03:20:04,283 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-10 03:32:26,917 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:32:30,787 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:32:38,736 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:16,581 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:21,365 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:23,159 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:24,862 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:26,589 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:29,386 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:48,724 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:33:59,357 - api.utils.logging_utils - INFO - Leaderboard retrieved successfully
+2024-11-10 03:34:33,951 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 03:34:51,742 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-10 03:34:53,153 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-10 03:34:53,153 - django.request - WARNING - Not Found: /favicon.ico
+2024-11-10 03:34:56,484 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-10 03:34:56,516 - asyncio - ERROR - Error en MonitoringMiddleware: Python int too large to convert to SQLite INTEGER
+2024-11-10 03:36:13,725 - api.utils.logging_utils - INFO - Updating score for testUser: +10 points
+2024-11-10 03:36:13,731 - api.utils.logging_utils - ERROR - Error updating score: ['“AnonymousUser” is not a valid UUID.']
+2024-11-10 03:36:13,739 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T03:36:13.731794",
+  "function": "update_score",
+  "error_type": "ValidationError",
+  "error_message": "['\u201cAnonymousUser\u201d is not a valid UUID.']",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py\", line 2761, in to_python\n    return uuid.UUID(**{input_form: value})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/uuid.py\", line 175, in __init__\n    hex = hex.replace('urn:', '').replace('uuid:', '')\n          ^^^^^^^^^^^\nAttributeError: 'AnonymousUser' object has no attribute 'replace'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py\", line 67, in update_score\n    score, created = Score.objects.get_or_create(\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 948, in get_or_create\n    return self.get(**kwargs), False\n           ^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 635, in get\n    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 1476, in filter\n    return self._filter_or_exclude(False, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 1494, in _filter_or_exclude\n    clone._filter_or_exclude_inplace(negate, args, kwargs)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 1501, in _filter_or_exclude_inplace\n    self._query.add_q(Q(*args, **kwargs))\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1609, in add_q\n    clause, _ = self._add_q(q_object, self.used_aliases)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1641, in _add_q\n    child_clause, needed_inner = self.build_filter(\n                                 ^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1555, in build_filter\n    condition = self.build_lookup(lookups, col, value)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1385, in build_lookup\n    lookup = lookup_class(lhs, rhs)\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/lookups.py\", line 30, in __init__\n    self.rhs = self.get_prep_lookup()\n               ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_lookups.py\", line 156, in get_prep_lookup\n    self.rhs = target_field.get_prep_value(self.rhs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py\", line 2745, in get_prep_value\n    return self.to_python(value)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py\", line 2763, in to_python\n    raise exceptions.ValidationError(\ndjango.core.exceptions.ValidationError: ['\u201cAnonymousUser\u201d is not a valid UUID.']\n"
+}
+2024-11-10 03:36:13,776 - django.request - ERROR - Internal Server Error: /api/scores/update_score/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2761, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/uuid.py", line 175, in __init__
+    hex = hex.replace('urn:', '').replace('uuid:', '')
+          ^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py", line 67, in update_score
+    score, created = Score.objects.get_or_create(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_lookups.py", line 156, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2745, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2763, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“AnonymousUser” is not a valid UUID.']
+2024-11-10 03:37:36,859 - api.utils.logging_utils - INFO - Updating score for testUser: +10 points
+2024-11-10 03:37:36,859 - api.utils.logging_utils - ERROR - Error updating score: ['“AnonymousUser” is not a valid UUID.']
+2024-11-10 03:37:36,863 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T03:37:36.859976",
+  "function": "update_score",
+  "error_type": "ValidationError",
+  "error_message": "['\u201cAnonymousUser\u201d is not a valid UUID.']",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py\", line 2761, in to_python\n    return uuid.UUID(**{input_form: value})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/uuid.py\", line 175, in __init__\n    hex = hex.replace('urn:', '').replace('uuid:', '')\n          ^^^^^^^^^^^\nAttributeError: 'AnonymousUser' object has no attribute 'replace'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py\", line 67, in update_score\n    score, created = Score.objects.get_or_create(\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 948, in get_or_create\n    return self.get(**kwargs), False\n           ^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 635, in get\n    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 1476, in filter\n    return self._filter_or_exclude(False, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 1494, in _filter_or_exclude\n    clone._filter_or_exclude_inplace(negate, args, kwargs)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py\", line 1501, in _filter_or_exclude_inplace\n    self._query.add_q(Q(*args, **kwargs))\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1609, in add_q\n    clause, _ = self._add_q(q_object, self.used_aliases)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1641, in _add_q\n    child_clause, needed_inner = self.build_filter(\n                                 ^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1555, in build_filter\n    condition = self.build_lookup(lookups, col, value)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 1385, in build_lookup\n    lookup = lookup_class(lhs, rhs)\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/lookups.py\", line 30, in __init__\n    self.rhs = self.get_prep_lookup()\n               ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_lookups.py\", line 156, in get_prep_lookup\n    self.rhs = target_field.get_prep_value(self.rhs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py\", line 2745, in get_prep_value\n    return self.to_python(value)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py\", line 2763, in to_python\n    raise exceptions.ValidationError(\ndjango.core.exceptions.ValidationError: ['\u201cAnonymousUser\u201d is not a valid UUID.']\n"
+}
+2024-11-10 03:37:36,956 - django.request - ERROR - Internal Server Error: /api/scores/update_score/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2761, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/uuid.py", line 175, in __init__
+    hex = hex.replace('urn:', '').replace('uuid:', '')
+          ^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py", line 67, in update_score
+    score, created = Score.objects.get_or_create(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/related_lookups.py", line 156, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2745, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2763, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“AnonymousUser” is not a valid UUID.']
+2024-11-10 03:38:52,538 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/models.py changed, reloading.
+2024-11-10 03:39:04,661 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/models.py changed, reloading.
+2024-11-10 03:46:29,180 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/models.py changed, reloading.
+2024-11-10 03:46:48,487 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 03:47:19,063 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 03:47:27,866 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 03:47:59,239 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 03:48:07,158 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 03:48:13,098 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 03:50:57,706 - api.utils.logging_utils - INFO - New user registered: prueba3#9201
+2024-11-10 04:09:46,143 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/models.py changed, reloading.
+2024-11-10 04:09:59,191 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-10 04:10:41,230 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-10 04:11:08,658 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-10 04:17:55,856 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:18:23,277 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/models.py changed, reloading.
+2024-11-10 04:18:27,108 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:19:04,607 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/serializers.py changed, reloading.
+2024-11-10 04:19:07,352 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:19:30,587 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/serializers.py changed, reloading.
+2024-11-10 04:19:36,446 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:19:51,390 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:20:43,362 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:21:23,253 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:25:10,530 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 04:25:14,298 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/serializers.py changed, reloading.
+2024-11-10 04:28:16,096 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-10 11:30:17,523 - api.utils.logging_utils - INFO - New user registered: prueba#9201
+2024-11-10 11:30:24,688 - api.utils.logging_utils - INFO - User logged in: prueba#9201
+2024-11-10 11:30:32,946 - django.request - WARNING - Unauthorized: /api/trivias/
+2024-11-10 11:45:19,386 - django.request - WARNING - Bad Request: /api/register/
+2024-11-10 11:45:27,997 - api.utils.logging_utils - INFO - New user registered: prueba2#9201
+2024-11-10 11:46:56,439 - api.utils.logging_utils - INFO - User logged in: prueba#9201
+2024-11-10 11:49:57,946 - django.request - WARNING - Unauthorized: /api/trivias/
+2024-11-10 12:06:37,073 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/jwt_utils.py changed, reloading.
+2024-11-10 12:11:33,646 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-10 12:11:44,294 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-10 12:11:47,828 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-10 12:11:54,398 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-10 12:14:23,873 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-10 12:14:23,877 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T12:14:23.874650",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 26, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-10 12:14:23,883 - django.request - WARNING - Bad Request: /api/login/
+2024-11-10 12:28:38,994 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 12:28:44,446 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-10 12:28:44,450 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T12:28:44.447334",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 26, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-10 12:28:44,455 - django.request - WARNING - Bad Request: /api/login/
+2024-11-10 12:29:24,356 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-10 12:29:24,360 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T12:29:24.357800",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 26, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-10 12:29:24,366 - django.request - WARNING - Bad Request: /api/login/
+2024-11-10 12:32:14,877 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 12:32:16,439 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 12:32:55,191 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-10 12:32:55,193 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T12:32:55.191448",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 37, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-10 12:32:55,196 - django.request - WARNING - Bad Request: /api/login/
+2024-11-10 12:42:45,222 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-11-10 12:44:11,061 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 12:44:21,789 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 12:44:39,572 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 12:45:06,708 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-10 12:50:37,490 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 12:53:44,848 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-10 12:53:53,609 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 12:54:01,182 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-10 12:54:12,589 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-10 12:54:12,591 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-10T12:54:12.589849",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 37, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-10 12:54:12,594 - django.request - WARNING - Bad Request: /api/login/
+2024-11-12 16:41:58,144 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-12 16:41:58,147 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-12T16:41:58.145489",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 37, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-12 16:41:58,149 - django.request - WARNING - Bad Request: /api/login/
+2024-11-12 17:48:14,895 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-12 17:48:16,500 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-12 17:48:21,601 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-12 17:48:21,603 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-12T17:48:21.601373",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 37, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-12 17:48:21,606 - django.request - WARNING - Bad Request: /api/login/
+2024-11-12 17:51:45,779 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-12 17:52:25,043 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-12 17:52:55,136 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-12 17:53:13,282 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-12 17:55:37,967 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/serializers.py changed, reloading.
+2024-11-12 17:55:44,977 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-12 17:55:52,637 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py changed, reloading.
+2024-11-12 17:55:57,383 - api.utils.logging_utils - ERROR - Login error: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2024-11-12 17:55:57,389 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-12T17:55:57.383639",
+  "function": "post",
+  "error_type": "ValidationError",
+  "error_message": "{'password': [ErrorDetail(string='This field is required.', code='required')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/views.py\", line 37, in post\n    response = super().post(request, *args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework_simplejwt/views.py\", line 44, in post\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'password': [ErrorDetail(string='This field is required.', code='required')]}\n"
+}
+2024-11-12 17:55:57,400 - django.request - WARNING - Bad Request: /api/login/
+2024-11-12 17:57:11,601 - django.request - WARNING - Bad Request: /api/register/
+2024-11-12 17:57:28,674 - django.request - WARNING - Not Found: /favicon.ico
+2024-11-12 17:58:00,448 - django.request - WARNING - Unauthorized: /api/trivias/
+2024-11-13 03:54:16,016 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-13 03:55:29,640 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-13T03:55:29.638125",
+  "function": "create",
+  "error_type": "AssertionError",
+  "error_message": "The field 'questions' was declared on serializer TriviaSerializer, but has not been included in the 'fields' option.",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 223, in is_valid\n    self._validated_data = self.run_validation(self.initial_data)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 442, in run_validation\n    value = self.to_internal_value(data)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 495, in to_internal_value\n    for field in fields:\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 378, in _writable_fields\n    for field in self.fields.values():\n                 ^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/utils/functional.py\", line 47, in __get__\n    res = instance.__dict__[self.name] = self.func(instance)\n                                         ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 372, in fields\n    for key, value in self.get_fields().items():\n                      ^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 1079, in get_fields\n    field_names = self.get_field_names(declared_fields, info)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 1175, in get_field_names\n    assert field_name in fields, (\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError: The field 'questions' was declared on serializer TriviaSerializer, but has not been included in the 'fields' option.\n"
+}
+2024-11-13 03:55:29,718 - django.request - ERROR - Internal Server Error: /api/trivias/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 71, in create
+    return super().create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'questions' was declared on serializer TriviaSerializer, but has not been included in the 'fields' option.
+2024-11-13 04:04:22,189 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-13 04:04:51,850 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-13 04:05:07,617 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-11-13 04:05:16,797 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-11-13 04:05:16,804 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-11-13T04:05:16.799889",
+  "function": "create",
+  "error_type": "ValueError",
+  "error_message": "Cannot assign \"<django.contrib.auth.models.AnonymousUser object at 0x10410e2a0>\": \"Trivia.created_by\" must be a \"CustomUser\" instance.",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 71, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py\", line 19, in create\n    self.perform_create(serializer)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 42, in perform_create\n    serializer.save(created_by=self.request.user, is_public=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 208, in save\n    self.instance = self.create(validated_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py\", line 88, in create\n    trivia = Trivia.objects.create(theme=theme, **validated_data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/query.py\", line 677, in create\n    obj = self.model(**kwargs)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/base.py\", line 543, in __init__\n    _setattr(self, field.name, rel_obj)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py\", line 287, in __set__\n    raise ValueError(\nValueError: Cannot assign \"<django.contrib.auth.models.AnonymousUser object at 0x10410e2a0>\": \"Trivia.created_by\" must be a \"CustomUser\" instance.\n"
+}
+2024-11-13 04:05:16,825 - django.request - ERROR - Internal Server Error: /api/trivias/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 71, in create
+    return super().create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 42, in perform_create
+    serializer.save(created_by=self.request.user, is_public=True)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py", line 88, in create
+    trivia = Trivia.objects.create(theme=theme, **validated_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x10410e2a0>": "Trivia.created_by" must be a "CustomUser" instance.
+2024-11-13 04:22:05,958 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-11-13 04:23:37,461 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef

@@ -16,3 +16,9 @@
 2024-11-08 23:07:47,917 - bot_commands - ERROR - Error in trivia command: No trivias available
 2024-11-08 23:57:41,399 - bot_commands - ERROR - Error in trivia command: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
 2024-11-09 13:17:30,036 - bot_commands - ERROR - Error in score command: Session is closed
+2024-11-09 17:08:28,818 - bot_commands - ERROR - Error in score command: Session is closed
+2024-11-09 18:01:55,790 - bot_commands - ERROR - Error in trivia command: Session is closed
+2024-11-09 18:09:19,356 - bot_commands - ERROR - Error in trivia command: Session is closed
+2024-11-09 18:21:52,106 - bot_commands - ERROR - Error in trivia command: Session is closed
+2024-11-09 18:32:05,291 - bot_commands - ERROR - Error in score command: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-09 21:06:56,254 - bot_commands - ERROR - Error in score command: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'

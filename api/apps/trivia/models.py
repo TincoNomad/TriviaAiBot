@@ -19,15 +19,16 @@ class Trivia(models.Model):
     difficulty = models.IntegerField(_('Difficulty'), choices=DIFFICULTY_CHOICES)
     theme = models.ForeignKey('Theme', on_delete=models.CASCADE, related_name='trivias', verbose_name=_('Theme'))
     url = models.URLField(_('URL'), null=True, blank=True)
-    username = models.CharField(_('Username'), max_length=100, null=True, blank=True)
-    user = models.ForeignKey(
+    created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
-        on_delete=models.CASCADE,
-        related_name='trivias', 
-        verbose_name=_('User'),
+        on_delete=models.SET_NULL,  # Si se elimina el usuario, la trivia permanece
+        related_name='trivias_created', 
+        verbose_name=_('Created By'),
         null=True,
         blank=True
     )
+    created_at = models.DateTimeField(_('Created'), auto_now_add=True)
+    updated_at = models.DateTimeField(_('Updated'), auto_now=True)
 
     def clean(self):
         if self.questions.count() < 3:

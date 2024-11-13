@@ -49,3 +49,18 @@
 2024-11-09 13:14:41,242 - game_interactions - INFO - Trivia game initialized successfully
 2024-11-09 13:16:27,506 - game_interactions - ERROR - Error getting question: list index out of range
 2024-11-09 13:16:58,459 - game_interactions - ERROR - Error getting question: list index out of range
+2024-11-09 17:07:52,967 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 17:08:06,350 - game_interactions - ERROR - Error getting question: 'text'
+2024-11-09 17:08:07,248 - game_interactions - ERROR - Error getting question: 'text'
+2024-11-09 17:08:12,375 - game_interactions - ERROR - Error getting question: 'text'
+2024-11-09 17:08:17,390 - game_interactions - ERROR - Error getting question: list index out of range
+2024-11-09 17:08:23,226 - game_interactions - ERROR - Error getting question: list index out of range
+2024-11-09 18:01:42,386 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 18:01:55,789 - game_interactions - ERROR - Error getting trivia questions: Session is closed
+2024-11-09 18:07:13,863 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 18:08:55,125 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 18:09:19,356 - game_interactions - ERROR - Error getting trivia questions: Session is closed
+2024-11-09 18:21:37,621 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 18:21:52,106 - game_interactions - ERROR - Error getting trivia questions: Session is closed
+2024-11-09 18:30:31,200 - game_interactions - INFO - Trivia game initialized successfully
+2024-11-09 21:05:06,453 - game_interactions - INFO - Trivia game initialized successfully

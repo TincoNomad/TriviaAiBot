@@ -67,6 +67,32 @@ def auth_jwt(request):
         logger.warning("No valid Authorization header found")
     return None
 
+def get_user_id_by_username(username):
+    """
+    Find the user ID based on the username.
+    
+    Args:
+        username (str): The username to search for.
+    
+    Returns:
+        UUID: The user ID if found, None otherwise.
+    """
+    try:
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        
+        user = User.objects.filter(username=username).first()
+        if user:
+            logger.info(f"User found: {username} with ID: {user.id}")
+            return user.id
+        
+        logger.warning(f"No user found with username: {username}")
+        return None
+        
+    except Exception as e:
+        logger.exception(f"Error finding user by username: {str(e)}")
+        return None
+
 class IsAdminUser(permissions.BasePermission):
     def has_permission(self, request, view):
         # Allow GET requests for all authenticated users

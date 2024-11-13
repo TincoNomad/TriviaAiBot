@@ -1,11 +1,45 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.conf import settings
+import uuid
+
+class LeaderBoard(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    discord_channel = models.CharField(_('Discord Channel'), max_length=255, unique=True)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='leaderboards',
+        verbose_name=_('Created By')
+    )
+    created_at = models.DateTimeField(_('Created'), auto_now_add=True)
+
+    def __str__(self):
+        return f"Leaderboard - {self.discord_channel}"
+
+    class Meta:
+        verbose_name = _('LeaderBoard')
+        verbose_name_plural = _('LeaderBoards')
 
 class Score(models.Model):
     name = models.CharField(_('name'), max_length=255)
     points = models.IntegerField(_('points'))
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='scores', verbose_name=_('User'))
+    leaderboard = models.ForeignKey(
+        LeaderBoard,
+        on_delete=models.CASCADE,
+        related_name='scores',
+        verbose_name=_('LeaderBoard')
+    )
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE, 
+        related_name='scores', 
+        verbose_name=_('User')
+    )
+    created_at = models.DateTimeField(_('Created'), auto_now_add=True)
+
+    class Meta:
+        ordering = ['-points']
 
     def __str__(self):
         return f"{self.name} - {self.points}"

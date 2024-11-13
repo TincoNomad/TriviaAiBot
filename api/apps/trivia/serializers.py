@@ -2,6 +2,7 @@
 
 from rest_framework import serializers
 from .models import Question, Answer, Trivia, Theme
+from api.utils.jwt_utils import get_user_id_by_username
 
 class ThemeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,11 +29,25 @@ class TriviaSerializer(serializers.ModelSerializer):
     theme = serializers.CharField(max_length=100)
     questions = QuestionSerializer(many=True, required=True)
     can_make_private = serializers.SerializerMethodField()
+    username = serializers.CharField(write_only=True)
 
     class Meta:
         model = Trivia
-        fields = ['id', 'title', 'difficulty', 'theme', 'url', 'questions', 
-                 'is_public', 'can_make_private', 'username']
+        fields = [
+            'id', 'title', 'is_public', 'difficulty', 
+            'theme', 'url', 'created_by', 'created_at',
+            'username', 'questions', 'can_make_private'
+        ]
+        read_only_fields = ['created_by', 'created_at']
+
+    def validate(self, data):
+        username = data.get('username')
+        user_id = get_user_id_by_username(username)
+        if not user_id:
+            raise serializers.ValidationError({
+                "username": "No existe un usuario con este username"
+            })
+        return data
 
     def validate_questions(self, value):
         if len(value) < 3:
@@ -61,6 +76,7 @@ class TriviaSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         questions_data = validated_data.pop('questions', [])
         theme_data = validated_data.pop('theme', None)
+        username = validated_data.pop('username')
         theme = None
 
         if theme_data:

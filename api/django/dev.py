@@ -12,7 +12,7 @@ DIFFICULTY_URL = f"{TRIVIA_URL}difficulty/"
 FILTER_URL = f"{TRIVIA_URL}filter/"
 LEADERBOARD_URL = f"{BASE_URL}/api/score/leaderboard/"
 SCORE_URL = f"{BASE_URL}/api/score/"
-QUESTION_URL = f"{BASE_URL}/api/question/"
+QUESTION_URL = f"{BASE_URL}/api/questions/"
 
 # Development-specific settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

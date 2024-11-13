@@ -20,34 +20,36 @@ class TriviaCommands:
             await message.author.send("You already have an active game!")
             return
             
-        try:
-            # Inicializar el juego
-            await self.trivia_game.initialize()
-            
-            # Obtener opciones
-            theme_list, difficulty_list = await self.trivia_game.get_available_options()
-            
-            # Crear estado del jugador
-            self.game_state.active_games[user_id] = PlayerGame(
-                channel_id=channel_id,
-                current_score=0,
-                current_question=0
-            )
-            
-            # Flujo del juego
-            await self._handle_game_start(message)
-            await self._handle_theme_selection(message)
-            await self._handle_difficulty_selection(message)
-            await self._handle_trivia_selection(message)
-            await self._handle_questions(message)
-            
-        except TimeoutError:
-            await message.author.send("Timeout. Try again with $trivia")
-            self._cleanup_game(user_id)
-        except Exception as e:
-            command_logger.error(f"Error in trivia command: {e}")
-            await message.author.send("An error occurred. Please try again.")
-            self._cleanup_game(user_id)
+        async with self.trivia_game.api_client:
+            try:
+                # Inicializar el juego
+                await self.trivia_game.initialize()
+                
+                # Obtener opciones
+                theme_list, difficulty_list = await self.trivia_game.get_available_options()
+                
+                # Crear estado del jugador
+                self.game_state.active_games[user_id] = PlayerGame(
+                    channel_id=channel_id,
+                    current_score=0,
+                    current_question=0
+                )
+                
+                # Flujo del juego
+                await self._handle_game_start(message)
+                await self._handle_theme_selection(message)
+                await self._handle_difficulty_selection(message)
+                await self._handle_trivia_selection(message)
+                await self._handle_questions(message)
+                
+            except TimeoutError:
+                await message.author.send("Timeout. Try again with $trivia")
+                self._cleanup_game(user_id)
+            except Exception as e:
+                command_logger.error(f"Error in trivia command: {e}")
+                await message.author.send("An error occurred. Please try again.")
+                await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
+                self._cleanup_game(user_id)
 
     async def _handle_game_start(self, message: Message):
         await message.author.send("Welcome to the trivia game! Type 'go' to start.")
@@ -84,15 +86,32 @@ Game Time!!!
         if not game.selected_trivia:
             raise ValueError("No trivia selected")
         
+        # Obtener todas las preguntas al inicio
+        trivia_id = next(
+            trivia["id"] for trivia in self.trivia_game.current_trivia 
+            if trivia["title"] == game.selected_trivia
+        )
+        questions = await self.trivia_game.get_trivia_questions(trivia_id)
+        game.total_questions = len(questions)
+        
         while game.current_question < game.total_questions:
-            question, correct_answer, points = self.trivia_game.get_question(
-                game.selected_trivia,
+            question, correct_answer, points, options = self.trivia_game.get_question(
+                questions,
                 game.current_question
             )
             
             await message.channel.send("```orange\n------------ QUESTION -------------\n```")
             await message.channel.send(f"Question {game.current_question + 1}: Read the question, you have 30 seconds")
             await message.channel.send(question)
+            
+            # Mostrar las opciones de respuesta
+            if options:
+                options_text = "\n".join(options)
+                await message.channel.send(f"```\nOptions:\n{options_text}\n```")
+            else:
+                await message.channel.send("Error: No options available for this question")
+                game.current_question += 1
+                continue
             
             def check(m):
                 return (
@@ -160,6 +179,7 @@ End of the Game. Thanks for participating 💚
             
             # Guardar el theme_id
             self.game_state.user_selections[message.author.id]['theme'] = theme_id
+            await message.channel.send("2 ⏳")
 
             return theme_id
         except TimeoutError:
@@ -190,6 +210,7 @@ End of the Game. Thanks for participating 💚
                     user_selections = self.game_state.user_selections.get(message.author.id, {})
                     user_selections["difficulty"] = difficulty_level
                     self.game_state.user_selections[message.author.id] = user_selections
+                    await message.channel.send("1 ⏳...")
                     
                     return difficulty_level
                 except TimeoutError:
@@ -205,40 +226,47 @@ End of the Game. Thanks for participating 💚
 
     async def _handle_trivia_selection(self, message: Message):
         """Handles the trivia selection step"""
-        user_selections = self.game_state.user_selections.get(message.author.id, {})
-
-        theme_id = user_selections.get("theme")
-        difficulty_level = user_selections.get("difficulty")
-        
-        if not theme_id or not difficulty_level:
-            raise ValueError("Theme or difficulty not selected")
-        
         try:
-            trivia_list, count = await self.trivia_game.get_trivia(theme_id, difficulty_level)
+            user_selections = self.game_state.user_selections.get(message.author.id, {})
+
+            theme_id = user_selections.get("theme")
+            difficulty_level = user_selections.get("difficulty")
+            
+            if not theme_id or not difficulty_level:
+                raise ValueError("Theme or difficulty not selected")
+            
+            try:
+                trivia_list, count = await self.trivia_game.get_trivia(theme_id, difficulty_level)
+            except Exception as e:
+                command_logger.error(f"Error getting trivia: {e}")
+                await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
+                raise
+            
+            if count == 0:
+                await message.author.send("No trivias available for this combination")
+                raise ValueError("No trivias available")
+                
+            await message.author.send(f"Select a trivia by number:\n{trivia_list}")
+            
+            def check(m):
+                return (
+                    m.author == message.author and 
+                    m.content.isdigit() and 
+                    1 <= int(m.content) <= count
+                )
+            
+            try:
+                response = await self.client.wait_for('message', timeout=30.0, check=check)
+                selected_index = int(response.content) - 1
+                selected_trivia = self.trivia_game.current_trivia[selected_index]["title"]
+                self.game_state.active_games[message.author.id].selected_trivia = selected_trivia
+            except TimeoutError:
+                raise TimeoutError("Trivia selection timed out")
+
         except Exception as e:
             command_logger.error(f"Error getting trivia: {e}")
+            await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
             raise
-        
-        if count == 0:
-            await message.author.send("No trivias available for this combination")
-            raise ValueError("No trivias available")
-            
-        await message.author.send(f"Select a trivia by number:\n{trivia_list}")
-        
-        def check(m):
-            return (
-                m.author == message.author and 
-                m.content.isdigit() and 
-                1 <= int(m.content) <= count
-            )
-        
-        try:
-            response = await self.client.wait_for('message', timeout=30.0, check=check)
-            selected_index = int(response.content) - 1
-            selected_trivia = self.trivia_game.current_trivia[selected_index]["title"]
-            self.game_state.active_games[message.author.id].selected_trivia = selected_trivia
-        except TimeoutError:
-            raise TimeoutError("Trivia selection timed out")
 
     def _cleanup_game(self, user_id: int):
         """Cleans up the game state when it ends or there's an error"""

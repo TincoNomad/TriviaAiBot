@@ -10,7 +10,8 @@ from api.utils.logging_utils import log_exception, logger
 from rest_framework.decorators import action
 from rest_framework import status
 from rest_framework.response import Response
-from api.utils.jwt_utils import get_user_from_token
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class TriviaViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
@@ -21,8 +22,6 @@ class TriviaViewSet(viewsets.ModelViewSet):
     def get_permissions(self):
         if self.action in ['update', 'partial_update', 'destroy', 'toggle_visibility']:
             return [permissions.IsAuthenticated()]
-        if self.action == 'create':
-            return [IsAdminUser()]
         return []
     
     def get_queryset(self):
@@ -37,10 +36,14 @@ class TriviaViewSet(viewsets.ModelViewSet):
         )
     
     def perform_create(self, serializer):
-        if self.request.user.is_authenticated:
-            serializer.save(user=self.request.user)
+        # Get username from validated data
+        username = serializer.validated_data.get('username')
+        user = User.objects.get(username=username)
+        
+        if user:
+            serializer.save(created_by=user, is_public=True)
         else:
-            serializer.save(is_public=True)
+            raise ValidationError("User not found")
     
     @action(detail=True, methods=['post'])
     def toggle_visibility(self, request, pk=None):
@@ -92,27 +95,18 @@ class TriviaViewSet(viewsets.ModelViewSet):
         
         try:
             difficulty = int(difficulty)
-            # Base query para trivias públicas
             query = models.Q(theme=theme, difficulty=difficulty, is_public=True)
             
-            # Si hay token de autorización, intentar incluir trivias privadas
-            # auth_header = request.headers.get('Authorization')
-            # if auth_header and auth_header.startswith('Bearer '):
-            #     try:
-            #         token = auth_header.split(' ')[1]
-            #         user = get_user_from_token(token)
-            #         if user:
-            #             query |= models.Q(theme=theme, difficulty=difficulty, user=user)
-            #     except Exception as auth_error:
-            #         logger.warning(f"Error processing auth token: {auth_error}")
-            #         # Continuar solo con trivias públicas si hay error de autenticación
-            #         pass
+            filtered_trivias = Trivia.objects.filter(query).values('id', 'title')
+            logger.info(f"Found {len(filtered_trivias)} matching trivias")
             
-            filtered_trivias = Trivia.objects.filter(query)
-            logger.info(f"Found {filtered_trivias.count()} matching trivias")
+            # Formatear la respuesta como una lista de diccionarios
+            simplified_response = [
+                {"id": str(trivia['id']), "title": trivia['title']} 
+                for trivia in filtered_trivias
+            ]
             
-            serializer = self.get_serializer(filtered_trivias, many=True)
-            return Response(serializer.data)
+            return Response(simplified_response)
             
         except ValueError:
             return Response(

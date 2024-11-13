@@ -53,9 +53,14 @@ class TriviaAPIClient:
             bot_logger.error(f"Error getting filtered trivias: {e}")
             raise
             
-    async def get_leaderboard(self) -> List[Dict[str, Any]]:
+    async def get_leaderboard(self) -> Dict[str, Any]:
         """Gets the score table"""
-        return await self.get(LEADERBOARD_URL)
+        try:
+            data = await self.get(SCORE_URL + "leaderboard/")
+            return data
+        except Exception as e:
+            bot_logger.error(f"Error getting leaderboard: {e}")
+            raise
             
     async def update_score(self, name: str, points: int) -> bool:
         """Updates the score of a player"""
@@ -63,11 +68,14 @@ class TriviaAPIClient:
             bot_logger.info(f"Updating score for {name}: {points} points")
             if not self.session:
                 self.session = aiohttp.ClientSession()
-            async with self.session.post(SCORE_URL, json={
-                "name": name,
-                "points": points
-            }) as response:
-                return response.status == 201
+            async with self.session.post(
+                SCORE_URL + "update_score/", 
+                json={
+                    "name": name,
+                    "points": points
+                }
+            ) as response:
+                return response.status == 200
         except Exception as e:
             bot_logger.error(f"Error updating score: {e}")
-            return False
+            raise
