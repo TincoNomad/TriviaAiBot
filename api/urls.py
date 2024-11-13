@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from .apps.trivia.viewsets import TriviaViewSet, ThemeViewSet
 from .apps.trivia.views import GetQuestions
-from .apps.score.viewsets import ScoreViewSet, TriviaWinnerViewSet
+from .apps.score.viewsets import ScoreViewSet, TriviaWinnerViewSet, LeaderBoardViewSet
 from .apps.users.views import RegisterView, LoginView, LogoutView, CreateUserView, SetupCredentialsView
 from .apps.users.viewsets import UserViewSet
 
@@ -15,6 +15,7 @@ router.register(r'themes', ThemeViewSet, basename='theme')
 router.register(r'scores', ScoreViewSet, basename='score')
 router.register(r'winners', TriviaWinnerViewSet, basename='winner')
 router.register(r'users', UserViewSet, basename='user')
+router.register(r'leaderboards', LeaderBoardViewSet, basename='leaderboard')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

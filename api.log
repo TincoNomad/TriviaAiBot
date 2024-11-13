@@ -1094,3 +1094,9 @@ Traceback (most recent call last):
 ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x10410e2a0>": "Trivia.created_by" must be a "CustomUser" instance.
 2024-11-13 04:22:05,958 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
 2024-11-13 04:23:37,461 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-11-13 04:47:33,528 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-11-13 04:59:07,687 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-11-13 05:05:04,028 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/serializers.py changed, reloading.
+2024-11-13 05:05:18,188 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-13 05:05:27,882 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-11-13 05:08:01,735 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.

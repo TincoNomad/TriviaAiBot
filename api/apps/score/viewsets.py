@@ -5,6 +5,7 @@ from django.db.models import F
 from .models import Score, TriviaWinner, LeaderBoard
 from .serializers import ScoreSerializer, LeaderBoardSerializer, TriviaWinnerSerializer
 from api.utils.logging_utils import log_exception, logger
+from api.utils.jwt_utils import get_user_id_by_username
 
 class LeaderBoardViewSet(viewsets.ModelViewSet):
     serializer_class = LeaderBoardSerializer
@@ -13,7 +14,10 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
         return LeaderBoard.objects.all()
 
     def perform_create(self, serializer):
-        serializer.save(created_by=self.request.user)
+        username = serializer.validated_data.pop('username')
+        user_id = get_user_id_by_username(username)
+        if user_id:
+            serializer.save(created_by_id=user_id)
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -22,7 +26,8 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
             return Response({
                 'message': 'Leaderboard created successfully',
                 'id': serializer.instance.id,
-                'discord_channel': serializer.instance.discord_channel
+                'discord_channel': serializer.instance.discord_channel,
+                'created_by': serializer.instance.created_by.username
             }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
