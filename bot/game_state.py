@@ -8,6 +8,7 @@ class PlayerGame:
     current_question: int
     selected_trivia: Optional[str] = None
     total_questions: int = 5
+    leaderboard_id: Optional[str] = None
 
 class GameState:
     def __init__(self):

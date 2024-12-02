@@ -1,6 +1,6 @@
 import discord
 from env import env
-from .discord_client import MyClient
+from bot.discord_client import MyClient
 
 # Set up Discord bot connection
 intents = discord.Intents.default()

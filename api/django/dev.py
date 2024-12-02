@@ -10,7 +10,7 @@ TRIVIA_URL = f"{BASE_URL}/api/trivias/"
 THEME_URL = f"{BASE_URL}/api/themes/"
 DIFFICULTY_URL = f"{TRIVIA_URL}difficulty/"
 FILTER_URL = f"{TRIVIA_URL}filter/"
-LEADERBOARD_URL = f"{BASE_URL}/api/score/leaderboard/"
+LEADERBOARD_URL = f"{BASE_URL}/api/leaderboards/"
 SCORE_URL = f"{BASE_URL}/api/score/"
 QUESTION_URL = f"{BASE_URL}/api/questions/"
 

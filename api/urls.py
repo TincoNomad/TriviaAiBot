@@ -12,7 +12,7 @@ from .apps.users.viewsets import UserViewSet
 router = DefaultRouter()
 router.register(r'trivias', TriviaViewSet, basename='trivia')
 router.register(r'themes', ThemeViewSet, basename='theme')
-router.register(r'scores', ScoreViewSet, basename='score')
+router.register(r'score', ScoreViewSet, basename='score')
 router.register(r'winners', TriviaWinnerViewSet, basename='winner')
 router.register(r'users', UserViewSet, basename='user')
 router.register(r'leaderboards', LeaderBoardViewSet, basename='leaderboard')

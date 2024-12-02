@@ -81,79 +81,117 @@ Game Time!!!
     async def _handle_questions(self, message: Message):
         """Handles the questions flow"""
         game = self.game_state.active_games[message.author.id]
-        players = []
         
         if not game.selected_trivia:
             raise ValueError("No trivia selected")
         
-        # Obtener todas las preguntas al inicio
-        trivia_id = next(
-            trivia["id"] for trivia in self.trivia_game.current_trivia 
-            if trivia["title"] == game.selected_trivia
-        )
-        questions = await self.trivia_game.get_trivia_questions(trivia_id)
-        game.total_questions = len(questions)
-        
-        while game.current_question < game.total_questions:
-            question, correct_answer, points, options = self.trivia_game.get_question(
-                questions,
-                game.current_question
+        try:
+            # Obtener identificador del canal de manera segura
+            if isinstance(message.channel, (discord.TextChannel, discord.Thread)):
+                channel_identifier = message.channel.name
+            else:
+                # Para DMs y otros tipos de canales, usar una combinación de tipo y ID
+                channel_type = type(message.channel).__name__
+                channel_identifier = f"{channel_type}-{message.channel.id}"
+            
+            username = message.author.name
+            
+            leaderboard = await self.trivia_game.api_client.create_leaderboard(
+                discord_channel=channel_identifier,
+                username=username
             )
             
-            await message.channel.send("```orange\n------------ QUESTION -------------\n```")
-            await message.channel.send(f"Question {game.current_question + 1}: Read the question, you have 30 seconds")
-            await message.channel.send(question)
+            # Guardar el ID del leaderboard en el estado del juego
+            game.leaderboard_id = str(leaderboard['id'])
             
-            # Mostrar las opciones de respuesta
-            if options:
-                options_text = "\n".join(options)
-                await message.channel.send(f"```\nOptions:\n{options_text}\n```")
-            else:
-                await message.channel.send("Error: No options available for this question")
-                game.current_question += 1
-                continue
+            # Obtener preguntas
+            trivia_id = next(
+                trivia["id"] for trivia in self.trivia_game.current_trivia 
+                if trivia["title"] == game.selected_trivia
+            )
+            questions = await self.trivia_game.get_trivia_questions(trivia_id)
+            game.total_questions = len(questions)
             
-            def check(m):
-                return (
-                    m.content.isdigit() and 
-                    1 <= int(m.content) <= 4
+            while game.current_question < game.total_questions:
+                players = []
+                
+                question, correct_answer, points, options = self.trivia_game.get_question(
+                    questions,
+                    game.current_question
                 )
-            
-            try:
-                while True:
-                    response = await self.client.wait_for('message', timeout=30.0, check=check)
-                    player_info = f"{response.author.name}#{response.author.discriminator}"
-                    
-                    if player_info not in players:
-                        players.append(player_info)
-                        if int(response.content) == correct_answer:
-                            game.current_score += points
-                            await message.channel.send(f"Correct! {response.author.name}, you won {points} points 🥳\n\n")
-                            await self.trivia_game.api_client.update_score(response.author.name, points)
-                            break
-                        else:
-                            await message.channel.send(f"Uh no {response.author.name}, that's not the answer 😞\n\n")
-                            await self.trivia_game.api_client.update_score(response.author.name, 0)
-                    else:
-                        await message.channel.send(f"{response.author.name}, You can only try once 🙈")
+                
+                await message.channel.send("```orange\n------------ QUESTION -------------\n```")
+                await message.channel.send(f"Question {game.current_question + 1}: Read the question, you have 30 seconds")
+                await message.channel.send(question)
+                
+                # Mostrar las opciones de respuesta
+                if options:
+                    options_text = "\n".join(options)
+                    await message.channel.send(f"```\nOptions:\n{options_text}\n```")
+                else:
+                    await message.channel.send("Error: No options available for this question")
+                    game.current_question += 1
+                    continue
+                
+                def check(m):
+                    return (
+                        m.content.isdigit() and 
+                        1 <= int(m.content) <= 4
+                    )
+                
+                try:
+                    while True:
+                        response = await self.client.wait_for('message', timeout=30.0, check=check)
+                        player_info = f"{response.author.name}#{response.author.discriminator}"
                         
-                game.current_question += 1
-                    
-            except TimeoutError:
-                await message.channel.send("ohhh, it seems no one guessed this 😔. Well, let's move on to the next one 💪🏽")
-                game.current_question += 1
+                        if player_info not in players:
+                            players.append(player_info)
+                            if int(response.content) == correct_answer:
+                                game.current_score += points
+                                await message.channel.send(f"Correct! {response.author.name}, you won {points} points 🥳\n\n")
+                                await self.trivia_game.api_client.update_score(
+                                    name=response.author.name,
+                                    points=points,
+                                    discord_channel=channel_identifier
+                                )
+                                break
+                            else:
+                                await message.channel.send(f"Uh no {response.author.name}, that's not the answer 😞\n\n")
+                                await self.trivia_game.api_client.update_score(
+                                    name=response.author.name,
+                                    points=0,
+                                    discord_channel=channel_identifier
+                                )
+                        else:
+                            await message.channel.send(f"{response.author.name}, You can only try once 🙈")
+                            
+                    game.current_question += 1
+                        
+                except TimeoutError:
+                    await message.channel.send("ohhh, it seems no one guessed this 😔. Well, let's move on to the next one 💪🏽")
+                    game.current_question += 1
 
-        # End game
-        await message.channel.send("""
+            # End game
+            await message.channel.send("""
 End of the Game. Thanks for participating 💚
                                    """)
-        await message.channel.send("It was very fun 💃🕺 Congratulations!\nFinal Score: ")
-        await self.handle_score(message)
-        
-        url = self.trivia_game.get_link(game.selected_trivia)
-        if url:
-            await message.channel.send(f"The theme of this game was the course {url}")
+            await message.channel.send("It was very fun 💃🕺 Congratulations!\nFinal Score: ")
+            await self.handle_score(message)
             
+            url = self.trivia_game.get_link(game.selected_trivia)
+            if url:
+                await message.channel.send(f"The theme of this game was the course {url}")
+                
+            leaderboard = await self.trivia_game.api_client.get_leaderboard(
+                discord_channel=channel_identifier
+            )
+            await message.channel.send("🏆 Final Leaderboard:")
+            await message.channel.send(f"```\n{leaderboard}\n```")
+        except Exception as e:
+            command_logger.error(f"Error getting trivia: {e}")
+            await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
+            raise
+
     async def _handle_theme_selection(self, message: Message):
         """Handles the theme selection step"""
         theme_list, _ = await self.trivia_game.get_available_options()
@@ -278,7 +316,16 @@ End of the Game. Thanks for participating 💚
     async def handle_score(self, message: Message):
         """Handles the $score command"""
         try:
-            leaderboard = await self.trivia_game.api_client.get_leaderboard()
+            # Obtener identificador del canal
+            if isinstance(message.channel, (discord.TextChannel, discord.Thread)):
+                channel_identifier = message.channel.name
+            else:
+                channel_type = type(message.channel).__name__
+                channel_identifier = f"{channel_type}-{message.channel.id}"
+            
+            leaderboard = await self.trivia_game.api_client.get_leaderboard(
+                discord_channel=channel_identifier
+            )
             await message.channel.send(f"Score table:\n{leaderboard}")
         except Exception as e:
             command_logger.error(f"Error in score command: {e}")
