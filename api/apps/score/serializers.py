@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import Score, LeaderBoard, TriviaWinner
-from api.utils.jwt_utils import get_user_id_by_username
 from django.contrib.auth import get_user_model
 import logging
 from typing import Dict, Any
@@ -64,8 +63,7 @@ class LeaderBoardSerializer(serializers.ModelSerializer):
 class ScoreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Score
-        fields = ['id', 'name', 'points', 'leaderboard', 'user', 'created_at']
-        read_only_fields = ['user', 'created_at']
+        fields = ['name', 'points']
 
 class TriviaWinnerSerializer(serializers.ModelSerializer):
     class Meta:

@@ -30,12 +30,6 @@ class Score(models.Model):
         related_name='scores',
         verbose_name=_('LeaderBoard')
     )
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        on_delete=models.CASCADE, 
-        related_name='scores', 
-        verbose_name=_('User')
-    )
     created_at = models.DateTimeField(_('Created'), auto_now_add=True)
 
     class Meta:

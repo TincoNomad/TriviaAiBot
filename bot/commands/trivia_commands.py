@@ -65,8 +65,7 @@ class TriviaCommands:
 -------------------
 Game Time!!!
 -------------------
-```                                  
-                                       """)
+```                                   """)
 
             await message.channel.send(
             "The game will start soon. There will be 5 questions about a Platzi course. "
@@ -96,13 +95,11 @@ Game Time!!!
             
             username = message.author.name
             
-            leaderboard = await self.trivia_game.api_client.create_leaderboard(
+            # Crear el leaderboard al inicio del juego
+            await self.trivia_game.api_client.create_leaderboard(
                 discord_channel=channel_identifier,
                 username=username
             )
-            
-            # Guardar el ID del leaderboard en el estado del juego
-            game.leaderboard_id = str(leaderboard['id'])
             
             # Obtener preguntas
             trivia_id = next(
@@ -175,18 +172,32 @@ Game Time!!!
             await message.channel.send("""
 End of the Game. Thanks for participating 💚
                                    """)
-            await message.channel.send("It was very fun 💃🕺 Congratulations!\nFinal Score: ")
-            await self.handle_score(message)
+            await message.channel.send("It was very fun 💃🕺 Congratulations!")
             
+            try:
+                # Obtener y mostrar el leaderboard final
+                leaderboard = await self.trivia_game.api_client.get_leaderboard(
+                    discord_channel=channel_identifier
+                )
+                
+                # Formatear el leaderboard de manera más legible
+                if isinstance(leaderboard, list):
+                    formatted_scores = "\n".join(
+                        f"{player['name']}: {player['points']} points" 
+                        for player in leaderboard
+                    )
+                    await message.channel.send("🏆 Final Leaderboard:")
+                    await message.channel.send(f"```\n{formatted_scores}\n```")
+                else:
+                    await message.channel.send("No scores available in the leaderboard!")
+            except Exception as e:
+                command_logger.error(f"Error getting leaderboard: {e}")
+                await message.channel.send("Error getting the leaderboard. Please try again later.")
+            
+            # Mostrar el link del curso si está disponible
             url = self.trivia_game.get_link(game.selected_trivia)
             if url:
                 await message.channel.send(f"The theme of this game was the course {url}")
-                
-            leaderboard = await self.trivia_game.api_client.get_leaderboard(
-                discord_channel=channel_identifier
-            )
-            await message.channel.send("🏆 Final Leaderboard:")
-            await message.channel.send(f"```\n{leaderboard}\n```")
         except Exception as e:
             command_logger.error(f"Error getting trivia: {e}")
             await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
@@ -314,19 +325,28 @@ End of the Game. Thanks for participating 💚
             del self.game_state.user_selections[user_id]
 
     async def handle_score(self, message: Message):
-        """Handles the $score command"""
         try:
-            # Obtener identificador del canal
-            if isinstance(message.channel, (discord.TextChannel, discord.Thread)):
-                channel_identifier = message.channel.name
-            else:
-                channel_type = type(message.channel).__name__
-                channel_identifier = f"{channel_type}-{message.channel.id}"
+            channel_identifier = message.channel.name if isinstance(
+                message.channel, (discord.TextChannel, discord.Thread)
+            ) else f"{type(message.channel).__name__}-{message.channel.id}"
             
             leaderboard = await self.trivia_game.api_client.get_leaderboard(
                 discord_channel=channel_identifier
             )
-            await message.channel.send(f"Score table:\n{leaderboard}")
+            
+            if not leaderboard:
+                await message.channel.send("No scores yet!")
+                return
+            
+            # Asumiendo que leaderboard es un diccionario con una lista de scores
+            scores = leaderboard.get('scores', [])  # Ajusta esto según la estructura real de tu respuesta
+            
+            formatted_scores = "\n".join(
+                f"{score['name']}, {score['points']} points" 
+                for score in scores
+            )
+            
+            await message.channel.send(f"🏆 Leaderboard:\n```\n{formatted_scores}\n```")
         except Exception as e:
             command_logger.error(f"Error in score command: {e}")
             await message.channel.send("Error getting the score table.")

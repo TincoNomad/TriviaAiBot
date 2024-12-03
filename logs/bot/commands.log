@@ -35,3 +35,14 @@
 2024-12-01 21:14:11,808 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
 2024-12-01 21:14:12,028 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
 2024-12-02 08:54:43,301 - bot_commands - ERROR - Error in score command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-03 06:22:17,465 - bot_commands - ERROR - Error in score command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,697 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,909 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:27:45,488 - bot_commands - ERROR - Error getting trivia: Datos inválidos para actualizar score
+2024-12-03 06:27:45,685 - bot_commands - ERROR - Error in trivia command: Datos inválidos para actualizar score
+2024-12-03 11:30:27,981 - bot_commands - ERROR - Error in score command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:29,983 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:30,452 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 13:18:12,184 - bot_commands - ERROR - Error getting trivia: Datos inválidos para actualizar score
+2024-12-03 13:18:12,420 - bot_commands - ERROR - Error in trivia command: Datos inválidos para actualizar score
+2024-12-03 17:39:44,613 - bot_commands - ERROR - Error in score command: 'list' object has no attribute 'get'

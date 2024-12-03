@@ -124,38 +124,62 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
             raise
 
 @method_decorator(csrf_exempt, name='dispatch')
-class ScoreViewSet(viewsets.GenericViewSet):
+class ScoreViewSet(viewsets.ModelViewSet):
     serializer_class = ScoreSerializer
 
-    @log_exception
     def get_queryset(self):
         return Score.objects.all()
 
-    @log_exception
-    @action(detail=False, methods=['post'])
-    def update_score(self, request):
-        """
-        POST /api/score/update_score/
-        Requiere X-CSRFToken header
-        """
+    def create(self, request):
         try:
             data = request.data
             name = data.get('name')
             points = data.get('points')
             discord_channel = data.get('discord_channel')
             
-            # Tu lógica de actualización aquí
+            # Validate data
+            if not all([name, points, discord_channel]):
+                return Response({
+                    "error": "Missing required fields"
+                }, status=status.HTTP_400_BAD_REQUEST)
+                
+            # Get the leaderboard
+            try:
+                leaderboard = LeaderBoard.objects.get(discord_channel=discord_channel)
+            except LeaderBoard.DoesNotExist:
+                return Response({
+                    "error": "No leaderboard exists for this channel"
+                }, status=status.HTTP_404_NOT_FOUND)
+                
+            # Buscar si el usuario ya tiene un score en este leaderboard
+            existing_score = Score.objects.filter(
+                name=name,
+                leaderboard=leaderboard
+            ).first()
+            
+            if existing_score:
+                # Actualizar puntos existentes
+                existing_score.points += int(points)
+                existing_score.save()
+                score = existing_score
+            else:
+                # Crear nuevo score
+                score = Score.objects.create(
+                    name=name,
+                    points=int(points),
+                    leaderboard=leaderboard
+                )
             
             return Response({
                 "message": "Score updated successfully",
                 "data": {
-                    "name": name,
-                    "points": points,
-                    "channel": discord_channel
+                    "name": score.name,
+                    "points": score.points
                 }
             }, status=status.HTTP_200_OK)
-            
+                
         except Exception as e:
+            logger.error(f"Error updating score: {str(e)}")
             return Response({
                 "error": str(e)
             }, status=status.HTTP_400_BAD_REQUEST)

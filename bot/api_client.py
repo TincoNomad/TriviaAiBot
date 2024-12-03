@@ -20,13 +20,14 @@ class TriviaAPIClient:
         if self.session:
             await self.session.close()
             
-    async def get(self, url: str) -> Any:
+    async def get(self, url: str, data: Optional[Dict[str, Any]] = None) -> Any:
         """Método genérico para hacer peticiones GET"""
         if not self.session:
             self.session = aiohttp.ClientSession()
             
         try:
-            async with self.session.get(url) as response:
+            # Si hay datos, los enviamos como JSON en el body
+            async with self.session.get(url, json=data) as response:
                 response.raise_for_status()
                 return await response.json()
         except Exception as e:
@@ -93,8 +94,14 @@ class TriviaAPIClient:
             
     async def get_leaderboard(self, discord_channel: str) -> Dict[str, Any]:
         """Gets the score table for a specific discord channel"""
-        data = {"discord_channel": discord_channel}
-        return await self.post(LEADERBOARD_URL, data)
+        try:
+            data = {
+                "discord_channel": discord_channel
+            }
+            return await self.get(LEADERBOARD_URL, data)
+        except Exception as e:
+            bot_logger.error(f"Error getting leaderboard: {e}")
+            raise
             
     async def update_score(self, name: str, points: int, discord_channel: str):
         """Actualiza el score usando el token CSRF
@@ -125,7 +132,7 @@ class TriviaAPIClient:
                 "discord_channel": discord_channel
             }
             
-            response = await self.post(f"{SCORE_URL}update_score/", data)
+            response = await self.post(f"{SCORE_URL}", data)
             
             # Verificar la respuesta exitosa
             if "message" in response and response["message"] == "Score updated successfully":

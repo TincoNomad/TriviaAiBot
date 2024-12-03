@@ -1349,3 +1349,50 @@ TypeError: LeaderBoard() got unexpected keyword arguments: 'username'
 2024-12-02 22:04:36,034 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
 2024-12-02 22:04:36,037 - api.utils.logging_utils - INFO - Found 1 matching trivias
 2024-12-02 22:04:37,829 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 10:19:29,221 - django.request - WARNING - Not Found: /favicon.ico
+2024-12-03 10:26:28,873 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 10:26:31,133 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 10:47:44,214 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/models.py changed, reloading.
+2024-12-03 10:47:45,813 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/models.py changed, reloading.
+2024-12-03 10:48:05,790 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 10:48:07,251 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 10:49:06,622 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 10:49:09,126 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 10:50:44,798 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/serializers.py changed, reloading.
+2024-12-03 10:55:18,723 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/admin.py changed, reloading.
+2024-12-03 10:56:21,639 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/admin.py changed, reloading.
+2024-12-03 10:58:51,749 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/serializers.py changed, reloading.
+2024-12-03 11:01:35,090 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 11:03:41,465 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 11:21:58,136 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 11:21:58,137 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 11:21:59,878 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 11:22:17,452 - django.request - WARNING - Bad Request: /api/leaderboards/
+2024-12-03 11:22:17,693 - django.request - WARNING - Bad Request: /api/leaderboards/
+2024-12-03 11:27:10,621 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 11:27:10,623 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 11:27:13,223 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 11:27:45,488 - django.request - WARNING - Bad Request: /api/score/
+2024-12-03 11:29:04,102 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 11:29:04,103 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 11:29:05,620 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 15:58:31,595 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 15:58:31,596 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 15:58:33,556 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 16:29:20,253 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-03 16:29:28,770 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-12-03 16:30:06,719 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 16:30:06,722 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 16:30:08,374 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 16:30:27,939 - django.request - WARNING - Bad Request: /api/leaderboards/
+2024-12-03 16:30:29,980 - django.request - WARNING - Bad Request: /api/leaderboards/
+2024-12-03 18:17:54,514 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 18:17:54,517 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 18:17:56,918 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 18:18:12,183 - django.request - WARNING - Bad Request: /api/score/
+2024-12-03 22:39:22,805 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 22:39:22,811 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 22:39:24,454 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 22:49:01,033 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 22:49:01,035 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 22:49:03,985 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
