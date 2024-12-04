@@ -1,0 +1,805 @@
+2024-11-07 23:18:31,064 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 00:20:18,837 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 00:24:26,207 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias
+2024-11-08 00:24:26,211 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias: Cannot connect to host 127.0.0.1:8000 ssl:default [Connect call failed ('127.0.0.1', 8000)]
+2024-11-08 00:33:36,277 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 00:33:53,855 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias
+2024-11-08 00:33:53,887 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 00:54:18,811 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 01:27:15,406 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 01:44:55,233 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:43:30,971 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:43:58,442 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/trivias
+2024-11-08 12:43:58,473 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/trivias: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:44:24,064 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:44:33,773 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/trivias
+2024-11-08 12:44:33,795 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/trivias: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:48:38,696 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/trivias
+2024-11-08 12:48:38,741 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/trivias: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:49:58,113 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:50:45,446 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias
+2024-11-08 12:50:45,467 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:52:26,912 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:52:41,497 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias
+2024-11-08 12:52:41,529 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:56:52,667 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:57:04,742 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 12:57:04,765 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias//difficulty/
+2024-11-08 12:57:04,780 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias//difficulty/: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias//difficulty/'
+2024-11-08 12:58:46,888 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 12:58:57,745 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 12:58:57,777 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 12:58:57,783 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/difficulty/: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/difficulty/'
+2024-11-08 13:54:15,002 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 13:54:31,383 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 13:54:31,405 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 13:54:31,410 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 13:54:31,416 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 13:54:31,421 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:37:26,735 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 14:37:36,995 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 14:37:37,020 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:37:37,026 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:37:37,059 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:37:37,112 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:37:42,412 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:37:42,423 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:37:46,550 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:37:46,560 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:49:35,191 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 14:50:24,484 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 14:50:24,495 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:50:24,499 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:50:24,504 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:50:24,508 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:50:29,975 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:50:29,989 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 14:50:32,972 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 14:50:32,983 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 15:29:14,392 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 15:33:40,659 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 15:33:40,687 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 15:33:40,697 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 15:33:40,724 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 15:33:40,763 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 15:33:48,144 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 15:33:48,158 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 15:33:51,112 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 15:33:51,119 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:20:39,342 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 16:23:11,610 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 16:23:11,634 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:23:11,639 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:23:11,645 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:23:11,650 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:23:15,661 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:23:15,673 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:23:17,417 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:23:17,432 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:28:14,410 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 16:28:32,338 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 16:28:32,348 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:28:32,353 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:28:32,359 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:28:32,364 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:28:38,894 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:28:38,907 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:28:41,630 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 16:28:41,638 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 16:47:09,780 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 17:08:25,906 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 20:44:58,501 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 20:47:01,556 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 20:47:01,577 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 20:47:01,582 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 20:47:01,588 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 20:47:01,593 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 20:47:07,558 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 20:47:07,566 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 20:47:10,260 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 20:47:10,273 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:18:35,396 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 21:18:55,325 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 21:18:55,343 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:18:55,349 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:18:55,389 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:18:55,395 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:18:59,909 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:18:59,920 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:19:02,467 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:19:02,481 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:22:54,022 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 21:23:01,480 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 21:23:01,495 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:23:01,502 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:23:01,550 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:23:01,556 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:23:07,319 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:23:07,333 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:23:09,977 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:23:09,991 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:27:38,842 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 21:29:00,597 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 21:29:00,611 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:29:00,618 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:29:00,624 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:29:00,628 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:29:09,215 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:29:09,229 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:29:11,818 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:29:11,825 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:34:55,191 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 21:35:04,141 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 21:35:04,153 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:35:04,157 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:35:04,163 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:35:04,168 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:35:08,727 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:35:08,742 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:35:11,382 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:35:11,392 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:48:35,272 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 21:49:13,412 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 21:49:13,430 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:49:13,435 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:49:13,440 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:49:13,445 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:49:16,983 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:49:16,996 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:49:22,573 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:49:22,584 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:54:25,186 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 21:54:30,911 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 21:54:30,924 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:54:30,935 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:54:30,941 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:54:30,946 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:54:34,953 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:54:34,965 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 21:54:36,612 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 21:54:36,621 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:18:46,756 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 22:19:03,544 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 22:19:03,564 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:19:03,570 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:19:03,576 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:19:03,581 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:19:07,525 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:19:07,538 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:19:10,277 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:19:10,294 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:32:01,468 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 22:32:18,016 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 22:32:18,029 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:32:18,033 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:32:18,039 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:32:18,044 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:32:21,863 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:32:21,875 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:32:23,810 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:32:23,823 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:40:18,458 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 22:41:19,770 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 22:41:19,783 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:41:19,788 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:41:19,794 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:41:19,798 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:41:23,946 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:41:23,958 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:41:26,071 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:41:26,084 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:47:26,025 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 22:48:20,036 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 22:48:41,938 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 22:48:41,951 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:48:41,955 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:48:41,960 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:48:41,966 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:48:46,447 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:48:46,459 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 22:48:49,068 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 22:48:49,081 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:01:44,145 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 23:01:50,246 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 23:01:50,264 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:01:50,269 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:01:50,275 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:01:50,280 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:01:54,684 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:01:54,697 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:01:56,025 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:01:56,039 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:01:57,706 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:01:57,707 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:01:57,708 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: Session is closed
+2024-11-08 23:01:57,708 - discord_bot - ERROR - Error getting filtered trivias: Session is closed
+2024-11-08 23:07:12,544 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 23:07:37,860 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 23:07:37,890 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:07:37,896 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:07:37,902 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:07:37,907 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:07:41,958 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:07:41,971 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:07:45,029 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:07:45,042 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:07:47,678 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:07:47,678 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:07:47,689 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:07:47,689 - discord_bot - ERROR - Error getting filtered trivias: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:50:18,746 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 23:50:26,525 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 23:50:26,602 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:50:26,606 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:50:26,680 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:50:26,698 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:50:33,379 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:50:33,392 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:50:35,289 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:50:35,302 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:50:37,092 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:50:37,092 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:50:37,104 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:50:37,105 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-08 23:52:54,242 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 23:53:00,815 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 23:53:00,836 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:00,842 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:00,849 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:00,854 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:03,651 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:03,665 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:05,733 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:05,746 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:07,216 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:53:07,216 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:53:07,224 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:53:07,224 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-08 23:53:43,755 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 23:53:52,869 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 23:53:52,884 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:52,888 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:52,894 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:52,898 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:57,096 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:57,115 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:53:58,510 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:53:58,522 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:54:00,367 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:54:00,368 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:54:00,380 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:54:00,381 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-08 23:57:19,519 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-08 23:57:31,414 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-08 23:57:31,432 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:57:31,436 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:57:31,442 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:57:31,448 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:57:38,592 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:57:38,605 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:57:39,891 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-08 23:57:39,904 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-08 23:57:41,384 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:57:41,385 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-08 23:57:41,399 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:57:41,399 - discord_bot - ERROR - Error getting filtered trivias: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-08 23:59:51,442 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 00:00:04,167 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 00:00:10,527 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 00:00:10,551 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:00:10,557 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:00:10,564 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:00:10,570 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:00:14,838 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:00:14,852 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:00:17,617 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:00:17,631 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:00:20,307 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:00:20,308 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:00:20,322 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-09 00:00:20,322 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-09 00:01:11,340 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 00:01:21,114 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 00:01:21,145 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:01:21,152 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:01:21,158 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:01:21,163 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:01:25,106 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:01:25,120 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:01:27,294 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:01:27,300 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:01:29,801 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:01:29,802 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:01:29,813 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-09 00:01:29,813 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-09 00:05:00,505 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 00:05:32,259 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 00:05:32,306 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:05:32,313 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:05:32,318 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:05:32,323 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:05:36,237 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:05:36,251 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:05:38,166 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:05:38,179 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:05:40,934 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:05:40,935 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:05:40,947 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-09 00:05:40,947 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-09 00:14:54,240 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 00:15:02,869 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 00:15:02,891 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:15:02,896 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:15:02,903 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:15:02,907 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:15:08,630 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:15:08,638 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:15:09,927 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:15:09,941 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:15:11,499 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:15:11,500 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:15:11,513 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-09 00:15:11,513 - discord_bot - ERROR - Unauthorized access to filtered trivias endpoint
+2024-11-09 00:17:35,358 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 00:17:42,109 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 00:17:42,129 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:17:42,134 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:17:42,140 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:17:42,145 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:17:47,423 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:17:47,431 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:17:49,909 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 00:17:49,920 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 00:17:51,459 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 00:17:51,460 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 01:08:50,766 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 01:09:06,069 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 01:09:06,091 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 01:09:06,097 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 01:09:06,103 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 01:09:06,108 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 01:09:11,564 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 01:09:11,578 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 01:09:25,264 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 01:09:25,280 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 01:09:27,457 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 01:09:27,459 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 13:14:30,340 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 13:14:41,180 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 13:14:41,232 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 13:14:41,236 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 13:14:41,242 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 13:14:41,247 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 13:14:47,821 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 13:14:47,831 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 13:14:49,949 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 13:14:49,958 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 13:14:53,318 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 13:14:53,320 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 13:17:30,035 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/score/leaderboard/
+2024-11-09 13:17:30,036 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/score/leaderboard/: Session is closed
+2024-11-09 14:36:03,221 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 14:46:46,697 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 15:54:57,673 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 17:07:06,798 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 17:07:52,928 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 17:07:52,954 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 17:07:52,959 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 17:07:52,968 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 17:07:52,974 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 17:07:59,833 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 17:07:59,849 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 17:08:02,253 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 17:08:02,263 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 17:08:04,402 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 17:08:04,403 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 17:08:28,816 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/score/leaderboard/
+2024-11-09 17:08:28,817 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/score/leaderboard/: Session is closed
+2024-11-09 17:59:43,709 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 18:01:42,365 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 18:01:42,376 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:01:42,380 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:01:42,386 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:01:42,391 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:01:47,329 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:01:47,344 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:01:49,098 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:01:49,112 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:01:53,027 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:01:53,028 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:01:55,788 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/question/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 18:01:55,789 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/question/866756a5-a27d-473e-982b-b59ce2d31f46/: Session is closed
+2024-11-09 18:06:58,405 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 18:07:13,839 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 18:07:13,853 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:07:13,857 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:07:13,863 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:07:13,868 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:08:55,093 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 18:08:55,106 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:08:55,110 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:08:55,133 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:08:55,165 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:09:04,970 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:09:04,980 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:09:08,325 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:09:08,344 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:09:10,890 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:09:10,890 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:09:19,354 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/question/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 18:09:19,356 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/question/866756a5-a27d-473e-982b-b59ce2d31f46/: Session is closed
+2024-11-09 18:21:27,824 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 18:21:37,576 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 18:21:37,611 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:21:37,616 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:21:37,621 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:21:37,626 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:21:47,305 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:21:47,323 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:21:49,074 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:21:49,086 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:21:50,710 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:21:50,711 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:21:52,105 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/question/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 18:21:52,106 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/question/866756a5-a27d-473e-982b-b59ce2d31f46/: Session is closed
+2024-11-09 18:30:27,536 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 18:30:31,172 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 18:30:31,190 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:30:31,195 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:30:31,200 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:30:31,205 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:30:35,354 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:30:35,368 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:30:37,178 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 18:30:37,220 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 18:30:38,942 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:30:38,943 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 18:30:40,784 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/questions/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 18:30:49,997 - discord_bot - INFO - Updating score for tinconomad: 10 points
+2024-11-09 18:32:05,272 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/score/leaderboard/
+2024-11-09 18:32:05,291 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/score/leaderboard/: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-09 21:04:56,722 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 21:05:06,402 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-09 21:05:06,443 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 21:05:06,448 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 21:05:06,454 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 21:05:06,458 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 21:05:14,508 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 21:05:14,520 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 21:05:16,877 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-09 21:05:16,890 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-09 21:05:18,925 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 21:05:18,926 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1
+2024-11-09 21:05:20,924 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/questions/866756a5-a27d-473e-982b-b59ce2d31f46/
+2024-11-09 21:05:27,814 - discord_bot - INFO - Updating score for tinconomad: 10 points
+2024-11-09 21:06:56,236 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/score/leaderboard/
+2024-11-09 21:06:56,254 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/score/leaderboard/: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-09 21:06:56,254 - discord_bot - ERROR - Error getting leaderboard: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-09 22:30:37,037 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-09 23:02:39,691 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 00:26:55,532 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 01:00:32,591 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 01:38:10,082 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 01:38:52,405 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 02:39:40,984 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 03:40:30,205 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 04:34:30,998 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 04:40:08,904 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 05:34:16,721 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 05:41:23,859 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 06:17:55,473 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 06:20:55,015 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 06:26:53,608 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 07:59:32,875 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 08:06:27,934 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 08:22:29,733 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 08:39:48,168 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 09:56:09,084 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 10:13:30,148 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 10:35:12,030 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 11:17:19,082 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 12:32:48,635 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 13:24:25,955 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 14:40:19,673 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 14:56:36,193 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 16:12:18,819 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 17:31:01,957 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 17:48:50,450 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 18:57:42,734 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 19:15:37,765 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 20:31:37,757 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 20:52:13,834 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 21:58:39,084 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 22:14:50,412 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 22:31:53,537 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 22:50:07,336 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-10 23:59:53,723 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 00:18:21,520 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 00:44:42,699 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 02:00:20,535 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 03:18:36,245 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 03:42:02,856 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 04:58:08,720 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 05:17:31,078 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 06:28:58,039 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 09:50:35,964 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 10:07:58,119 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 10:47:23,254 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 13:15:26,052 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 13:25:51,430 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 13:32:27,132 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 14:15:28,415 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-11 14:22:33,184 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 16:28:16,243 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 16:45:09,678 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 17:33:46,753 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 17:49:54,848 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 18:06:05,052 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 18:22:19,460 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 18:29:37,441 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 18:42:06,195 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 19:04:32,988 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-21 19:04:33,743 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-21 19:04:34,107 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-21 19:04:34,399 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-21 19:04:34,562 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-21 19:04:49,483 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-21 19:04:49,985 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-21 19:04:53,991 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-21 19:04:54,280 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-21 19:04:57,642 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-21 19:04:57,643 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-21 19:05:04,027 - discord_bot - ERROR - Error creando leaderboard: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-21 19:48:20,036 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 19:53:06,372 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 20:09:13,304 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 21:03:21,802 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-21 21:19:30,468 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-22 10:32:17,141 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-22 10:40:10,389 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-22 10:40:10,519 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-22 10:40:10,569 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-22 10:40:10,869 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-22 10:40:11,072 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-22 10:40:24,472 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-22 10:40:24,527 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-22 10:40:35,349 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-22 10:40:35,415 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-22 10:40:38,914 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-22 10:40:38,914 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-22 10:40:46,207 - discord_bot - ERROR - Error creando leaderboard: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-22 10:58:07,575 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-28 19:15:18,892 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-28 19:15:48,808 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-28 19:15:48,822 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:15:48,825 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:15:48,830 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:15:48,834 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:15:55,449 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:15:55,459 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:15:58,908 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:15:58,918 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:16:02,160 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-28 19:16:02,161 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-28 19:16:04,523 - discord_bot - ERROR - Error creando leaderboard: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-28 19:31:50,182 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-28 19:32:10,228 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-28 19:32:10,241 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:32:10,244 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:32:10,248 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:32:10,251 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:32:16,456 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:32:16,460 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:32:18,907 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:32:18,924 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:32:20,796 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-28 19:32:20,797 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-28 19:32:25,909 - discord_bot - ERROR - Error creando leaderboard: api/leaderboards/
+2024-11-28 19:34:34,180 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-28 19:39:36,024 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-28 19:39:36,095 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:39:36,098 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:39:36,103 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:39:36,111 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:39:43,877 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:39:43,913 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:39:45,428 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-28 19:39:45,438 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-28 19:39:47,024 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-28 19:39:47,025 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-28 19:39:48,408 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/questions/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8/
+2024-11-28 19:39:54,617 - discord_bot - INFO - Updating score for tinconomad: 10 points in channel 🤖•ai-trivia
+2024-11-28 19:41:09,199 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/leaderboards/
+2024-11-28 20:33:44,043 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-28 21:18:04,740 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-30 00:31:27,401 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-11-30 00:32:24,163 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-11-30 00:32:24,175 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-30 00:32:24,179 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-30 00:32:24,186 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-30 00:32:24,190 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-30 00:32:34,080 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-30 00:32:34,096 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-30 00:32:37,191 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-11-30 00:32:37,197 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-11-30 00:32:38,565 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-30 00:32:38,566 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-11-30 00:32:39,828 - discord_bot - ERROR - Error creando leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-01 21:13:15,911 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-01 21:13:56,350 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-12-01 21:13:56,356 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-01 21:13:56,359 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-01 21:13:56,367 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-01 21:13:56,390 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-01 21:14:04,457 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-01 21:14:04,503 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-01 21:14:07,658 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-01 21:14:07,688 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-01 21:14:09,786 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-01 21:14:09,786 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-01 21:14:11,807 - discord_bot - ERROR - Error creando leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-02 08:49:06,647 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 08:53:09,058 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-12-02 08:53:09,065 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 08:53:09,069 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 08:53:09,072 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 08:53:09,075 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 08:53:15,306 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 08:53:15,312 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 08:53:17,954 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 08:53:17,964 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 08:53:19,775 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 08:53:19,775 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 08:53:28,406 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/questions/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8/
+2024-12-02 08:53:32,987 - discord_bot - INFO - Updating score for tinconomad: 10 points in channel 🤖•ai-trivia
+2024-12-02 08:54:43,290 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/leaderboards/
+2024-12-02 08:54:43,301 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/leaderboards/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-02 08:54:43,301 - discord_bot - ERROR - Error getting leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-02 09:32:34,801 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 10:02:43,059 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 10:09:17,198 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-12-02 10:09:17,237 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 10:09:17,274 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 10:09:17,291 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 10:09:17,296 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 10:09:23,082 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 10:09:23,090 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 10:09:25,941 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 10:09:25,990 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 10:09:28,643 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 10:09:28,643 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 10:09:31,770 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/questions/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8/
+2024-12-02 10:09:37,465 - discord_bot - INFO - Updating score for tinconomad: 10 points in channel 🤖•ai-trivia
+2024-12-02 12:00:14,114 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 12:50:01,226 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 14:45:49,461 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 14:55:58,435 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 14:57:50,723 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/
+2024-12-02 14:57:50,740 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 14:57:50,752 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 14:57:50,800 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 14:57:50,807 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 14:57:56,145 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 14:57:56,193 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 14:57:58,438 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/themes/
+2024-12-02 14:57:58,458 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/difficulty/
+2024-12-02 14:58:00,166 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 14:58:00,175 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 14:58:03,178 - discord_bot - INFO - GET request to: http://127.0.0.1:8000/api/questions/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8/
+2024-12-02 14:58:08,900 - discord_bot - INFO - Updating score for tinconomad: 10 points in channel 🤖•ai-trivia
+2024-12-02 14:58:13,461 - discord_bot - INFO - Updating score for tinconomad: 10 points in channel 🤖•ai-trivia
+2024-12-02 14:58:19,715 - discord_bot - INFO - Updating score for tinconomad: 10 points in channel 🤖•ai-trivia
+2024-12-02 15:09:30,201 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 15:48:09,940 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 15:57:05,322 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 17:03:11,377 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-02 17:04:36,031 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-02 17:04:43,612 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-02 17:04:47,624 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-02 17:04:55,647 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:21:13,905 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 06:21:58,134 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 06:22:04,924 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:22:08,876 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:22:16,650 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:22:17,464 - discord_bot - ERROR - Error en petición GET a http://127.0.0.1:8000/api/leaderboards/?discord_channel=🤖•ai-trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,465 - discord_bot - ERROR - Error getting leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,697 - discord_bot - ERROR - Error en petición GET a http://127.0.0.1:8000/api/leaderboards/?discord_channel=🤖•ai-trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,697 - discord_bot - ERROR - Error getting leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:26:50,671 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 06:27:10,619 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 06:27:21,762 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:27:34,736 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:27:45,488 - discord_bot - ERROR - Error en petición POST a http://127.0.0.1:8000/api/score/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/score/'
+2024-12-03 06:27:45,488 - discord_bot - ERROR - Datos inválidos enviados al servidor: {'name': 'tinconomad', 'points': 0, 'discord_channel': '🤖•ai-trivia'}
+2024-12-03 06:28:31,072 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 06:29:04,099 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 06:29:09,191 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:29:15,815 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:29:19,944 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 06:36:08,033 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 06:40:51,863 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 07:34:31,039 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 08:28:39,214 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 08:42:27,497 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 09:00:16,070 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 09:43:26,909 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 10:04:23,115 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 10:13:48,824 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 10:17:40,502 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 10:57:53,452 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 10:58:31,593 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 10:58:39,054 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 10:58:46,251 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 10:58:51,661 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 11:29:39,098 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 11:30:06,716 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 11:30:16,247 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 11:30:21,038 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 11:30:27,275 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 11:30:27,981 - discord_bot - ERROR - Error en petición GET a http://127.0.0.1:8000/api/leaderboards/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:27,981 - discord_bot - ERROR - Error getting leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:29,983 - discord_bot - ERROR - Error en petición GET a http://127.0.0.1:8000/api/leaderboards/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:29,983 - discord_bot - ERROR - Error getting leaderboard: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:51:50,157 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 13:17:38,055 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 13:17:54,511 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 13:18:01,423 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 13:18:05,420 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 13:18:12,184 - discord_bot - ERROR - Error en petición POST a http://127.0.0.1:8000/api/score/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/score/'
+2024-12-03 13:18:12,184 - discord_bot - ERROR - Datos inválidos enviados al servidor: {'name': 'tinconomad', 'points': 0, 'discord_channel': '🤖•ai-trivia'}
+2024-12-03 13:18:38,159 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 14:12:02,526 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 14:15:41,229 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 14:35:36,302 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 15:29:38,117 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 15:33:17,089 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 16:27:27,340 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 16:34:17,617 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 17:25:54,137 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 17:27:14,791 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 17:39:22,776 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 17:39:31,788 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:39:36,314 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:39:39,592 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:48:36,095 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 17:49:01,029 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 17:49:08,167 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:49:11,597 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:49:18,566 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:55:16,249 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 17:56:07,160 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 17:56:14,781 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:56:20,116 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:56:34,159 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:01:57,559 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:02:14,857 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:05:12,163 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:05:18,419 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:05:31,521 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:05:36,554 - discord_bot - ERROR - Error en petición POST a http://127.0.0.1:8000/api/score/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/score/'
+2024-12-03 18:05:36,554 - discord_bot - ERROR - Datos inválidos enviados al servidor: {'name': 'tinconomad', 'points': 0, 'discord_channel': '🤖•ai-trivia'}
+2024-12-03 18:15:22,433 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:15:44,727 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:15:52,775 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:16:05,870 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:16:31,474 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:16:48,974 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:17:48,856 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:18:32,976 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:20:03,090 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:20:12,005 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:20:26,563 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:21:10,982 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:21:17,320 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:22:01,654 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-04 11:16:57,369 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 11:35:55,080 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 11:36:34,894 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-04 11:36:46,858 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-04 11:36:53,183 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-04 11:39:29,070 - discord_bot - ERROR - Error en petición GET a http://127.0.0.1:8000/api/leaderboards/: Session is closed
+2024-12-04 11:39:29,071 - discord_bot - ERROR - Error getting leaderboard: Session is closed
+2024-12-04 11:39:44,503 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 12:00:29,565 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 12:05:15,716 - discord_bot - INFO - We are connected as TriviaBotAI#7106

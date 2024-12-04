@@ -1,0 +1,51 @@
+2024-11-07 23:20:39,224 - bot_commands - ERROR - Error in trivia command: 'TriviaAPIClient' object has no attribute 'get'
+2024-11-08 00:20:01,508 - bot_commands - ERROR - Error in trivia command: 'TriviaAPIClient' object has no attribute 'get'
+2024-11-08 00:24:26,212 - bot_commands - ERROR - Error in trivia command: Cannot connect to host 127.0.0.1:8000 ssl:default [Connect call failed ('127.0.0.1', 8000)]
+2024-11-08 00:33:53,888 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:43:58,474 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:44:33,795 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:48:38,741 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/trivias'
+2024-11-08 12:50:45,468 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:52:41,530 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias'
+2024-11-08 12:57:04,782 - bot_commands - ERROR - Error in trivia command: 404, message='Not Found', url='http://127.0.0.1:8000/api/trivias//difficulty/'
+2024-11-08 12:58:57,784 - bot_commands - ERROR - Error in trivia command: 401, message='Unauthorized', url='http://127.0.0.1:8000/api/trivias/difficulty/'
+2024-11-08 13:54:32,053 - bot_commands - ERROR - Error in trivia command: 'NoneType' object has no attribute 'wait_for'
+2024-11-08 22:19:12,074 - bot_commands - ERROR - Error in trivia command: 'TriviaGame' object has no attribute 'difficulty_choice'
+2024-11-08 22:32:25,261 - bot_commands - ERROR - Error in trivia command: 'TriviaGame' object has no attribute 'difficulty_choice'
+2024-11-08 23:01:57,946 - bot_commands - ERROR - Error in trivia command: No trivias available
+2024-11-08 23:07:47,917 - bot_commands - ERROR - Error in trivia command: No trivias available
+2024-11-08 23:57:41,399 - bot_commands - ERROR - Error in trivia command: 403, message='Forbidden', url='http://127.0.0.1:8000/api/trivias/filter/?theme=3acf39bf-d249-4aa1-87e0-dc974e9029be&difficulty=1'
+2024-11-09 13:17:30,036 - bot_commands - ERROR - Error in score command: Session is closed
+2024-11-09 17:08:28,818 - bot_commands - ERROR - Error in score command: Session is closed
+2024-11-09 18:01:55,790 - bot_commands - ERROR - Error in trivia command: Session is closed
+2024-11-09 18:09:19,356 - bot_commands - ERROR - Error in trivia command: Session is closed
+2024-11-09 18:21:52,106 - bot_commands - ERROR - Error in trivia command: Session is closed
+2024-11-09 18:32:05,291 - bot_commands - ERROR - Error in score command: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-09 21:06:56,254 - bot_commands - ERROR - Error in score command: 404, message='Not Found', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-21 19:05:04,028 - bot_commands - ERROR - Error getting trivia: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-21 19:05:04,319 - bot_commands - ERROR - Error in trivia command: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-22 10:40:46,207 - bot_commands - ERROR - Error getting trivia: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-22 10:40:46,531 - bot_commands - ERROR - Error in trivia command: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-28 19:16:04,523 - bot_commands - ERROR - Error getting trivia: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-28 19:16:04,741 - bot_commands - ERROR - Error in trivia command: 403, message='Forbidden', url='http://127.0.0.1:8000/api/score/leaderboard/'
+2024-11-28 19:32:25,910 - bot_commands - ERROR - Error getting trivia: api/leaderboards/
+2024-11-28 19:32:26,207 - bot_commands - ERROR - Error in trivia command: api/leaderboards/
+2024-11-30 00:32:39,828 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-11-30 00:32:40,059 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-01 21:14:11,808 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-01 21:14:12,028 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-02 08:54:43,301 - bot_commands - ERROR - Error in score command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-03 06:22:17,465 - bot_commands - ERROR - Error in score command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,697 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:22:17,909 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 06:27:45,488 - bot_commands - ERROR - Error getting trivia: Datos inválidos para actualizar score
+2024-12-03 06:27:45,685 - bot_commands - ERROR - Error in trivia command: Datos inválidos para actualizar score
+2024-12-03 11:30:27,981 - bot_commands - ERROR - Error in score command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:29,983 - bot_commands - ERROR - Error getting trivia: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 11:30:30,452 - bot_commands - ERROR - Error in trivia command: 400, message='Bad Request', url='http://127.0.0.1:8000/api/leaderboards/?discord_channel=%F0%9F%A4%96%E2%80%A2ai-trivia'
+2024-12-03 13:18:12,184 - bot_commands - ERROR - Error getting trivia: Datos inválidos para actualizar score
+2024-12-03 13:18:12,420 - bot_commands - ERROR - Error in trivia command: Datos inválidos para actualizar score
+2024-12-03 17:39:44,613 - bot_commands - ERROR - Error in score command: 'list' object has no attribute 'get'
+2024-12-03 18:05:36,555 - bot_commands - ERROR - Error getting trivia: Datos inválidos para actualizar score
+2024-12-03 18:05:36,820 - bot_commands - ERROR - Error in trivia command: Datos inválidos para actualizar score
+2024-12-04 11:39:29,071 - bot_commands - ERROR - Error in score command: Session is closed
