@@ -20,18 +20,18 @@ class LeaderBoardSerializer(serializers.ModelSerializer):
         
         logger.info(f"Attempting to create/get leaderboard for channel: {discord_channel}, username: {username}")
         
-        # Verificar si ya existe el leaderboard
+        # Check if leaderboard already exists
         existing_leaderboard = LeaderBoard.objects.filter(discord_channel=discord_channel).first()
         if existing_leaderboard:
             logger.info(f"Found existing leaderboard for channel: {discord_channel}")
             return existing_leaderboard
             
         try:
-            # Buscar el usuario
+            # Find user
             user = User.objects.get(username=username)
             logger.info(f"Found user: {username}")
             
-            # Crear nuevo leaderboard
+            # Create new leaderboard
             leaderboard = LeaderBoard.objects.create(
                 discord_channel=discord_channel,
                 created_by=user
@@ -40,9 +40,9 @@ class LeaderBoardSerializer(serializers.ModelSerializer):
             return leaderboard
             
         except User.DoesNotExist:
-            logger.error(f"User not found: {username}")
+            logger.error(f"No user exists with this username: {username}")
             raise serializers.ValidationError({
-                "username": "No existe un usuario con este username"
+                "username": "No user exists with this username"
             })
         except Exception as e:
             logger.error(f"Error creating leaderboard: {str(e)}")
@@ -52,12 +52,12 @@ class LeaderBoardSerializer(serializers.ModelSerializer):
 
     def validate_discord_channel(self, value: str) -> str:
         if not value:
-            raise serializers.ValidationError("El canal de Discord es requerido")
+            raise serializers.ValidationError("Discord channel is required")
         return value
 
     def validate_username(self, value: str) -> str:
         if not value:
-            raise serializers.ValidationError("El username es requerido")
+            raise serializers.ValidationError("Username is required")
         return value
 
 class ScoreSerializer(serializers.ModelSerializer):

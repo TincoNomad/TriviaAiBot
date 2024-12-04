@@ -36,7 +36,7 @@ class TriviaGame:
             filtered_trivias = await self.api_client.get_filtered_trivias(theme_id, difficulty_level)
             
             if not filtered_trivias:
-                return "No hay trivias disponibles para esta combinación", 0
+                return "No trivias available for this combination", 0
                 
             trivia_list = "\n".join(
                 f"{idx + 1}- {trivia['title']}" 
@@ -47,7 +47,7 @@ class TriviaGame:
             return trivia_list, len(filtered_trivias)
                 
         except Exception as e:
-            game_logger.error(f"Error obteniendo trivias: {e}")
+            game_logger.error(f"Error obtaining trivias: {e}")
             raise
     
     async def get_trivia_questions(self, trivia_id: str) -> List[Dict[str, Any]]:

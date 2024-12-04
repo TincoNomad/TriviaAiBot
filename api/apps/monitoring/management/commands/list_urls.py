@@ -3,18 +3,18 @@ from django.urls import get_resolver
 from django.urls.resolvers import URLPattern, URLResolver
 
 class Command(BaseCommand):
-    help = 'Muestra todas las URLs disponibles en la aplicación, separadas por tipo'
+    help = 'Shows all available URLs in the application, separated by type'
 
     def handle(self, *args, **options):
-        self.stdout.write(self.style.SUCCESS('\nURLs de Django por defecto:'))
+        self.stdout.write(self.style.SUCCESS('\nDefault Django URLs:'))
         self.stdout.write(self.style.SUCCESS('------------------------'))
         self._list_urls(get_resolver(), url_type='django')
         
-        self.stdout.write(self.style.SUCCESS('\nURLs de API (formato JSON):'))
+        self.stdout.write(self.style.SUCCESS('\nAPI URLs (JSON format):'))
         self.stdout.write(self.style.SUCCESS('------------------------'))
         self._list_urls(get_resolver(), url_type='api')
         
-        self.stdout.write(self.style.SUCCESS('\nURLs con formato específico:'))
+        self.stdout.write(self.style.SUCCESS('\nURLs with specific format:'))
         self.stdout.write(self.style.SUCCESS('---------------------------'))
         self._list_urls(get_resolver(), url_type='format')
 
@@ -27,11 +27,11 @@ class Command(BaseCommand):
             elif isinstance(pattern, URLPattern):
                 url = prefix + str(pattern.pattern)
                 
-                # Evitar URLs duplicadas
+                # Avoid duplicate URLs
                 if url in seen_urls:
                     continue
                 
-                # Clasificar URLs por tipo
+                # Classify URLs by type
                 is_django = url.startswith('admin/') or url.startswith('static/')
                 is_format = '.(?P<format>' in url
                 is_api = url.startswith('api/') and not is_format
@@ -43,7 +43,7 @@ class Command(BaseCommand):
                 )
                 
                 if should_display:
-                    name = f"[nombre='{pattern.name}']" if pattern.name else ''
+                    name = f"[name='{pattern.name}']"
                     view_name = pattern.callback.__name__ if hasattr(pattern.callback, '__name__') else str(pattern.callback)
                     
                     formatted_url = self.style.HTTP_SUCCESS(f"  {url}")

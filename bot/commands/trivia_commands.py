@@ -22,20 +22,20 @@ class TriviaCommands:
             
         async with self.trivia_game.api_client:
             try:
-                # Inicializar el juego
+                # Initialize game
                 await self.trivia_game.initialize()
                 
-                # Obtener opciones
+                # Get options
                 theme_list, difficulty_list = await self.trivia_game.get_available_options()
                 
-                # Crear estado del jugador
+                # Create player state
                 self.game_state.active_games[user_id] = PlayerGame(
                     channel_id=channel_id,
                     current_score=0,
                     current_question=0
                 )
                 
-                # Flujo del juego
+                # Game flow
                 await self._handle_game_start(message)
                 await self._handle_theme_selection(message)
                 await self._handle_difficulty_selection(message)
@@ -48,10 +48,10 @@ class TriviaCommands:
             except Exception as e:
                 command_logger.error(f"Error in trivia command: {e}")
                 await message.author.send("An error occurred. Please try again.")
-                await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
+                await message.channel.send("🙈 Oops, something went wrong. Let's try again later!")
                 self._cleanup_game(user_id)
             finally:
-                # Asegurar que el estado del juego se limpie en todos los casos
+                # Ensure game state is cleaned up in all cases
                 self._cleanup_game(user_id)
 
     async def _handle_game_start(self, message: Message):
@@ -71,7 +71,7 @@ Game Time!!!
 ```                                   """)
 
             await message.channel.send(
-            "The game will start soon. There will be a minimun of 3 questions about a deferent subjects. "
+            "The game will start soon. There will be a minimum of 3 questions about different subjects. "
             "You'll have 30 seconds to read each question and 10 seconds to respond after the warning. "
             "Each correct answer is worth 10 points!"
             "Ready!? 🚀"
@@ -89,23 +89,23 @@ Game Time!!!
             raise ValueError("No trivia selected")
         
         try:
-            # Obtener identificador del canal de manera segura
+            # Get channel identifier safely
             if isinstance(message.channel, (discord.TextChannel, discord.Thread)):
                 channel_identifier = message.channel.name
             else:
-                # Para DMs y otros tipos de canales, usar una combinación de tipo y ID
+                # For DMs and other channel types, use a combination of type and ID
                 channel_type = type(message.channel).__name__
                 channel_identifier = f"{channel_type}-{message.channel.id}"
             
             username = message.author.name
             
-            # Crear el leaderboard al inicio del juego
+            # Create leaderboard at the beginning of the game
             await self.trivia_game.api_client.create_leaderboard(
                 discord_channel=channel_identifier,
                 username=username
             )
             
-            # Obtener preguntas
+            # Get questions
             trivia_id = next(
                 trivia["id"] for trivia in self.trivia_game.current_trivia 
                 if trivia["title"] == game.selected_trivia
@@ -125,7 +125,7 @@ Game Time!!!
                 await message.channel.send(f"Question {game.current_question + 1}: Read the question, you have 30 seconds")
                 await message.channel.send(f"```\n{question}\n```")
                 
-                # Mostrar las opciones de respuesta
+                # Show answer options
                 if options:
                     options_text = "\n".join(options)
                     await message.channel.send(f"```\nOptions:\n{options_text}\n```")
@@ -174,12 +174,12 @@ Game Time!!!
             await message.channel.send("It was very fun 💃🕺 Congratulations!")
             
             try:
-                # Obtener y mostrar el leaderboard final
+                # Get and show the final leaderboard
                 leaderboard = await self.trivia_game.api_client.get_leaderboard(
                     discord_channel=channel_identifier
                 )
                 
-                # Formatear el leaderboard de manera más legible
+                # Format the leaderboard in a more readable way
                 if isinstance(leaderboard, list):
                     formatted_scores = "\n".join(
                         f"{player['name']}: {player['points']} points" 
@@ -193,13 +193,13 @@ Game Time!!!
                 command_logger.error(f"Error getting leaderboard: {e}")
                 await message.channel.send("Error getting the leaderboard. Please try again later.")
             
-            # Mostrar el link del curso si está disponible
+            # Show course link if available
             url = self.trivia_game.get_link(game.selected_trivia)
             if url:
                 await message.channel.send(f"The theme of this game was the course {url}")
         except Exception as e:
             command_logger.error(f"Error getting trivia: {e}")
-            await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
+            await message.channel.send("🙈 Oops, something went wrong. Let's try again later!")
             raise
 
     async def _handle_theme_selection(self, message: Message):
@@ -221,11 +221,11 @@ Game Time!!!
             theme_data = self.trivia_game.theme_choices[theme_num]
             theme_id = theme_data['id']
             
-            # Inicializar o actualizar las selecciones del usuario
+            # Initialize or update user selections
             if message.author.id not in self.game_state.user_selections:
                 self.game_state.user_selections[message.author.id] = {}
             
-            # Guardar el theme_id
+            # Save theme_id
             self.game_state.user_selections[message.author.id]['theme'] = theme_id
             await message.channel.send("2 ⏳")
 
@@ -251,10 +251,10 @@ Game Time!!!
                     response = await self.client.wait_for('message', timeout=30.0, check=check)
                     difficulty_level = int(response.content)
                     
-                    # Guardar la dificultad seleccionada
+                    # Save the selected difficulty
                     await self.trivia_game.set_difficulty(difficulty_level)
                     
-                    # Actualizar el estado del juego
+                    # Update game state
                     user_selections = self.game_state.user_selections.get(message.author.id, {})
                     user_selections["difficulty"] = difficulty_level
                     self.game_state.user_selections[message.author.id] = user_selections
@@ -287,7 +287,7 @@ Game Time!!!
                 trivia_list, count = await self.trivia_game.get_trivia(theme_id, difficulty_level)
             except Exception as e:
                 command_logger.error(f"Error getting trivia: {e}")
-                await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
+                await message.channel.send("🙈 Oops, something went wrong. Let's try again later!")
                 raise
             
             if count == 0:
@@ -337,8 +337,8 @@ Game Time!!!
                 await message.channel.send("No scores yet!")
                 return
             
-            # Asumiendo que leaderboard es un diccionario con una lista de scores
-            scores = leaderboard.get('scores', [])  # Ajusta esto según la estructura real de tu respuesta
+            # Assuming leaderboard is a dictionary with a list of scores
+            scores = leaderboard.get('scores', [])  # Adjust this according to the actual structure of your response
             
             formatted_scores = "\n".join(
                 f"{score['name']}, {score['points']} points" 

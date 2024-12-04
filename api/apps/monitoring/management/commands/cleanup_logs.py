@@ -14,10 +14,10 @@ class Command(BaseCommand):
         request_threshold = timezone.now() - timedelta(days=request_retention)
         error_threshold = timezone.now() - timedelta(days=error_retention)
         
-        # Borrar logs por lotes para evitar sobrecarga de memoria
+        # Delete logs in batches to avoid memory overload
         batch_size = 1000
         
-        # Borrar request logs
+        # Delete request logs
         deleted_requests = 0
         while RequestLog.objects.filter(timestamp__lt=request_threshold).exists():
             ids = RequestLog.objects.filter(
@@ -26,7 +26,7 @@ class Command(BaseCommand):
             deleted_count, _ = RequestLog.objects.filter(id__in=list(ids)).delete()
             deleted_requests += deleted_count
             
-        # Borrar error logs
+        # Delete error logs
         deleted_errors = 0
         while ErrorLog.objects.filter(timestamp__lt=error_threshold).exists():
             ids = ErrorLog.objects.filter(

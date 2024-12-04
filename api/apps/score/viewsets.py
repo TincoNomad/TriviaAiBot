@@ -21,7 +21,7 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         """
         POST /api/leaderboards/
-        Recibe: {
+        Receives: {
             "discord_channel": "channel_name",
             "username": "username"
         }
@@ -55,7 +55,7 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, pk=None):
         """
         GET /api/leaderboards/{id}/
-        Retorna: Top 10 scores del leaderboard específico usando su ID
+        Returns: Top 10 scores of the specific leaderboard using its ID
         """
         try:
             leaderboard = LeaderBoard.objects.get(pk=pk)
@@ -80,7 +80,7 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
     def all_leaderboards(self, request):
         """
         GET /api/leaderboards/all/
-        Retorna: Lista de todos los leaderboards con username del creador
+        Returns: List of all leaderboards with creator username
         """
         try:
             leaderboards = LeaderBoard.objects.all()
@@ -99,8 +99,8 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         """
         GET /api/leaderboards/
-        Recibe: {"discord_channel": "channel_name"}
-        Retorna: Solo name y points de los top 10 scores
+        Receives: {"discord_channel": "channel_name"}
+        Returns: Only name and points of top 10 scores
         """
         discord_channel = request.data.get('discord_channel')
         if not discord_channel:
@@ -151,19 +151,19 @@ class ScoreViewSet(viewsets.ModelViewSet):
                     "error": "No leaderboard exists for this channel"
                 }, status=status.HTTP_404_NOT_FOUND)
                 
-            # Buscar si el usuario ya tiene un score en este leaderboard
+            # Check if user already has a score in this leaderboard
             existing_score = Score.objects.filter(
                 name=name,
                 leaderboard=leaderboard
             ).first()
             
             if existing_score:
-                # Actualizar puntos existentes
+                # Update existing points
                 existing_score.points += int(points)
                 existing_score.save()
                 score = existing_score
             else:
-                # Crear nuevo score
+                # Create new score
                 score = Score.objects.create(
                     name=name,
                     points=int(points),
@@ -218,12 +218,12 @@ class ScoreViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         """
         GET /api/score/
-        Retorna información del API y asegura que se envíe el token CSRF
+        Returns API information and ensures CSRF token is sent
         """
         csrf_token = get_token(request)
         return Response({
             "message": "Score API endpoint",
-            "csrf_token": csrf_token,  # Opcional: enviar el token en el body
+            "csrf_token": csrf_token,  # Optional: send the token in the body
             "endpoints": {
                 "update_score": "/api/score/update_score/"
             }

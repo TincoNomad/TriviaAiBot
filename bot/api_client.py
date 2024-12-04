@@ -21,21 +21,21 @@ class TriviaAPIClient:
             await self.session.close()
             
     async def get(self, url: str, data: Optional[Dict[str, Any]] = None) -> Any:
-        """Método genérico para hacer peticiones GET"""
+        """Generic method for making GET requests"""
         if not self.session:
             self.session = aiohttp.ClientSession()
             
         try:
-            # Si hay datos, los enviamos como JSON en el body
+            # If there are data, we send them as JSON in the body
             async with self.session.get(url, json=data) as response:
                 response.raise_for_status()
                 return await response.json()
         except Exception as e:
-            bot_logger.error(f"Error en petición GET a {url}: {e}")
+            bot_logger.error(f"Error in GET request to {url}: {e}")
             raise
             
     async def post(self, url: str, data: Dict[str, Any], use_csrf: bool = True) -> Any:
-        """Método genérico para hacer peticiones POST"""
+        """Generic method for making POST requests"""
         if not self.session:
             self.session = aiohttp.ClientSession()
             
@@ -44,18 +44,18 @@ class TriviaAPIClient:
             if use_csrf:
                 csrf_token = await self.get_csrf_token()
                 if csrf_token is None:
-                    raise ValueError("No se pudo obtener el token CSRF")
+                    raise ValueError("Could not obtain CSRF token")
                 headers['X-CSRFToken'] = csrf_token
                 
             async with self.session.post(url, json=data, headers=headers) as response:
                 response.raise_for_status()
                 return await response.json()
         except Exception as e:
-            bot_logger.error(f"Error en petición POST a {url}: {e}")
+            bot_logger.error(f"Error in POST request to {url}: {e}")
             raise
             
     async def get_csrf_token(self) -> Optional[str]:
-        """Obtiene el token CSRF del servidor"""
+        """Gets the CSRF token from the server"""
         if not self.session:
             self.session = aiohttp.ClientSession()
         
@@ -63,13 +63,13 @@ class TriviaAPIClient:
             async with self.session.get(SCORE_URL) as response:
                 csrf_cookie = response.cookies.get('csrftoken')
                 if csrf_cookie is None:
-                    bot_logger.error("No se encontró el token CSRF en las cookies")
+                    bot_logger.error("CSRF token not found in cookies")
                     return None
                     
                 self.csrf_token = csrf_cookie.value
                 return self.csrf_token
         except Exception as e:
-            bot_logger.error(f"Error obteniendo CSRF token: {e}")
+            bot_logger.error(f"Error obtaining CSRF token: {e}")
             return None
             
     async def fetch_trivia_questions(self) -> List[Dict[str, Any]]:
@@ -104,26 +104,26 @@ class TriviaAPIClient:
             raise
             
     async def update_score(self, name: str, points: int, discord_channel: str):
-        """Actualiza el score usando el token CSRF
+        """Updates the score using CSRF token
         
         Args:
-            name (str): Nombre del usuario de Discord
-            points (int): Puntos ganados en la pregunta
-            discord_channel (str): Identificador del canal de Discord
+            name (str): Discord username
+            points (int): Points earned in the question
+            discord_channel (str): Discord channel identifier
             
         Returns:
-            Dict: Datos actualizados del score
+            Dict: Updated score data
             
         Raises:
-            ValueError: Si faltan datos requeridos o son inválidos
-            ClientResponseError: Si hay errores de comunicación con el API
+            ValueError: If required data is missing or invalid
+            ClientResponseError: If there are communication errors with the API
         """
-        # Validaciones básicas
+        # Basic validations
         if not name or not discord_channel:
-            raise ValueError("El nombre y canal de Discord son requeridos")
+            raise ValueError("Discord name and channel are required")
         
         if not isinstance(points, (int, float)):
-            raise ValueError("Los puntos deben ser un número")
+            raise ValueError("Points must be a number")
         
         try:
             data = {
@@ -134,40 +134,40 @@ class TriviaAPIClient:
             
             response = await self.post(f"{SCORE_URL}", data)
             
-            # Verificar la respuesta exitosa
+            # Verify successful response
             if "message" in response and response["message"] == "Score updated successfully":
                 bot_logger.info(
-                    f"Score actualizado exitosamente - Usuario: {name}, "
-                    f"Puntos: {points}, Canal: {discord_channel}"
+                    f"Score updated successfully - User: {name}, "
+                    f"Points: {points}, Channel: {discord_channel}"
                 )
                 return response["data"]
             
-            # Si la respuesta no tiene el formato esperado
-            bot_logger.error(f"Respuesta inesperada del servidor: {response}")
-            raise ValueError("Error inesperado al actualizar el score")
+            # If the response is not in the expected format
+            bot_logger.error(f"Unexpected response from server: {response}")
+            raise ValueError("Unexpected error updating score")
             
         except aiohttp.ClientResponseError as e:
             if e.status == 404:
-                bot_logger.error(f"Usuario o canal no encontrado: {name}, {discord_channel}")
-                raise ValueError("Usuario o canal no encontrado")
+                bot_logger.error(f"User or channel not found: {name}, {discord_channel}")
+                raise ValueError("User or channel not found")
             elif e.status in [401, 403]:
-                bot_logger.error("Error de autorización al actualizar score")
-                raise ValueError("Error de autorización")
+                bot_logger.error("Authorization error updating score")
+                raise ValueError("Authorization error")
             elif e.status == 400:
-                bot_logger.error(f"Datos inválidos enviados al servidor: {data}")
-                raise ValueError("Datos inválidos para actualizar score")
+                bot_logger.error(f"Invalid data sent to server: {data}")
+                raise ValueError("Invalid data for updating score")
             else:
-                bot_logger.error(f"Error del servidor al actualizar score: {e}")
+                bot_logger.error(f"Server error updating score: {e}")
                 raise
         except aiohttp.ClientError as e:
-            bot_logger.error(f"Error de conexión al actualizar score: {e}")
-            raise ValueError("Error de conexión con el servidor")
+            bot_logger.error(f"Connection error updating score: {e}")
+            raise ValueError("Connection error with the server")
         except Exception as e:
-            bot_logger.error(f"Error inesperado actualizando score: {e}")
-            raise ValueError(f"Error inesperado: {str(e)}")
+            bot_logger.error(f"Unexpected error updating score: {e}")
+            raise ValueError(f"Unexpected error: {str(e)}")
             
     async def create_leaderboard(self, discord_channel: str, username: str) -> Dict[str, Any]:
-        """Crea un nuevo leaderboard para el canal"""
+        """Creates a new leaderboard for the channel"""
         data = {
             "discord_channel": discord_channel,
             "username": username
