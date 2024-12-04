@@ -767,3 +767,39 @@
 2024-12-03 17:49:08,167 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
 2024-12-03 17:49:11,597 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
 2024-12-03 17:49:18,566 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:55:16,249 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 17:56:07,160 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 17:56:14,781 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:56:20,116 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 17:56:34,159 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:01:57,559 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:02:14,857 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:05:12,163 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:05:18,419 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:05:31,521 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:05:36,554 - discord_bot - ERROR - Error en petición POST a http://127.0.0.1:8000/api/score/: 400, message='Bad Request', url='http://127.0.0.1:8000/api/score/'
+2024-12-03 18:05:36,554 - discord_bot - ERROR - Datos inválidos enviados al servidor: {'name': 'tinconomad', 'points': 0, 'discord_channel': '🤖•ai-trivia'}
+2024-12-03 18:15:22,433 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:15:44,727 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:15:52,775 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:16:05,870 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:16:31,474 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:16:48,974 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:17:48,856 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:18:32,976 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:20:03,090 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:20:12,005 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:20:26,563 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-03 18:21:10,982 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-03 18:21:17,320 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-03 18:22:01,654 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-04 11:16:57,369 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 11:35:55,080 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 11:36:34,894 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-04 11:36:46,858 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-04 11:36:53,183 - discord_bot - INFO - Score actualizado exitosamente - Usuario: tinconomad, Puntos: 10, Canal: 🤖•ai-trivia
+2024-12-04 11:39:29,070 - discord_bot - ERROR - Error en petición GET a http://127.0.0.1:8000/api/leaderboards/: Session is closed
+2024-12-04 11:39:29,071 - discord_bot - ERROR - Error getting leaderboard: Session is closed
+2024-12-04 11:39:44,503 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 12:00:29,565 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-04 12:05:15,716 - discord_bot - INFO - We are connected as TriviaBotAI#7106

@@ -50,6 +50,9 @@ class TriviaCommands:
                 await message.author.send("An error occurred. Please try again.")
                 await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
                 self._cleanup_game(user_id)
+            finally:
+                # Asegurar que el estado del juego se limpie en todos los casos
+                self._cleanup_game(user_id)
 
     async def _handle_game_start(self, message: Message):
         await message.author.send("Welcome to the trivia game! Type 'go' to start.")
@@ -68,11 +71,12 @@ Game Time!!!
 ```                                   """)
 
             await message.channel.send(
-            "The game will start soon. There will be 5 questions about a Platzi course. "
+            "The game will start soon. There will be a minimun of 3 questions about a deferent subjects. "
             "You'll have 30 seconds to read each question and 10 seconds to respond after the warning. "
             "Each correct answer is worth 10 points!"
+            "Ready!? 🚀"
             )
-            await message.channel.send("Starting in 3 ⏳")
+            await message.channel.send("Starting game in 3 ⏳")
         except TimeoutError:
             await message.author.send("I understand, it's not time to play yet. We'll play another time! 😃")
             raise
@@ -119,7 +123,7 @@ Game Time!!!
                 
                 await message.channel.send("```orange\n------------ QUESTION -------------\n```")
                 await message.channel.send(f"Question {game.current_question + 1}: Read the question, you have 30 seconds")
-                await message.channel.send(question)
+                await message.channel.send(f"```\n{question}\n```")
                 
                 # Mostrar las opciones de respuesta
                 if options:
@@ -154,11 +158,6 @@ Game Time!!!
                                 break
                             else:
                                 await message.channel.send(f"Uh no {response.author.name}, that's not the answer 😞\n\n")
-                                await self.trivia_game.api_client.update_score(
-                                    name=response.author.name,
-                                    points=0,
-                                    discord_channel=channel_identifier
-                                )
                         else:
                             await message.channel.send(f"{response.author.name}, You can only try once 🙈")
                             
@@ -169,9 +168,9 @@ Game Time!!!
                     game.current_question += 1
 
             # End game
-            await message.channel.send("""
-End of the Game. Thanks for participating 💚
-                                   """)
+            await message.channel.send(
+                "```orange\nEnd of the Game. Thanks for participating 💚\n```"
+            )
             await message.channel.send("It was very fun 💃🕺 Congratulations!")
             
             try:

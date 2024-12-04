@@ -1396,3 +1396,28 @@ TypeError: LeaderBoard() got unexpected keyword arguments: 'username'
 2024-12-03 22:49:01,033 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
 2024-12-03 22:49:01,035 - api.utils.logging_utils - INFO - Found 1 matching trivias
 2024-12-03 22:49:03,985 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 22:56:07,162 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 22:56:07,164 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 22:56:09,014 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 23:02:14,858 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 23:02:14,862 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 23:02:17,198 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 23:05:12,165 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 23:05:12,168 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 23:05:13,411 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 23:05:36,554 - django.request - WARNING - Bad Request: /api/score/
+2024-12-03 23:15:44,729 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 23:15:44,732 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 23:15:46,012 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 23:16:48,976 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 23:16:48,979 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 23:16:50,329 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 23:20:03,091 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 23:20:03,097 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 23:20:05,497 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-03 23:21:10,986 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-03 23:21:10,991 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-03 23:21:12,230 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-04 16:36:34,896 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-04 16:36:34,899 - api.utils.logging_utils - INFO - Found 1 matching trivias
+2024-12-04 16:36:36,198 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8

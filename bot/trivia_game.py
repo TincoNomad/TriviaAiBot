@@ -97,8 +97,8 @@ class TriviaGame:
             return None
     
     async def set_difficulty(self, difficulty: int) -> None:
-        """Establece la dificultad seleccionada para el juego"""
+        """Sets the selected difficulty for the game"""
         if difficulty not in [1, 2, 3]:
-            raise ValueError("Dificultad no válida")
+            raise ValueError("Invalid difficulty")
         self.difficulty_choice = difficulty
         game_logger.debug(f"Difficulty set to: {difficulty}")
