@@ -44,6 +44,7 @@ class TriviaCommands:
                 
             except TimeoutError:
                 await message.author.send("Timeout. Try again with $trivia")
+                await message.channel.send("🙈 Oops, this is embarrassing, but we have a problem. Let's play later, Shall we?")
                 self._cleanup_game(user_id)
             except Exception as e:
                 command_logger.error(f"Error in trivia command: {e}")
@@ -62,7 +63,7 @@ class TriviaCommands:
                 return m.author == message.author and m.content.lower() == 'go'
             
             await self.client.wait_for('message', timeout=30.0, check=check)
-            await message.channel.send("```orange\n------Hey!! Trivia time!---------\n```")
+            await message.channel.send("```orange\n------Hey!! Trivia it's about to start!---------\n```")
             await message.channel.send("""
 ```orange
 -------------------
@@ -71,12 +72,10 @@ Game Time!!!
 ```                                   """)
 
             await message.channel.send(
-            "The game will start soon. There will be a minimum of 3 questions about different subjects. "
-            "You'll have 30 seconds to read each question and 10 seconds to respond after the warning. "
-            "Each correct answer is worth 10 points!"
-            "Ready!? 🚀"
+"""The game will start soon. There will be a minimum of 3 questions about different subjects.
+Each correct answer is worth 10 points!
+Ready!? 🚀"""
             )
-            await message.channel.send("Starting game in 3 ⏳")
         except TimeoutError:
             await message.author.send("I understand, it's not time to play yet. We'll play another time! 😃")
             raise
@@ -89,6 +88,10 @@ Game Time!!!
             raise ValueError("No trivia selected")
         
         try:
+            # Enviar mensaje privado y esperar 5 segundos antes de comenzar
+            await message.author.send("The game will start in 5 seconds")
+            await asyncio.sleep(5)
+            
             # Get channel identifier safely
             if isinstance(message.channel, (discord.TextChannel, discord.Thread)):
                 channel_identifier = message.channel.name
@@ -122,23 +125,39 @@ Game Time!!!
                 )
                 
                 await message.channel.send("```orange\n------------ QUESTION -------------\n```")
-                await message.channel.send(f"Question {game.current_question + 1}: Read the question, you have 30 seconds")
+                await message.channel.send(f"Question {game.current_question + 1}")
                 await message.channel.send(f"```\n{question}\n```")
                 
-                # Show answer options
                 if options:
                     options_text = "\n".join(options)
                     await message.channel.send(f"```\nOptions:\n{options_text}\n```")
+                    num_options = len(options)  # Obtener el número de opciones disponibles
                 else:
                     await message.channel.send("Error: No options available for this question")
                     game.current_question += 1
                     continue
                 
                 def check(m):
-                    return (
-                        m.content.isdigit() and 
-                        1 <= int(m.content) <= 4
-                    )
+                    # Verify message is in the correct channel
+                    if m.channel != message.channel:
+                        return False
+                    
+                    # If not a number, ignore
+                    if not m.content.isdigit():
+                        asyncio.create_task(message.channel.send(
+                            f"{m.author.name}, please enter a number between 1 and {num_options} 🤔"
+                        ))
+                        return False
+                    
+                    # If number is out of range, ignore
+                    num = int(m.content)
+                    if not (1 <= num <= num_options):
+                        asyncio.create_task(message.channel.send(
+                            f"{m.author.name}, the number must be between 1 and {num_options} 🎯"
+                        ))
+                        return False
+                    
+                    return True
                 
                 try:
                     while True:
@@ -167,9 +186,9 @@ Game Time!!!
                     await message.channel.send("ohhh, it seems no one guessed this 😔. Well, let's move on to the next one 💪🏽")
                     game.current_question += 1
 
-            # End game
+            # End game messages
             await message.channel.send(
-                "```orange\nEnd of the Game. Thanks for participating 💚\n```"
+                "```orange\nEnd of the Game. Thanks for participating 🧡\n```"
             )
             await message.channel.send("It was very fun 💃🕺 Congratulations!")
             
@@ -189,6 +208,10 @@ Game Time!!!
                     await message.channel.send(f"```\n{formatted_scores}\n```")
                 else:
                     await message.channel.send("No scores available in the leaderboard!")
+
+                # Agregar mensaje sobre el tema de la trivia
+                await message.channel.send(f"This game was about: {game.selected_trivia} 📚")
+                
             except Exception as e:
                 command_logger.error(f"Error getting leaderboard: {e}")
                 await message.channel.send("Error getting the leaderboard. Please try again later.")
@@ -221,13 +244,11 @@ Game Time!!!
             theme_data = self.trivia_game.theme_choices[theme_num]
             theme_id = theme_data['id']
             
-            # Initialize or update user selections
             if message.author.id not in self.game_state.user_selections:
                 self.game_state.user_selections[message.author.id] = {}
             
-            # Save theme_id
             self.game_state.user_selections[message.author.id]['theme'] = theme_id
-            await message.channel.send("2 ⏳")
+            await message.channel.send("Starting game in 3 ⏳")
 
             return theme_id
         except TimeoutError:
@@ -258,7 +279,7 @@ Game Time!!!
                     user_selections = self.game_state.user_selections.get(message.author.id, {})
                     user_selections["difficulty"] = difficulty_level
                     self.game_state.user_selections[message.author.id] = user_selections
-                    await message.channel.send("1 ⏳...")
+                    await message.channel.send("2 ⏳")
                     
                     return difficulty_level
                 except TimeoutError:
@@ -308,6 +329,7 @@ Game Time!!!
                 selected_index = int(response.content) - 1
                 selected_trivia = self.trivia_game.current_trivia[selected_index]["title"]
                 self.game_state.active_games[message.author.id].selected_trivia = selected_trivia
+                await message.channel.send("1 ⏳")
             except TimeoutError:
                 raise TimeoutError("Trivia selection timed out")
 
@@ -337,28 +359,28 @@ Game Time!!!
                 await message.channel.send("No scores yet!")
                 return
             
-            # Assuming leaderboard is a dictionary with a list of scores
-            scores = leaderboard.get('scores', [])  # Adjust this according to the actual structure of your response
-            
-            formatted_scores = "\n".join(
-                f"{score['name']}, {score['points']} points" 
-                for score in scores
-            )
-            
-            await message.channel.send(f"🏆 Leaderboard:\n```\n{formatted_scores}\n```")
+            # Verificar si leaderboard es una lista como en _handle_questions
+            if isinstance(leaderboard, list):
+                formatted_scores = "\n".join(
+                    f"{player['name']}: {player['points']} points" 
+                    for player in leaderboard
+                )
+                await message.channel.send("🏆 Leaderboard:\n```\n{}\n```".format(formatted_scores))
+            else:
+                await message.channel.send("No scores available in the leaderboard!")
+                
         except Exception as e:
             command_logger.error(f"Error in score command: {e}")
             await message.channel.send("Error getting the score table.")
 
-    async def handle_courses(self, message: Message):
-        """Handles the $courses command"""
+    async def handle_themes(self, message: Message):
+        """Handles the $themes command"""
         try:
-            theme_list, difficulty_list = await self.trivia_game.get_available_options()
+            theme_list, _ = await self.trivia_game.get_available_options()
             await message.channel.send(f"Available themes:\n{theme_list}")
-            await message.channel.send(f"Available difficulties:\n{difficulty_list}")
         except Exception as e:
-            command_logger.error(f"Error in courses command: {e}")
-            await message.channel.send("Error getting the list of courses.")
+            command_logger.error(f"Error getting themes: {e}")
+            await message.channel.send("Error getting the list of themes.")
 
     async def handle_game_response(self, message: Message) -> None:
         """Handles responses during an active game"""
@@ -367,4 +389,55 @@ Game Time!!!
         
         if not game:
             return
+        
+        # Agregar el comando para acortar el juego
+        if message.content.lower() == "$stopgame":
+            await self.handle_stop_game(message)
+            return
         pass
+
+    async def handle_stop_game(self, message: Message) -> None:
+        """Finaliza el juego actual por completo"""
+        user_id = message.author.id
+        
+        # Verificar si hay un juego activo
+        if user_id not in self.game_state.active_games:
+            await message.channel.send("¡No hay ningún juego activo para finalizar!")
+            return
+        
+        game = self.game_state.active_games[user_id]
+        
+        # Obtener el canal para mostrar el mensaje final
+        channel_identifier = message.channel.name if isinstance(
+            message.channel, (discord.TextChannel, discord.Thread)
+        ) else f"{type(message.channel).__name__}-{message.channel.id}"
+        
+        try:
+            # Mostrar el resultado final
+            await message.channel.send("```orange\nGame ended early.\n```")
+            
+            # Intentar mostrar el leaderboard final
+            try:
+                leaderboard = await self.trivia_game.api_client.get_leaderboard(
+                    discord_channel=channel_identifier
+                )
+                
+                if isinstance(leaderboard, list):
+                    formatted_scores = "\n".join(
+                        f"{player['name']}: {player['points']} points" 
+                        for player in leaderboard
+                    )
+                    await message.channel.send("🏆 Final Score:")
+                    await message.channel.send(f"```\n{formatted_scores}\n```")
+                
+                # Mostrar el tema del juego
+                await message.channel.send(f"The game was about: {game.selected_trivia} 📚")
+                
+            except Exception as e:
+                command_logger.error(f"Error mostrando puntuación final: {e}")
+                await message.channel.send("Could not display final score.")
+                
+        finally:
+            # Limpiar el estado del juego
+            self._cleanup_game(user_id)
+            await message.channel.send("Thanks for playing! You can start a new game anytime with $trivia")

@@ -49,3 +49,4 @@
 2024-12-03 18:05:36,555 - bot_commands - ERROR - Error getting trivia: Datos inválidos para actualizar score
 2024-12-03 18:05:36,820 - bot_commands - ERROR - Error in trivia command: Datos inválidos para actualizar score
 2024-12-04 11:39:29,071 - bot_commands - ERROR - Error in score command: Session is closed
+2024-12-05 14:33:13,091 - bot_commands - ERROR - Error in score command: 'list' object has no attribute 'get'

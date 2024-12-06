@@ -26,8 +26,10 @@ class MyClient(discord.Client):
                 await self.trivia_commands.handle_trivia(message)
             elif message.content.startswith('$score'):
                 await self.trivia_commands.handle_score(message)
-            elif message.content.startswith('$courses'):
-                await self.trivia_commands.handle_courses(message)
+            elif message.content.startswith('$themes'):
+                await self.trivia_commands.handle_themes(message)
+            elif message.content.startswith('$stopgame'):
+                await self.trivia_commands.handle_stop_game(message)
         # Manejar respuestas del juego
         elif user_id in self.trivia_commands.game_state.active_games:
             await self.trivia_commands.handle_game_response(message)
