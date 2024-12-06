@@ -843,3 +843,9 @@
 2024-12-06 11:26:30,551 - discord_bot - INFO - Score updated successfully - User: tinconomad, Points: 10, Channel: 🤖•ai-trivia
 2024-12-06 11:37:01,987 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
 2024-12-06 11:37:24,634 - discord_bot - INFO - Score updated successfully - User: tinconomad, Points: 10, Channel: 🤖•ai-trivia
+2024-12-06 12:27:02,812 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-06 12:34:10,583 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-06 12:36:11,506 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-06 12:37:00,657 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-06 12:37:15,126 - discord_bot - INFO - Score updated successfully - User: tinconomad, Points: 10, Channel: 🤖•ai-trivia
+2024-12-06 12:37:39,864 - discord_bot - INFO - Score updated successfully - User: tinconomad, Points: 10, Channel: 🤖•ai-trivia

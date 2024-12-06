@@ -138,6 +138,10 @@ Ready!? 🚀"""
                     continue
                 
                 def check(m):
+                    # Ignore messages from the bot itself
+                    if m.author == self.client.user:
+                        return False
+                    
                     # Verify message is in the correct channel
                     if m.channel != message.channel:
                         return False
