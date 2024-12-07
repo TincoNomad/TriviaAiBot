@@ -36,11 +36,13 @@ class TriviaGame:
         try:
             filtered_trivias = await self.api_client.get_filtered_trivias(theme_id, difficulty_level)
             
+            game_logger.debug(f"Filtered trivias: {filtered_trivias}")
+            
             if not filtered_trivias:
                 return "No trivias available for this combination", 0
                 
             trivia_list = "\n".join(
-                f"{idx + 1}- {trivia['title']}" 
+                f"{idx + 1}- {trivia['title']} {'🔗' if trivia.get('url') else ''}" 
                 for idx, trivia in enumerate(filtered_trivias)
             )
             
@@ -90,8 +92,16 @@ class TriviaGame:
                 (trivia for trivia in self.current_trivia if trivia["title"] == selected_trivia),
                 None
             )
-            if trivia and trivia.get("url"):
-                return trivia["url"]
+            if trivia:
+                game_logger.debug(f"Found trivia: {trivia}")
+                url = trivia.get("url")
+                if url:
+                    game_logger.debug(f"Found URL: {url}")
+                    return url
+                else:
+                    game_logger.debug("No URL found in trivia data")
+            else:
+                game_logger.debug(f"No trivia found with title: {selected_trivia}")
             return None
         except Exception as e:
             game_logger.error(f"Error getting trivia link: {e}")

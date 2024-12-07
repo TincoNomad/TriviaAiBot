@@ -1465,3 +1465,103 @@ TypeError: LeaderBoard() got unexpected keyword arguments: 'username'
 2024-12-07 01:58:09,378 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
 2024-12-07 01:58:09,379 - api.utils.logging_utils - INFO - Found 2 matching trivias
 2024-12-07 01:58:18,591 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 02:55:32,115 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-07 02:55:32,122 - api.utils.logging_utils - INFO - Found 2 matching trivias
+2024-12-07 02:55:39,522 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 03:00:34,173 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-07 03:00:53,156 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-07 03:00:53,159 - api.utils.logging_utils - INFO - Found 3 matching trivias
+2024-12-07 03:01:00,691 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: 389c79fd-d22a-4818-b3f9-663ce2a604d4
+2024-12-07 11:43:06,774 - django.request - WARNING - Not Found: /favicon.ico
+2024-12-07 11:53:36,657 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 11:53:44,276 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-12-07 11:53:50,855 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/models.py changed, reloading.
+2024-12-07 11:54:53,646 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 11:55:04,836 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 11:57:04,670 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-12-07 11:58:42,412 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-12-07 11:58:47,716 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-12-07 12:31:15,250 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-12-07T12:31:15.248879",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'title': [ErrorDetail(string='trivia with this Title already exists.', code='unique')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 74, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'title': [ErrorDetail(string='trivia with this Title already exists.', code='unique')]}\n"
+}
+2024-12-07 12:31:15,252 - django.request - WARNING - Bad Request: /api/trivias/
+2024-12-07 13:38:26,977 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-12-07T13:38:26.977123",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'title': [ErrorDetail(string='trivia with this Title already exists.', code='unique')], 'questions': [ErrorDetail(string='A trivia must have at least 3 questions', code='invalid')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 74, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'title': [ErrorDetail(string='trivia with this Title already exists.', code='unique')], 'questions': [ErrorDetail(string='A trivia must have at least 3 questions', code='invalid')]}\n"
+}
+2024-12-07 13:38:26,978 - django.request - WARNING - Bad Request: /api/trivias/
+2024-12-07 14:08:05,110 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 14:13:13,343 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-12-07T14:13:13.341552",
+  "function": "create",
+  "error_type": "ValidationError",
+  "error_message": "{'title': [ErrorDetail(string='trivia with this Title already exists.', code='unique')], 'questions': [ErrorDetail(string='A trivia must have at least 3 questions', code='invalid')]}",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 74, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py\", line 18, in create\n    serializer.is_valid(raise_exception=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 231, in is_valid\n    raise ValidationError(self.errors)\nrest_framework.exceptions.ValidationError: {'title': [ErrorDetail(string='trivia with this Title already exists.', code='unique')], 'questions': [ErrorDetail(string='A trivia must have at least 3 questions', code='invalid')]}\n"
+}
+2024-12-07 14:13:13,348 - django.request - WARNING - Bad Request: /api/trivias/
+2024-12-07 14:44:25,756 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-07 14:44:25,762 - api.utils.logging_utils - ERROR - Exception details: {
+  "timestamp": "2024-12-07T14:44:25.757404",
+  "function": "create",
+  "error_type": "TypeError",
+  "error_message": "Trivia() got unexpected keyword arguments: 'username'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py\", line 23, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 74, in create\n    return super().create(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py\", line 19, in create\n    self.perform_create(serializer)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py\", line 43, in perform_create\n    serializer.save(created_by=user, is_public=True)\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py\", line 208, in save\n    self.instance = self.create(validated_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py\", line 88, in create\n    trivia = Trivia.objects.create(theme=theme, **validated_data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/query.py\", line 677, in create\n    obj = self.model(**kwargs)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/base.py\", line 567, in __init__\n    raise TypeError(\nTypeError: Trivia() got unexpected keyword arguments: 'username'\n"
+}
+2024-12-07 14:44:25,835 - django.request - ERROR - Internal Server Error: /api/trivias/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/utils/logging_utils.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 74, in create
+    return super().create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py", line 43, in perform_create
+    serializer.save(created_by=user, is_public=True)
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py", line 88, in create
+    trivia = Trivia.objects.create(theme=theme, **validated_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Trivia() got unexpected keyword arguments: 'username'
+2024-12-07 14:55:48,282 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-12-07 14:55:50,179 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.

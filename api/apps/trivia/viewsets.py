@@ -2,7 +2,6 @@ from rest_framework import viewsets, permissions
 from django.db import models
 from .models import Trivia, Theme
 from .serializers import TriviaSerializer, ThemeSerializer, TriviaListSerializer
-from api.utils.jwt_utils import IsAdminUser
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 from rest_framework.exceptions import ValidationError as DRFValidationError
@@ -78,6 +77,10 @@ class TriviaViewSet(viewsets.ModelViewSet):
             raise DRFValidationError(detail=str(e))
         except IntegrityError as e:
             logger.error(f"Database integrity error: {e}")
+            if 'unique_trivia_title' in str(e):
+                raise DRFValidationError(
+                    detail="A trivia with this title already exists. Please choose another title."
+                )
             raise DRFValidationError(detail="Could not create trivia due to database constraints")
     
     @action(detail=False, methods=['get'], url_path='filter', authentication_classes=[], permission_classes=[])

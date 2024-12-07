@@ -76,7 +76,7 @@ class TriviaSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         questions_data = validated_data.pop('questions', [])
         theme_data = validated_data.pop('theme', None)
-        username = validated_data.pop('username')
+        validated_data.pop('username', None)
         theme = None
 
         if theme_data:
@@ -131,6 +131,16 @@ class TriviaSerializer(serializers.ModelSerializer):
                 answer.save()
             else:
                 Answer.objects.create(question=question, **answer_data)
+
+    def validate_title(self, value):
+        """
+        Validate that the title does not already exist in the database
+        """
+        if Trivia.objects.filter(title=value).exists():
+            raise serializers.ValidationError(
+                "A trivia with this title already exists. Please choose another title."
+            )
+        return value
 
 class TriviaListSerializer(serializers.ModelSerializer):
     theme = serializers.CharField(source='theme.name')

@@ -37,6 +37,15 @@ class Trivia(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        # Agregar constraint de unicidad
+        constraints = [
+            models.UniqueConstraint(
+                fields=['title'],
+                name='unique_trivia_title'
+            )
+        ]
+
 class Theme(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(_('Name'), max_length=100, unique=True)
