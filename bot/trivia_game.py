@@ -27,7 +27,8 @@ class TriviaGame:
     
     async def get_available_options(self) -> Tuple[str, str]:
         """Returns the formatted lists of themes and difficulties available"""
-        theme_list, _ = await get_theme_list()
+        theme_list, theme_dict = await get_theme_list()
+        self.theme_choices = theme_dict
         difficulty_list, _ = await get_difficulty_list()
         return theme_list, difficulty_list
     

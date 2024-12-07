@@ -16,11 +16,9 @@ async def get_theme_list() -> Tuple[str, Dict[int, Dict[str, Any]]]:
     try:
         async with TriviaAPIClient() as client:
             themes = await client.get(THEME_URL)
-            print(f"DEBUG Utils - Received themes from API: {themes}")
             
             theme_dict = {i+1: {'id': theme['id'], 'name': theme['name']} 
                          for i, theme in enumerate(themes)}
-            print(f"DEBUG Utils - Created theme_dict: {theme_dict}")
             
             theme_list = "\n".join(
                 f"{num}- {theme['name']}" 

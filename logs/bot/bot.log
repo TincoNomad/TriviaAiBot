@@ -870,3 +870,10 @@
 2024-12-06 20:41:56,749 - discord_bot - INFO - We are connected as TriviaBotAI#7106
 2024-12-06 20:49:30,538 - discord_bot - INFO - We are connected as TriviaBotAI#7106
 2024-12-06 20:52:01,681 - discord_bot - INFO - Making POST request to http://127.0.0.1:8000/api/trivias/
+2024-12-06 20:54:45,951 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-06 20:56:35,799 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-06 20:57:08,553 - discord_bot - ERROR - Error in GET request to http://127.0.0.1:8000/api/leaderboards/: 404, message='Not Found', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-06 20:57:08,553 - discord_bot - ERROR - Error getting leaderboard: 404, message='Not Found', url='http://127.0.0.1:8000/api/leaderboards/'
+2024-12-06 20:57:52,641 - discord_bot - INFO - We are connected as TriviaBotAI#7106
+2024-12-06 20:58:09,376 - discord_bot - INFO - Requesting filtered trivias with URL: http://127.0.0.1:8000/api/trivias/filter/?theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17&difficulty=1
+2024-12-06 20:58:18,528 - discord_bot - INFO - Making POST request to http://127.0.0.1:8000/api/leaderboards/

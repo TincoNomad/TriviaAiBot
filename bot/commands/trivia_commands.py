@@ -462,35 +462,23 @@ Ready!? 🚀"""
 
             # Get theme
             theme_list, _ = await self.trivia_game.get_available_options()
-            command_logger.info(f"Available themes list: {theme_list}")
-            command_logger.info(f"Theme choices dictionary: {self.trivia_game.theme_choices}")
-
             await message.author.send(
                 f"Available themes:\n{theme_list}\n\n"
                 "You can either select a theme by number or type a new theme name."
             )
             response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
-            command_logger.info(f"User response: {response.content}")
 
             # Check if response is a number (existing theme) or text (new theme)
             if response.content.isdigit():
                 theme_num = int(response.content)
-                command_logger.info(f"Converted to number: {theme_num}")
-                command_logger.info(f"Theme choices keys: {self.trivia_game.theme_choices.keys()}")
-                command_logger.info(f"Is number in choices?: {theme_num in self.trivia_game.theme_choices}")
-                
                 if theme_num in self.trivia_game.theme_choices:
                     theme_data = self.trivia_game.theme_choices[theme_num]
-                    command_logger.info(f"Theme data found: {theme_data}")
                     theme = theme_data['name']
-                    command_logger.info(f"Selected theme name: {theme}")
                 else:
                     theme = response.content
-                    command_logger.info(f"Theme not found in choices, using as new theme: {theme}")
                     await message.author.send(f"Creating new theme: {theme}")
             else:
                 theme = response.content
-                command_logger.info(f"Not a number, using as new theme: {theme}")
                 await message.author.send(f"Creating new theme: {theme}")
 
             # Get URL (optional)

@@ -1461,3 +1461,7 @@ TypeError: LeaderBoard() got unexpected keyword arguments: 'username'
 2024-12-06 23:53:36,570 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
 2024-12-06 23:57:51,096 - django.request - WARNING - Not Found: /favicon.ico
 2024-12-07 01:52:01,684 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-07 01:57:08,545 - django.request - WARNING - Not Found: /api/leaderboards/
+2024-12-07 01:58:09,378 - api.utils.logging_utils - INFO - Filtering trivias with theme=fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17 and difficulty=1
+2024-12-07 01:58:09,379 - api.utils.logging_utils - INFO - Found 2 matching trivias
+2024-12-07 01:58:18,591 - api.utils.logging_utils - INFO - Retrieved questions for trivia ID: dbbdfce6-a83d-4774-a589-9c37ac2b6ec8

@@ -557,3 +557,13 @@
   ],
   "can_make_private": false
 }
+2024-12-06 20:55:36,366 - bot_commands - INFO - Available themes list: 1- pruebas
+2- 1
+2024-12-06 20:55:36,366 - bot_commands - INFO - Theme choices dictionary: {1: {'id': 'fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17', 'name': 'pruebas'}, 2: {'id': '97962678-fcb5-47c7-8388-7bf791d9a03a', 'name': '1'}}
+2024-12-06 20:55:45,966 - bot_commands - INFO - User response: 1
+2024-12-06 20:55:45,966 - bot_commands - INFO - Converted to number: 1
+2024-12-06 20:55:45,966 - bot_commands - INFO - Theme choices keys: dict_keys([1, 2])
+2024-12-06 20:55:45,967 - bot_commands - INFO - Is number in choices?: True
+2024-12-06 20:55:45,967 - bot_commands - INFO - Theme data found: {'id': 'fbbba4d6-8bd4-46d0-a4ee-a46090ac4a17', 'name': 'pruebas'}
+2024-12-06 20:55:45,967 - bot_commands - INFO - Selected theme name: pruebas
+2024-12-06 20:57:08,553 - bot_commands - ERROR - Error mostrando puntuación final: 404, message='Not Found', url='http://127.0.0.1:8000/api/leaderboards/'
