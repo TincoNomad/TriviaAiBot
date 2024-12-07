@@ -47,11 +47,25 @@ class TriviaAPIClient:
                     raise ValueError("Could not obtain CSRF token")
                 headers['X-CSRFToken'] = csrf_token
                 
+            bot_logger.info(f"Making POST request to {url}")
+            bot_logger.debug(f"Request data: {data}")
+            bot_logger.debug(f"Headers: {headers}")
+            
             async with self.session.post(url, json=data, headers=headers) as response:
-                response.raise_for_status()
-                return await response.json()
+                response_text = await response.text()
+                bot_logger.debug(f"Response status: {response.status}")
+                bot_logger.debug(f"Response text: {response_text}")
+                
+                try:
+                    response.raise_for_status()
+                    return await response.json()
+                except aiohttp.ClientResponseError as e:
+                    bot_logger.error(f"HTTP Error in POST request to {url}: {e.status} - {e.message}")
+                    bot_logger.error(f"Response body: {response_text}")
+                    raise
+            
         except Exception as e:
-            bot_logger.error(f"Error in POST request to {url}: {e}")
+            bot_logger.error(f"Error in POST request to {url}: {str(e)}")
             raise
             
     async def get_csrf_token(self) -> Optional[str]:

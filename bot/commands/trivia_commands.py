@@ -5,6 +5,9 @@ from ..utils.logging_bot import command_logger
 from asyncio import TimeoutError
 import discord
 import asyncio
+from typing import List, Dict, Any
+from api.django import TRIVIA_URL
+import json
 
 class TriviaCommands:
     def __init__(self, client: discord.Client):
@@ -172,7 +175,7 @@ Ready!? 🚀"""
                             players.append(player_info)
                             if int(response.content) == correct_answer:
                                 game.current_score += points
-                                await message.channel.send(f"Correct! {response.author.name}, you won {points} points 🥳\n\n")
+                                await message.channel.send(f"Correct! {response.author.name}, you won {points} points \n\n")
                                 await self.trivia_game.api_client.update_score(
                                     name=response.author.name,
                                     points=points,
@@ -401,12 +404,12 @@ Ready!? 🚀"""
         pass
 
     async def handle_stop_game(self, message: Message) -> None:
-        """Finaliza el juego actual por completo"""
+        """Completely ends the current game"""
         user_id = message.author.id
         
         # Verificar si hay un juego activo
         if user_id not in self.game_state.active_games:
-            await message.channel.send("¡No hay ningún juego activo para finalizar!")
+            await message.channel.send("There is no active game to end!")
             return
         
         game = self.game_state.active_games[user_id]
@@ -445,3 +448,205 @@ Ready!? 🚀"""
             # Limpiar el estado del juego
             self._cleanup_game(user_id)
             await message.channel.send("Thanks for playing! You can start a new game anytime with $trivia")
+
+    async def handle_create_trivia(self, message: Message) -> None:
+        """Handles the command to create a new trivia"""
+        try:
+            # Get title
+            await message.author.send("Let's create a new trivia! First, tell me the title:")
+            def check_dm(m):
+                return m.author == message.author and isinstance(m.channel, discord.DMChannel)
+            
+            response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+            title = response.content
+
+            # Get theme
+            theme_list, _ = await self.trivia_game.get_available_options()
+            command_logger.info(f"Available themes list: {theme_list}")
+            command_logger.info(f"Theme choices dictionary: {self.trivia_game.theme_choices}")
+
+            await message.author.send(
+                f"Available themes:\n{theme_list}\n\n"
+                "You can either select a theme by number or type a new theme name."
+            )
+            response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+            command_logger.info(f"User response: {response.content}")
+
+            # Check if response is a number (existing theme) or text (new theme)
+            if response.content.isdigit():
+                theme_num = int(response.content)
+                command_logger.info(f"Converted to number: {theme_num}")
+                command_logger.info(f"Theme choices keys: {self.trivia_game.theme_choices.keys()}")
+                command_logger.info(f"Is number in choices?: {theme_num in self.trivia_game.theme_choices}")
+                
+                if theme_num in self.trivia_game.theme_choices:
+                    theme_data = self.trivia_game.theme_choices[theme_num]
+                    command_logger.info(f"Theme data found: {theme_data}")
+                    theme = theme_data['name']
+                    command_logger.info(f"Selected theme name: {theme}")
+                else:
+                    theme = response.content
+                    command_logger.info(f"Theme not found in choices, using as new theme: {theme}")
+                    await message.author.send(f"Creating new theme: {theme}")
+            else:
+                theme = response.content
+                command_logger.info(f"Not a number, using as new theme: {theme}")
+                await message.author.send(f"Creating new theme: {theme}")
+
+            # Get URL (optional)
+            await message.author.send("Would you like to add a URL for this trivia? (yes/no)")
+            url = None
+            while True:
+                response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                if response.content.lower() in ['yes', 'y']:
+                    await message.author.send("Please enter the URL:")
+                    response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                    url = response.content
+                    break
+                if response.content.lower() in ['no', 'n']:
+                    break
+                await message.author.send("Please answer 'yes' or 'no'")
+
+            # Get difficulty
+            await message.author.send("Select the difficulty (1-3):")
+            def check_difficulty(m):
+                return (m.author == message.author and 
+                       isinstance(m.channel, discord.DMChannel) and 
+                       m.content.isdigit() and 
+                       1 <= int(m.content) <= 3)
+            
+            response = await self.client.wait_for('message', timeout=60.0, check=check_difficulty)
+            difficulty = int(response.content)
+
+            # Collect questions
+            questions: List[Dict[str, Any]] = []
+            await message.author.send("Now let's add the questions. You must add at least 3 questions.")
+            await message.author.send("For each question, you'll need to add at least 2 answers.")
+
+            while len(questions) < 3 or (len(questions) < 10):
+                # Get question
+                await message.author.send(f"\nQuestion #{len(questions) + 1}:")
+                await message.author.send("Write the question:")
+                response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                question_title = response.content
+
+                # Collect answers for this question
+                answers: List[Dict[str, Any]] = []
+                await message.author.send("\nNow add the answers. You need at least 2 answers and one must be correct.")
+
+                while len(answers) < 2 or (len(answers) < 4):
+                    await message.author.send(f"\nAnswer #{len(answers) + 1}:")
+                    await message.author.send("Write the answer:")
+                    response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                    answer_title = response.content
+
+                    await message.author.send("Is this the correct answer? (yes/no)")
+                    while True:
+                        response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                        if response.content.lower() in ['yes', 'y']:
+                            is_correct = True
+                            break
+                        if response.content.lower() in ['no', 'n']:
+                            is_correct = False
+                            break
+                        await message.author.send("Please answer 'yes' or 'no'")
+
+                    answers.append({
+                        "answer_title": answer_title,
+                        "is_correct": is_correct
+                    })
+
+                    if len(answers) >= 2:
+                        await message.author.send("Do you want to add another answer? (yes/no)")
+                        while True:
+                            response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                            if response.content.lower() in ['no', 'n']:
+                                break
+                            if response.content.lower() in ['yes', 'y']:
+                                break
+                            await message.author.send("Please answer 'yes' or 'no'")
+                        if response.content.lower() in ['no', 'n']:
+                            break
+
+                questions.append({
+                    "question_title": question_title,
+                    "answers": answers
+                })
+
+                if len(questions) >= 3:
+                    await message.author.send("Do you want to add another question? (yes/no)")
+                    while True:
+                        response = await self.client.wait_for('message', timeout=60.0, check=check_dm)
+                        if response.content.lower() in ['no', 'n']:
+                            break
+                        if response.content.lower() in ['yes', 'y']:
+                            break
+                        await message.author.send("Please answer 'yes' or 'no'")
+                    if response.content.lower() in ['no', 'n']:
+                        break
+
+            trivia_data = {
+                "title": title,
+                "theme": theme,
+                "username": message.author.name,
+                "difficulty": difficulty,
+                "url": url,
+                "questions": questions
+            }
+
+            # Agregar log detallado del JSON antes de enviarlo
+            command_logger.info("Attempting to create trivia with data:")
+            command_logger.info(json.dumps(trivia_data, indent=2))
+
+            # Create trivia using API client
+            async with self.trivia_game.api_client:
+                try:
+                    response = await self.trivia_game.api_client.post(
+                        TRIVIA_URL,
+                        trivia_data
+                    )
+                    
+                    # Log de la respuesta completa para debug
+                    command_logger.info(f"API Response: {json.dumps(response, indent=2)}")
+                    
+                    if not response:
+                        raise ValueError("Empty response from API")
+                        
+                    # Verificar que la respuesta tenga un ID (lo que indica que se creó exitosamente)
+                    if not response.get('id'):
+                        error_msg = response.get('error', 'Unknown error')
+                        command_logger.error(f"API Error Response: {json.dumps(response, indent=2)}")
+                        raise ValueError(f"Error creating trivia: {error_msg}")
+                        
+                except Exception as e:
+                    command_logger.error("Error during trivia creation:")
+                    command_logger.error(f"Data sent: {json.dumps(trivia_data, indent=2)}")
+                    command_logger.error(f"Exception: {str(e)}")
+                    raise
+
+            # Send detailed summary via DM
+            summary = [
+                "✨ Trivia created successfully! Here's a summary:",
+                f"\nTitle: {title}",
+                f"Theme: {theme}",
+                f"Difficulty: {difficulty}"
+            ]
+            
+            if url:
+                summary.append(f"URL: {url}")
+                
+            summary.append("\nQuestions:")
+
+            for i, q in enumerate(questions, 1):
+                summary.append(f"\n{i}. {q['question_title']}")
+                for j, a in enumerate(q['answers'], 1):
+                    correct = "✅" if a['is_correct'] else "❌"
+                    summary.append(f"   {j}. {a['answer_title']} {correct}")
+
+            await message.author.send("\n".join(summary))
+
+        except TimeoutError:
+            await message.author.send("Time's up for creating the trivia. Try again with $create_trivia")
+        except Exception as e:
+            command_logger.error(f"Error creating trivia: {e}")
+            await message.author.send("An error occurred while creating the trivia. Please try again.")
