@@ -1565,3 +1565,125 @@ Traceback (most recent call last):
 TypeError: Trivia() got unexpected keyword arguments: 'username'
 2024-12-07 14:55:48,282 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
 2024-12-07 14:55:50,179 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/serializers.py changed, reloading.
+2024-12-07 15:16:33,640 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:22:00,979 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:22:10,861 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:22:21,697 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:22:23,566 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:25:15,753 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:25:27,239 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:25:58,678 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:27:05,225 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:30:28,230 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:31:04,616 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:31:11,716 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:32:19,553 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:32:36,332 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 15:38:06,958 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:52:17,237 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-12-07 15:52:23,305 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:52:25,225 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:52:27,894 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/django/base.py changed, reloading.
+2024-12-07 15:52:36,394 - django.request - ERROR - Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 260, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 557, in index
+    app_list = self.get_app_list(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 541, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 525, in _build_app_dict
+    "app_url": reverse(
+               ^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'app_list' with keyword arguments '{'app_label': 'auth'}' not found. 1 pattern(s) tried: ['admin/?$(?P<app_label>auth|users|trivia|score|monitoring)/$']
+2024-12-07 15:52:58,333 - django.request - ERROR - Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 260, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 557, in index
+    app_list = self.get_app_list(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 541, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 525, in _build_app_dict
+    "app_url": reverse(
+               ^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'app_list' with keyword arguments '{'app_label': 'auth'}' not found. 1 pattern(s) tried: ['admin/?$(?P<app_label>auth|users|trivia|score|monitoring)/$']
+2024-12-07 15:53:59,491 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:54:02,482 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:54:21,993 - django.request - WARNING - Not Found: /api/trivias/dbbdfce6-a83d-4774-a589-9c37ac2b6ec8
+2024-12-07 15:55:22,573 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:56:46,028 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:56:47,772 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 15:57:06,826 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 16:02:28,600 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 16:05:21,227 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 16:05:32,278 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-07 16:05:34,140 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-07 16:05:47,228 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-07 16:07:30,209 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-07 16:09:15,429 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 16:09:51,102 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-07 16:09:52,524 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-07 16:10:03,111 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 16:12:47,429 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/users/viewsets.py changed, reloading.
+2024-12-07 16:14:22,117 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 16:15:22,999 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/trivia/viewsets.py changed, reloading.
+2024-12-07 16:15:44,475 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-07 16:15:49,265 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-08 19:27:45,273 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef
+2024-12-08 19:34:23,856 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/urls.py changed, reloading.
+2024-12-08 19:59:38,246 - django.utils.autoreload - INFO - /Users/renzotincopa/Documents/Proyectos/Django/Proyectotrivia/api/apps/score/viewsets.py changed, reloading.
+2024-12-10 00:07:20,530 - django.request - WARNING - Not Found: /favicon.ico
+2024-12-10 00:12:17,167 - api.utils.jwt_utils - INFO - User found: tinconomad with ID: 99b13037-8ebf-4d37-ae4c-6d8fc83e8bef

@@ -907,3 +907,4 @@
 }
 2024-12-07 09:44:25,958 - bot_commands - ERROR - Exception: 500, message='Internal Server Error', url='http://127.0.0.1:8000/api/trivias/'
 2024-12-07 09:44:25,958 - bot_commands - ERROR - Error creating trivia: 500, message='Internal Server Error', url='http://127.0.0.1:8000/api/trivias/'
+2024-12-09 19:12:17,159 - bot_commands - INFO - Listing trivias for user: tinconomad

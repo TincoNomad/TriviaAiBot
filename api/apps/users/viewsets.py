@@ -4,6 +4,9 @@ from .models import CustomUser
 from .serializers import UserSerializer
 from api.utils.jwt_utils import IsAdminUser
 from api.utils.logging_utils import log_exception, logger
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.decorators import action
 
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
@@ -41,3 +44,26 @@ class UserViewSet(viewsets.ModelViewSet):
         except Exception as e:
             logger.error(f"Error deleting user: {str(e)}")
             raise
+
+    @action(detail=False, methods=['get'])
+    def get_user(self, request):
+        """
+        GET /api/users/get_user/?id=uuid-de-usuario
+        Returns: User information
+        """
+        user_id = request.query_params.get('id')
+        if not user_id:
+            return Response(
+                {"error": "id query parameter is required"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            user = CustomUser.objects.get(id=user_id)
+            serializer = UserSerializer(user)
+            return Response(serializer.data)
+        except CustomUser.DoesNotExist:
+            return Response(
+                {"error": "User not found"},
+                status=status.HTTP_404_NOT_FOUND
+            )

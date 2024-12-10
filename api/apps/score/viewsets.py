@@ -1,7 +1,6 @@
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import F
 from .models import Score, TriviaWinner, LeaderBoard
 from .serializers import ScoreSerializer, LeaderBoardSerializer, TriviaWinnerSerializer
 from api.utils.logging_utils import log_exception, logger
@@ -52,30 +51,6 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-    def retrieve(self, request, pk=None):
-        """
-        GET /api/leaderboards/{id}/
-        Returns: Top 10 scores of the specific leaderboard using its ID
-        """
-        try:
-            leaderboard = LeaderBoard.objects.get(pk=pk)
-            top_scores = Score.objects.filter(leaderboard=leaderboard).order_by('-points')[:10]
-            
-            return Response({
-                'leaderboard_id': str(leaderboard.id),
-                'discord_channel': leaderboard.discord_channel,
-                'created_by': leaderboard.created_by.username,
-                'scores': ScoreSerializer(top_scores, many=True).data
-            })
-        except LeaderBoard.DoesNotExist:
-            return Response(
-                {"error": "LeaderBoard not found"}, 
-                status=status.HTTP_404_NOT_FOUND
-            )
-        except Exception as e:
-            logger.error(f"Error retrieving leaderboard: {str(e)}")
-            raise
-
     @action(detail=False, methods=['get'], url_path='all')
     def all_leaderboards(self, request):
         """
@@ -98,14 +73,15 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         """
-        GET /api/leaderboards/
-        Receives: {"discord_channel": "channel_name"}
+        GET /api/leaderboards/?channel=channel_name
+        or
+        GET /api/leaderboards/?discord_channel=channel_name
         Returns: Only name and points of top 10 scores
         """
-        discord_channel = request.data.get('discord_channel')
+        discord_channel = request.query_params.get('channel') or request.query_params.get('discord_channel')
         if not discord_channel:
             return Response(
-                {"error": "discord_channel is required"}, 
+                {"error": "channel or discord_channel query parameter is required"}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
 
@@ -122,6 +98,35 @@ class LeaderBoardViewSet(viewsets.ModelViewSet):
         except Exception as e:
             logger.error(f"Error retrieving leaderboard: {str(e)}")
             raise
+
+    @action(detail=False, methods=['get'])
+    def get_leaderboard(self, request):
+        """
+        GET /api/leaderboards/get_leaderboard/?id=uuid-de-leaderboard
+        Returns: Top 10 scores of the specific leaderboard
+        """
+        leaderboard_id = request.query_params.get('id')
+        if not leaderboard_id:
+            return Response(
+                {"error": "id query parameter is required"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            leaderboard = LeaderBoard.objects.get(pk=leaderboard_id)
+            top_scores = Score.objects.filter(leaderboard=leaderboard).order_by('-points')[:10]
+            
+            return Response({
+                'leaderboard_id': str(leaderboard.id),
+                'discord_channel': leaderboard.discord_channel,
+                'created_by': leaderboard.created_by.username,
+                'scores': ScoreSerializer(top_scores, many=True).data
+            })
+        except LeaderBoard.DoesNotExist:
+            return Response(
+                {"error": "LeaderBoard not found"}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
 
 @method_decorator(csrf_exempt, name='dispatch')
 class ScoreViewSet(viewsets.ModelViewSet):

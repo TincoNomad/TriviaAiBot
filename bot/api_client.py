@@ -3,7 +3,7 @@ from typing import Dict, Any, Optional, List
 from typing_extensions import Self
 from .utils.logging_bot import bot_logger
 from api.django import (
-    FILTER_URL, LEADERBOARD_URL, SCORE_URL, QUESTION_URL, BASE_URL
+    FILTER_URL, LEADERBOARD_URL, SCORE_URL, QUESTION_URL, BASE_URL, TRIVIA_URL
 )
 
 class TriviaAPIClient:
@@ -20,14 +20,29 @@ class TriviaAPIClient:
         if self.session:
             await self.session.close()
             
-    async def get(self, url: str, data: Optional[Dict[str, Any]] = None) -> Any:
-        """Generic method for making GET requests"""
+    async def get(self, url: str, params: Optional[Dict[str, Any]] = None) -> Any:
+        """Generic method for making GET requests with query parameters
+        
+        Args:
+            url (str): The URL to make the request to
+            params (Optional[Dict[str, Any]]): Query parameters to include in the URL
+            
+        Returns:
+            Any: The JSON response from the server
+            
+        Raises:
+            Exception: If there is an error making the request
+            
+        Note:
+            This method uses query parameters (added to URL) instead of a JSON body,
+            following REST conventions for GET requests.
+        """
         if not self.session:
             self.session = aiohttp.ClientSession()
             
         try:
-            # If there are data, we send them as JSON in the body
-            async with self.session.get(url, json=data) as response:
+            bot_logger.debug(f"Making GET request to {url} with params: {params}")
+            async with self.session.get(url, params=params) as response:
                 response.raise_for_status()
                 return await response.json()
         except Exception as e:
@@ -93,9 +108,12 @@ class TriviaAPIClient:
     async def get_filtered_trivias(self, theme: str, difficulty: int) -> List[Dict[str, Any]]:
         """Gets filtered trivia questions by theme and difficulty"""
         try:
-            url = f"{FILTER_URL}?theme={theme}&difficulty={difficulty}"
-            bot_logger.info(f"Requesting filtered trivias with URL: {url}")
-            return await self.get(url)
+            params = {
+                "theme": theme,
+                "difficulty": difficulty
+            }
+            bot_logger.info(f"Requesting filtered trivias with params: {params}")
+            return await self.get(FILTER_URL, params=params)
         except aiohttp.ClientResponseError as e:
             if e.status in [401, 403]:
                 bot_logger.error("Unauthorized access to filtered trivias endpoint")
@@ -107,14 +125,28 @@ class TriviaAPIClient:
             raise
             
     async def get_leaderboard(self, discord_channel: str) -> Dict[str, Any]:
-        """Gets the score table for a specific discord channel"""
+        """Gets the score table for a specific discord channel
+        
+        Args:
+            discord_channel (str): The discord channel identifier
+            
+        Returns:
+            Dict[str, Any]: A dictionary containing the leaderboard data with scores
+            
+        Raises:
+            ValueError: If the channel is not found
+            Exception: For other API errors
+        """
         try:
-            data = {
-                "discord_channel": discord_channel
+            bot_logger.info(f"Requesting leaderboard for channel: {discord_channel}")
+            params = {
+                "channel": discord_channel
             }
-            return await self.get(LEADERBOARD_URL, data)
+            response = await self.get(LEADERBOARD_URL, params)
+            bot_logger.debug(f"Leaderboard response: {response}")
+            return response
         except Exception as e:
-            bot_logger.error(f"Error getting leaderboard: {e}")
+            bot_logger.error(f"Error getting leaderboard for channel {discord_channel}: {e}")
             raise
             
     async def update_score(self, name: str, points: int, discord_channel: str):
@@ -187,3 +219,114 @@ class TriviaAPIClient:
             "username": username
         }
         return await self.post(LEADERBOARD_URL, data)
+            
+    async def get_user_trivias(self, params: Dict[str, str]) -> List[Dict[str, Any]]:
+        """Gets trivias created by a specific user
+        
+        Args:
+            params (Dict[str, str]): Query parameters including username
+            
+        Returns:
+            List[Dict[str, Any]]: List of trivias created by the user
+            
+        Raises:
+            Exception: If there is an error getting the trivias
+        """
+        try:
+            bot_logger.info(f"Getting trivias for user with params: {params}")
+            response = await self.get(TRIVIA_URL, params)
+            bot_logger.debug(f"Got trivias response: {response}")
+            return response
+        except Exception as e:
+            bot_logger.error(f"Error getting user trivias: {e}")
+            raise
+            
+    async def update_trivia(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Updates a trivia question
+        
+        Args:
+            data (Dict[str, Any]): Update data including trivia_id and the fields to update
+            
+        Returns:
+            Dict[str, Any]: Updated trivia data
+            
+        Raises:
+            Exception: If there is an error updating the trivia
+        """
+        try:
+            trivia_id = data.pop('trivia_id')
+            bot_logger.info(f"Updating trivia {trivia_id} with data: {data}")
+            
+            # Usar PATCH en lugar de POST para actualizar solo campos específicos
+            response = await self.patch(f"{TRIVIA_URL}{trivia_id}/", data)
+            bot_logger.debug(f"Update trivia response: {response}")
+            return response
+        except Exception as e:
+            bot_logger.error(f"Error updating trivia: {e}")
+            raise
+            
+    async def patch(self, url: str, data: Dict[str, Any]) -> Any:
+        """Generic method for making PATCH requests"""
+        if not self.session:
+            self.session = aiohttp.ClientSession()
+        
+        try:
+            headers = {'Content-Type': 'application/json'}
+            
+            bot_logger.info(f"Making PATCH request to {url}")
+            bot_logger.debug(f"Request data: {data}")
+            
+            async with self.session.patch(url, json=data, headers=headers) as response:
+                response_text = await response.text()
+                bot_logger.debug(f"Response status: {response.status}")
+                bot_logger.debug(f"Response text: {response_text}")
+                
+                response.raise_for_status()
+                return await response.json()
+        except Exception as e:
+            bot_logger.error(f"Error in PATCH request to {url}: {str(e)}")
+            raise
+            
+    async def patch_trivia(self, trivia_id: str, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Updates a trivia partially
+        
+        Args:
+            trivia_id (str): ID of the trivia to update
+            data (Dict[str, Any]): Fields to update
+            
+        Returns:
+            Dict[str, Any]: Updated trivia data
+        """
+        try:
+            bot_logger.info(f"Partially updating trivia {trivia_id} with data: {data}")
+            response = await self.patch(f"{TRIVIA_URL}{trivia_id}/", data)
+            bot_logger.debug(f"Update trivia response: {response}")
+            return response
+        except Exception as e:
+            bot_logger.error(f"Error updating trivia: {e}")
+            raise
+            
+    async def update_trivia_questions(self, trivia_id: str, questions_data: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Updates questions and answers for a trivia
+        
+        Args:
+            trivia_id (str): ID of the trivia to update
+            questions_data (List[Dict[str, Any]]): Questions and answers data to update
+            
+        Returns:
+            Dict[str, Any]: Response from the API
+            
+        Raises:
+            Exception: If there is an error updating the questions
+        """
+        try:
+            data = {"questions": questions_data}
+            bot_logger.info(f"Updating questions for trivia {trivia_id}")
+            bot_logger.debug(f"Questions data: {questions_data}")
+            
+            response = await self.patch(f"{TRIVIA_URL}{trivia_id}/update_questions/", data)
+            bot_logger.debug(f"Update questions response: {response}")
+            return response
+        except Exception as e:
+            bot_logger.error(f"Error updating trivia questions: {e}")
+            raise

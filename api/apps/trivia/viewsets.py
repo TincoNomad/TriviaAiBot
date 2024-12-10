@@ -10,6 +10,9 @@ from rest_framework.decorators import action
 from rest_framework import status
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
+from api.utils.jwt_utils import get_user_id_by_username
+
+
 User = get_user_model()
 
 class TriviaViewSet(viewsets.ModelViewSet):
@@ -19,7 +22,7 @@ class TriviaViewSet(viewsets.ModelViewSet):
         return TriviaSerializer
     
     def get_permissions(self):
-        if self.action in ['update', 'partial_update', 'destroy', 'toggle_visibility']:
+        if self.action in ['update', 'partial_update', 'destroy']:
             return [permissions.IsAuthenticated()]
         return []
     
@@ -44,44 +47,71 @@ class TriviaViewSet(viewsets.ModelViewSet):
         else:
             raise ValidationError("User not found")
     
-    @action(detail=True, methods=['post'])
-    def toggle_visibility(self, request, pk=None):
-        trivia = self.get_object()
-        
-        if not request.user.is_authenticated:
+    @action(detail=False, methods=['get'])
+    def get_trivia(self, request):
+        """
+        GET /api/trivias/get_trivia/?id=uuid-de-trivia
+        Returns: Detailed information of a specific trivia
+        """
+        trivia_id = request.query_params.get('id')
+        if not trivia_id:
             return Response(
-                {"error": "You must be authenticated to change visibility"},
-                status=status.HTTP_401_UNAUTHORIZED
+                {"error": "id query parameter is required"},
+                status=status.HTTP_400_BAD_REQUEST
             )
-        
-        if trivia.user != request.user:
-            return Response(
-                {"error": "Only the authenticated owner can modify visibility"},
-                status=status.HTTP_403_FORBIDDEN
-            )
-        
-        trivia.is_public = not trivia.is_public
-        trivia.save()
-        
-        return Response({
-            "message": "Visibility updated successfully",
-            "is_public": trivia.is_public
-        })
-    
-    @log_exception
-    def create(self, request, *args, **kwargs):
+
         try:
-            return super().create(request, *args, **kwargs)
-        except ValidationError as e:
-            logger.warning(f"Validation error in trivia creation: {e}")
-            raise DRFValidationError(detail=str(e))
-        except IntegrityError as e:
-            logger.error(f"Database integrity error: {e}")
-            if 'unique_trivia_title' in str(e):
-                raise DRFValidationError(
-                    detail="A trivia with this title already exists. Please choose another title."
+            trivia = Trivia.objects.get(id=trivia_id)
+            serializer = TriviaSerializer(trivia)
+            return Response(serializer.data)
+        except Trivia.DoesNotExist:
+            return Response(
+                {"error": "Trivia not found"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+    
+    @action(detail=False, methods=['get'])
+    def difficulty(self, request):
+        """Returns the available difficulty options"""
+        try:
+            difficulties = dict(Trivia.DIFFICULTY_CHOICES)
+            return Response(difficulties, status=status.HTTP_200_OK)
+        except Exception as e:
+            logger.error(f"Error getting difficulty choices: {e}")
+            return Response(
+                {"error": "Error retrieving difficulty choices"}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+    
+    def list(self, request, *args, **kwargs):
+        """
+        GET /api/trivias/?username=discord_user
+        Returns: List of trivias created by the specified user or all public trivias if no username
+        """
+        username = request.query_params.get('username')
+        
+        if username:
+            try:
+                user_id = get_user_id_by_username(username)
+                if not user_id:
+                    return Response(
+                        {"error": f"No se encontró usuario con username: {username}"},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+                
+                trivias = Trivia.objects.filter(created_by_id=user_id)
+                serializer = TriviaListSerializer(trivias, many=True)
+                return Response(serializer.data)
+                
+            except Exception as e:
+                logger.error(f"Error al obtener trivias por usuario: {str(e)}")
+                return Response(
+                    {"error": "Error interno del servidor"},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
-            raise DRFValidationError(detail="Could not create trivia due to database constraints")
+        
+        # Si no hay username, retorna el comportamiento normal (trivias públicas)
+        return super().list(request, *args, **kwargs)
     
     @action(detail=False, methods=['get'], url_path='filter', authentication_classes=[], permission_classes=[])
     def filter_trivias(self, request):
@@ -123,18 +153,20 @@ class TriviaViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
     
-    @action(detail=False, methods=['get'])
-    def difficulty(self, request):
-        """Returns the available difficulty options"""
+    @log_exception
+    def create(self, request, *args, **kwargs):
         try:
-            difficulties = dict(Trivia.DIFFICULTY_CHOICES)
-            return Response(difficulties, status=status.HTTP_200_OK)
-        except Exception as e:
-            logger.error(f"Error getting difficulty choices: {e}")
-            return Response(
-                {"error": "Error retrieving difficulty choices"}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            return super().create(request, *args, **kwargs)
+        except ValidationError as e:
+            logger.warning(f"Validation error in trivia creation: {e}")
+            raise DRFValidationError(detail=str(e))
+        except IntegrityError as e:
+            logger.error(f"Database integrity error: {e}")
+            if 'unique_trivia_title' in str(e):
+                raise DRFValidationError(
+                    detail="A trivia with this title already exists. Please choose another title."
+                )
+            raise DRFValidationError(detail="Could not create trivia due to database constraints")
 
 class ThemeViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Theme.objects.all()

@@ -35,6 +35,10 @@ class DiscordClient(discord.Client):
                 await self.trivia_commands.handle_themes(message)
             elif command == 'stopgame':
                 await self.trivia_commands.handle_stop_game(message)
+            elif command == 'trivias':
+                await self.trivia_commands.handle_list_trivias(message)
+            elif command == 'update_trivia':
+                await self.trivia_commands.handle_update_trivia(message)
         # Check if user is in active game
         elif user_id in self.trivia_commands.game_handler.game_state.active_games:
             await self.trivia_commands.handle_game_response(message)
