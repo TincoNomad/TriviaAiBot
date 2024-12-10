@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
 from django.db import models
-from .models import Trivia, Theme
+from .models import Trivia, Theme, Question, Answer
 from .serializers import TriviaSerializer, ThemeSerializer, TriviaListSerializer
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
@@ -167,6 +167,55 @@ class TriviaViewSet(viewsets.ModelViewSet):
                     detail="A trivia with this title already exists. Please choose another title."
                 )
             raise DRFValidationError(detail="Could not create trivia due to database constraints")
+    
+    @action(detail=True, methods=['patch'])
+    def update_questions(self, request, pk=None):
+        """
+        PATCH /api/trivias/{trivia_id}/update_questions/
+        Updates only questions and answers for a trivia
+        """
+        try:
+            trivia = self.get_object()
+            questions_data = request.data.get('questions', [])
+            
+            # Update questions
+            for question_data in questions_data:
+                question_id = question_data.get('id')
+                if question_id:
+                    question = Question.objects.get(id=question_id, trivia=trivia)
+                    # Update question fields
+                    for key, value in question_data.items():
+                        if key != 'answers':
+                            setattr(question, key, value)
+                    question.save()
+                    
+                    # Update answers if provided
+                    if 'answers' in question_data:
+                        for answer_data in question_data['answers']:
+                            answer_id = answer_data.get('id')
+                            if answer_id:
+                                answer = Answer.objects.get(id=answer_id, question=question)
+                                for key, value in answer_data.items():
+                                    setattr(answer, key, value)
+                                answer.save()
+            
+            return Response({'status': 'questions updated'})
+        except Question.DoesNotExist:
+            return Response(
+                {'error': 'Question not found'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Answer.DoesNotExist:
+            return Response(
+                {'error': 'Answer not found'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as e:
+            logger.error(f"Error updating questions: {e}")
+            return Response(
+                {'error': str(e)}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 class ThemeViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Theme.objects.all()
